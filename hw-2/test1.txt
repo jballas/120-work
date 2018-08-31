@@ -11,3 +11,9 @@ Step 2 Save it.
 Step 3 view changes in Github Desktop
 Step 4 write a summary
 Step 5 commit to master
+
+thoughts: when you view changes in Github Desktop 
+you have to select the changes you want to commit.
+I'm a bit puzzled by the history. When I added the file it
+only shows one line, which I then delete in the next commit, 
+and only the third commit shows my entire text1.txt.
