@@ -1,0 +1,13 @@
+Name: Julia Ballas
+Date: 8/30/18
+
+This is my first text document for one of Dr. Musick's Media Arts courses.
+
+I added a new line to this fine in my text editor.
+
+Adding more lines of text here.
+Step 1 Make changes in text editor. I am using Visual Code Studio.
+Step 2 Save it.
+Step 3 view changes in Github Desktop
+Step 4 write a summary
+Step 5 commit to master
