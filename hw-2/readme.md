@@ -33,6 +33,9 @@ First I created a new repository on Github Desktop and connected it to my 120-wo
 5. Select 'Commit to master'
 6. Push to Github.com
 
+### Screenshot of text editor
+
+![Screenshot of my text editor Visual Studio Code](/text-editor-screenshot.PNG)
 
 ## Problems or Issues this week
 
@@ -40,11 +43,14 @@ I noticed something odd in my history of test1.txt. When I first uploaded the fi
 
 I decided to do a test2.txt to see if I could recreate this, but unfortunately I could not. At least it allowed me to practice further. I also discovered how important it is to get your summaries correct, and that you only have one chance to do this. I added several documents, but only listed one in my summary.
 
+However, then I discovered a way to revert my commit and edit that summary and descriptions. I need to be clear as I can.
+
+
 ## Specific questions/concerns for next week
 
 Although I have gotten the hang of the text editor, and how everything syncs. I am unsure about some of the specific details, like what colors mean on the sidebar. I think if it is green it means I still have to save the file. Blues means I have to commit. 
 
-Second, I wish there was a way to edit commit summaries and descriptions, because sometimes I am not as clear as I should be or I forget to add in important information.
+Second, although I discovered a way to revert, I completely messed up my history as a result of this experiment.
 
 So far using Windows and slightly different programs from those that Dr. Musick uses in the lectures, and demonstrations has not caused me any problems.
 
