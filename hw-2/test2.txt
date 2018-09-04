@@ -7,12 +7,3 @@ Creative coding 120.
 This is a new line I added using my text editor, Visual Studio Code.
 
 
-
-Julia 
-
-
-
-
-Balllas
-
-Julia 
