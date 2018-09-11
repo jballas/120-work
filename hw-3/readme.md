@@ -13,7 +13,7 @@ This week felt very empowering. For the first time I felt like I was programming
 ## Projects
 
 - 01_hello-word
-- 02_hellow-world
+- 02_hello-world
 - 04_canvas
 - hw-3/sketch.js
     - Hello World final sketch
@@ -52,8 +52,8 @@ When customizing my Hello World program at first I could not change the font sty
 
 ## Specific questions/concerns for next week
 
-Next week we get deeper into drawing with code. While working on the simple Hello World text program I immediately wanted to animate the text. I looked through the p5 library at examples, but felt very confused and uncertain. Especially when I looked at the mouseMoved function. The reference page mentioned variables and the values. I couldn't figure out what to do with those values, or whether I could use this to make my text move at all. In the end I only adjusted the font size and style.
+Next week we get deeper into drawing with code. While working on the simple Hello World text program I immediately wanted to animate the text. I looked through the p5 library at examples, but felt very confused and uncertain. Especially when I looked at the mouseMoved function. The reference page mentioned variables and the values. I couldn't figure out what to do with those values, or whether I could use them to make my text move at all. In the end I only adjusted the font size and style.
 
-## Concludsion
+## Conclusion
 
-Programming in JavaScript is intimidating, but understanding the logic behind it makes it much easier. Knowing a program begins with the setup with the drawing after that makes sense. However, I'm skeptical about drawing using only number values to make shapes, and I wonder whether this will feel as meaningful as taking a pen to paper. It seems like more work, and too many numbers, to do something as simple as draw a shape, or a house or portrait, but if we can animate or create movement as well, then that appeals to me. Ultimately, I want to create a story. I love writing novels, and want to do something related to one of my novels for my final project. I don't know how yet.
+Programming in JavaScript is intimidating, but understanding the logic behind it makes it much easier. Knowing a program begins with the setup with the drawing after that makes sense. However, I'm skeptical about drawing using only number values to make shapes, and I wonder whether this will feel as meaningful as taking a pen to paper. It seems like more work, and too many numbers, to do something as simple as draw a shape, or a house or portrait, but if we can animate or create movement as well, then that appeals to me. Ultimately, I want to create a story. I love writing novels and want to do something related to one of my novels for my final project. I don't know how yet.
