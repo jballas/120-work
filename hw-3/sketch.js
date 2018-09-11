@@ -7,7 +7,7 @@ function setup(){
     //color background changed to hexadecimal, I wanted it to be lilac.
     background('#C8A2C8');
 
-    //changed font style and size so it would be easier to read.
+    //changed font style and size so it would be easier to read. It didn't work when I placed these under the draw function below.
     textFont('Georgia');
     textSize(25);
 }
