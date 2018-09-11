@@ -16,7 +16,7 @@ function setup(){
 function draw(){
 
     //write a statement to print the text string 'Hello World'
-    //set the location parameters of x=75 and y=75; otherwise with the default settings the text does not show up on our canvas. 
+    //set the location parameters of x=25 and y=75; otherwise with the default settings the text does not show up on our canvas. 
     text('Hello World!', 25, 75);
 
 }
