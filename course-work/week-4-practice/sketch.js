@@ -12,6 +12,7 @@ triangle()
 
 function setup(){
    createCanvas(800, 600); 
+   background('#c8f1f9')
 }
 
 
@@ -33,5 +34,11 @@ function draw(){
    ellipse(130, 48, 16, 16);
    ellipse(130, 64, 16, 16);
    ellipse(130, 80, 16, 16);
-   
+
+   strokeWeight(10);
+   point(20, 50);
+   point(50, 50);
+   point(20, 100);
+   point(50, 100);
+
 }
