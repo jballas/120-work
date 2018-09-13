@@ -11,7 +11,7 @@ triangle()
 */
 
 function setup(){
-   createCanvas(800, 600); 
+   createCanvas(600, 1000); 
    background('#c8f1f9')
 }
 
@@ -35,10 +35,28 @@ function draw(){
    ellipse(130, 64, 16, 16);
    ellipse(130, 80, 16, 16);
 
-   strokeWeight(10);
+   // added points and made 4 of them in a rectangle shape
+   // strokeWeight is used to make the points visible. Otherwise they are just small pixels. 
+   //strokeWeight(3); 
    point(20, 50);
    point(50, 50);
    point(20, 100);
    point(50, 100);
 
+   //rounded corners on my rectangle, 10 is pretty standard, while 100 is very rounded like a label.
+   rect(10, 180, 500, 130, 100);
+   //smaller rect inside the other one. It almost looks like a mouth.
+   rect(100, 200, 300, 100, 100);
+   // even small one with various corners. Its hard to get it centered. Now it's like a bandaid.
+   rect(150, 210, 200, 75, 10, 100, 5, 150);
+
+   //triangle added with 6 parameters
+   triangle( 300, 10, 250, 100, 500, 50);
+
+   //what is a line? It is a path between two points.
+   line(150, 150, 500, 150)
+
+   //What is a quad? A quadrilateral, 4sided polygon that does not have 90 degree angles. It needs 8 parameters.
+
+   quad(120, 600, 200, 250, 50, 400, 550, 750);
 }
