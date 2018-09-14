@@ -81,7 +81,8 @@ function draw(){
 
    //What is a quad? A quadrilateral, 4sided polygon that does not have 90 degree angles. It needs 8 parameters.
 
-   //adding color, and transparency
+   //adding color, and transparency. Reminds me of stained glass.
+
    fill( 255, 0, 255, 150 );
    quad(120, 600, 200, 250, 50, 400, 550, 750);
 
@@ -92,5 +93,5 @@ function draw(){
 
    fill(150)
    noStroke()
-   arc(10, 800, 50, 50, 0, HALF_PI);
+   arc(500, 500, 150, 150, 0, HALF_PI);
 }
