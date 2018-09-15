@@ -7,16 +7,16 @@ function draw() {
  
   // hair in background
   
-  fill('brown')
-  nostroke()
-  rect( 300, 100, 300, 600)
+  fill('brown');
+  nostroke();
+  rect( 300, 100, 300, 600);
   
   push()
     
     fill(0);
     nostroke();
     rotate( radians(90) );
-    arc( 300, 300, 100, 100, PI, HALF_PI);
+    arc( 300, 300, 50, 50, PI, HALF_PI);
   
   pop()
   
