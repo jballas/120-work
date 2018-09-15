@@ -27,13 +27,25 @@ function draw() {
   
   push();
 
-    fill(0);
-    //noStroke();
-    triangle( 500, 300, 350, 600, 600, 600 );
+    fill('blue');
+    noStroke();
+    quad( 280, 500, 600, 350, 600, 600, 400, 600 );
+
+    fill('green');
+    triangle( 280, 500, 600, 350, 400, 700 );
 
   pop();
 
   // head shape
+
+  push();
+
+    fill('yellow');
+    translate( -20, 100 );
+    rotate( radians (345));
+    ellipse( 400, 250, 350, 500);
+
+  pop();
   
   // face shading, should we try to drop in the light from outside?
   
