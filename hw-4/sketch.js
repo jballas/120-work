@@ -9,13 +9,13 @@ function draw() {
   
   fill('brown');
   noStroke();
-  rect( 300, 100, 300, 600);
+  rect( 200, 200, 400, 400);
   
   push()
     
-    fill(0);
+    fill(50);
     noStroke();
-    arc( 300, 500, 200, 200, radians(270), radians(450) );
+    arc( 60, 400, 400, 600, radians(270), radians(450) );
   
   pop()
   
