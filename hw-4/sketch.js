@@ -3,10 +3,13 @@ function setup(){
   background( 50 );
 }
 
+// I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
+
 function draw() {
- 
-  // hair in background
-  
+
+// hair in background
+// hair is in the far background, so I have to do that first, I has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a trapezoid shape?
+
   fill('brown');
   noStroke();
   rect( 200, 200, 400, 400);
@@ -24,6 +27,8 @@ function draw() {
   ellipse( 425, 100, 500, 400 );
 
   // neck
+
+  // The neck shape is basically a triangle, until I realized a quad would be better for the shadows, with a triangle for the hightlights.
   
   push();
 
@@ -38,6 +43,8 @@ function draw() {
 
   // head shape
 
+  // My face is an oval shape, but its tilted in my mockup, so I have to figure out how to rotate it, just enough. 
+
   push();
 
     fill('yellow');
@@ -48,7 +55,21 @@ function draw() {
   pop();
   
   // face shading, should we try to drop in the light from outside?
+
+ // Struggling with this part, the shading is arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work, so I went back to the arc and managed to make it align by using the same size as the ellipse. Still not quite working.
+
+  push();
+
+    fill('black');
+   // translate( 100, 150 );
+  //  scale(.70);
+    rotate( radians (345));
+ //   ellipse( 400, 250, 350, 500);
+     arc( 340, 360, 350, 500, radians(60), radians(240), CHORD );
   
+  pop();
+  
+
   // hair highlights
   
   // Glasses left side
