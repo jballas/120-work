@@ -58,6 +58,13 @@ function draw() {
 
  // Struggling with this part, the shading is arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work, so I went back to the arc and managed to make it align by using the same size as the ellipse. Still not quite working.
 
+ /* todo
+ -review my mockup
+ -How does face shading layer with rest of features 
+ -How can I do I make a curved line?
+ -Can I made the arc smaller, but keep it aligned?
+
+ */
   push();
 
     fill('black');
