@@ -15,8 +15,7 @@ function draw() {
     
     fill(0);
     noStroke();
-    rotate( radians(90) );
-    arc( 300, 300, 50, 50, PI, HALF_PI);
+    arc( 300, 500, 200, 200, radians(270), radians(450) );
   
   pop()
   
