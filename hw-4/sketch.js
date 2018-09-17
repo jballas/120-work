@@ -123,6 +123,7 @@ function draw() {
 
   fill(30)
   arc( 315, 430, 100, 45, radians(260), radians(425), CHORD );
+  
   rotate( radians(-15));
   //fill (60);
   //rect( 200, 510, 410, 10, 10 );
@@ -144,6 +145,17 @@ function draw() {
   rect( 235, 580, 410, 15, 10 );
 
   // lip highlight
+
+  // This occurs above the lips, so it must incorporate the lips as well and align on top of the face shape, below the nose.
+  
+  push();
+
+    fill(100);
+    //scale( .5, -1.5);
+    rotate( radians(-5));
+    ellipse( 210, 460, 135, 80 );
+
+  pop(); 
 
   // lips
   
