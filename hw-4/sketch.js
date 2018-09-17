@@ -1,6 +1,6 @@
 function setup(){
   createCanvas( 600, 600 );
-  background( 50 );
+  background( 200 );
 }
 
 // I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then will fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
@@ -11,19 +11,19 @@ function draw() {
 
 // hair is in the far background, so I have to do that first, I has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a curved shape?
 
-  fill('brown');
+  fill( '#3e1f00' );
   noStroke();
   rect( 200, 200, 400, 400);
   
   push();
     
-    fill(50);
+    fill(200);
     noStroke();
     arc( 60, 400, 400, 600, radians(270), radians(450) );
   
   pop();
   
-  fill('brown');
+  fill('#3e1f00');
   noStroke();
   ellipse( 425, 100, 500, 400 );
 
@@ -33,12 +33,12 @@ function draw() {
   
   push();
 
-    fill('blue');
+    fill('#3e1f00');
     noStroke();
     quad( 340, 450, 600, 350, 600, 600, 400, 600 );
 
-    fill('green');
-    stroke('red')
+    fill('#512b13');
+    stroke('#3e1f00')
     triangle( 340, 450, 600, 350, 400, 700 );
 
   pop();
@@ -49,7 +49,7 @@ function draw() {
 
   push();
 
-    fill('yellow');
+    fill('#ffd7af');
     translate( -20, 100 );
     rotate( radians (345));
     ellipse( 400, 250, 350, 500);
@@ -64,7 +64,7 @@ function draw() {
 
   push();
 
-    fill(60);
+    fill( '#ffc896');
     rotate( radians (345));
      arc( 355, 345, 355, 500, radians(75), radians(240), CHORD );
   
@@ -91,7 +91,7 @@ function draw() {
 
   push();
 
-  fill(80)
+  fill( '#ffb464')
   translate( -80, 220);
   rotate( radians (335));
   ellipse( 350, 270, 170, 300 );
@@ -121,19 +121,22 @@ function draw() {
 
     // I am still updating the chin. I think it needs a mouth, and the coloring will help make it look like a chin and not just boxes.
 
-  fill(30)
-  arc( 315, 430, 100, 45, radians(260), radians(425), CHORD );
+  fill( 'rgb(255, 150, 80)' )
+  arc( 320, 430, 100, 45, radians(245), radians(405), CHORD );
   
   rotate( radians(-15));
+  
+  /*
+  
   //fill (60);
   //rect( 200, 510, 410, 10, 10 );
-  fill(70);
+  fill( '#ffe1e1' );
   rect( 380, 480, 410, 20, 10 );
-  fill(80);
+  fill( 'rgb(130, 85, 0)' );
   rect( 300, 500, 410, 20, 10 );
-  fill(90);
+  fill( 'rgb(140, 95, 0)' );
   rect( 210, 520, 410, 20, 10 );
-  fill(100);
+  fill( 'rgb(150, 100, 0)');
   rect( 215, 540, 410, 10, 10 );
   fill(110);
   rect( 220, 550, 410, 10, 10 );
@@ -143,32 +146,34 @@ function draw() {
   rect( 230, 570, 410, 10, 10 );
   fill(140);
   rect( 235, 580, 410, 15, 10 );
+ 
+*/
 
 // lip highlight
 
   // This occurs above the lips, so it must incorporate the lips as well and align on top of the face shape, below the nose.
-  
+  /*
   push();
 
-    fill(100);
+    fill( 'rgb(255, 150, 80)' );
     //translate( -80, -220 );
     //rotate( radians(-5));
     //scale( 1.5, 3.0);
     ellipse( 230, 440, 100, 80 );
 
   pop(); 
-
+*/
 // lips
 
     // I'm thinking an arc would best represent this shape.
   
   //top lip
-  fill(120);
+  fill( 'rgb(255, 150, 150)' );
   arc( 230, 455, 80, 45, radians(180), radians(360), CHORD );
   rect( 190, 440, 50, 20, 3 );
 
   //bottom lip
-  fill(165)
+  fill( 'rgb(255, 140, 120)' );
   arc( 230, 455, 80, 45, radians(0), radians(180), CHORD );
   rect( 190, 456, 30, 20, 5 );
 
@@ -176,7 +181,7 @@ function draw() {
   
   push();
 
-    fill('brown');
+    fill('#3e1f00');
     rotate ( radians (-1));
     rect( 155, 345, 20, 150, 50 );
 
@@ -184,8 +189,8 @@ function draw() {
 
 // Nose
   
-fill('yellow');
+fill('#ffc896');
 triangle( 230, 235, 245, 345, 155, 335);
-fill( 'rgb(200, 256, 0)' );
+fill( 'rgb(255, 150, 80)' );
 rect( 155, 335, 90, 10, 5 );
 }
