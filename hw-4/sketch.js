@@ -34,10 +34,11 @@ function draw() {
 
     fill('blue');
     noStroke();
-    quad( 280, 500, 600, 350, 600, 600, 400, 600 );
+    quad( 340, 450, 600, 350, 600, 600, 400, 600 );
 
     fill('green');
-    triangle( 280, 500, 600, 350, 400, 700 );
+    stroke('red')
+    triangle( 340, 450, 600, 350, 400, 700 );
 
   pop();
 
@@ -85,12 +86,12 @@ function draw() {
   
   // face/glasses shadows
   
-  // this is going to be tricky, I have highlights to add over the top, including the nose and the mouth. 
+  // this is going to be tricky. It is sort of a oval shape, but I need to add in more highlights over the top, including the nose and above the mouth and under the eye. 
 
   push();
 
   fill(80)
-  translate( -80, 200);
+  translate( -80, 220);
   rotate( radians (335));
   ellipse( 350, 300, 170, 300 );
 
@@ -98,9 +99,23 @@ function draw() {
 
   // Glasses right side
 
-  // chin
+  // I copied the same specs as the left side, I just need to adjust where they are on the face.
 
-  
+  push();
+
+  fill(40);
+  translate( 20, 10 );
+  rotate( radians (345));
+  rect( 220, 250, 130, 120, 35 ); 
+
+  pop();
+
+  // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
+
+  fill(70);
+  rect( 335, 455, 110, 30, 10 );
+  arc()
+
   // lips
   
   // Nose
