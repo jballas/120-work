@@ -108,9 +108,12 @@ function draw() {
   rotate( radians (345));
   rect( 220, 250, 130, 120, 35 ); 
 
+//  the glasses have an arm extending from the right lense off the screen. So I have to add a rect
+  //rotate( radians (18));
+  rect ( 300, 280, 250, 20 );
   pop();
 
-  // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
+    // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
 
   fill(70);
   rect( 335, 455, 110, 30, 10 );
