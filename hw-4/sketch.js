@@ -3,12 +3,13 @@ function setup(){
   background( 50 );
 }
 
-// I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
+// I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then will fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
 
 function draw() {
 
-// hair in background
-// hair is in the far background, so I have to do that first, I has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a trapezoid shape?
+// hair background
+
+// hair is in the far background, so I have to do that first, I has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a curved shape?
 
   fill('brown');
   noStroke();
@@ -55,9 +56,9 @@ function draw() {
 
   pop();
   
-  // face shading, should we try to drop in the light from outside?
-
- // Struggling with this part, the shading is an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
+  // face shading
+  
+  // Struggling with this part, the shading is an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
 
  // I went with the arc and made it smaller, and rotated it.
 
@@ -73,14 +74,14 @@ function draw() {
 
   // Glasses left side
   
-  //These need to be off to the side of the face, a rect with rounded corners.
+  // Glasses need to be off to the side of the face, a rect with rounded corners might just work.
 
   push();
 
     fill(40);
     translate( -100, 50 );
     rotate( radians (345));
-    rect( 220, 250, 130, 120, 35 ); 
+    rect( 220, 210, 130, 120, 35 ); 
 
   pop();
   
@@ -93,7 +94,7 @@ function draw() {
   fill(80)
   translate( -80, 220);
   rotate( radians (335));
-  ellipse( 350, 300, 170, 300 );
+  ellipse( 350, 270, 170, 300 );
 
   pop();
 
@@ -106,19 +107,39 @@ function draw() {
   fill(40);
   translate( 20, 10 );
   rotate( radians (345));
-  rect( 220, 250, 130, 120, 35 ); 
+  rect( 220, 210, 130, 120, 35 ); 
 
-//  the glasses have an arm extending from the right lense off the screen. So I have to add a rect
-  //rotate( radians (18));
-  rect ( 300, 280, 250, 20 );
+  //  the glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
+  
+  rotate( radians (15));
+  rect ( 350, 125, 250, 20 );
   pop();
 
     // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
 
-  fill(70);
-  rect( 335, 455, 110, 30, 10 );
+    //todo: the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
+
   fill(30)
-  arc( 315, 440, 100, 45, radians(260), radians(425), CHORD );
+  arc( 315, 430, 100, 45, radians(260), radians(425), CHORD );
+  rotate( radians(-15));
+  fill(60);
+  rect( 200, 510, 410, 10, 10 );
+  fill(70);
+  rect( 200, 520, 410, 10, 10 );
+  fill(80);
+  rect( 205, 530, 410, 10, 10 );
+  fill(90);
+  rect( 210, 540, 410, 10, 10 );
+  fill(100);
+  rect( 215, 550, 410, 10, 10 );
+  fill(110);
+  rect( 220, 560, 410, 10, 10 );
+  fill(120);
+  rect( 225, 570, 410, 10, 10 );
+  fill(130);
+  rect( 230, 580, 410, 10, 10 );
+  fill(140);
+  rect( 235, 590, 410, 10, 10 );
 
   // lip highlight
 
