@@ -5,6 +5,8 @@ function setup(){
 
 // I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then will fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
 
+// I finished a basic layout, and adjusted the colors, but I'm still not satisfied with the face shape and especially the chin. So I reviewed my mockup and traced some of the shapes again. I'm going to try to change up the face to try and get the chin to work. Unfortunately, I'm concerned that this will effec the rotation and layout of everything else, but I won't be satisfied until I try.
+
 function draw() {
 
 // hair background
@@ -50,6 +52,7 @@ function draw() {
   push();
 
     fill('#ffd7af');
+    //fill( 'rgb(255, 150, 80)' );
     translate( -20, 100 );
     rotate( radians (345));
     ellipse( 400, 250, 350, 500);
@@ -62,15 +65,19 @@ function draw() {
 
  // I went with the arc and made it smaller, and rotated it.
 
+ // Adjusted the shading lower and bigger
+
   push();
 
     fill( '#ffc896');
     rotate( radians (345));
-     arc( 355, 345, 355, 500, radians(75), radians(240), CHORD );
+     arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
   
   pop();
   
-// hair highlights, do I still need these?
+// hair highlights, do I still need these? YES!
+
+
 
 // Glasses left side
   
@@ -91,11 +98,13 @@ function draw() {
 
   push();
 
-  fill( '#ffb464')
+  /*fill( '#ffb464');
   translate( -80, 220);
   rotate( radians (335));
-  ellipse( 350, 270, 170, 300 );
+  ellipse( 380, 290, 250, 300 );
 
+  */
+ 
   pop();
 
 // Glasses right side
