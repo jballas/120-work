@@ -51,11 +51,11 @@ function draw() {
 
   push();
 
-    fill('#ffd7af');
-    //fill( 'rgb(255, 150, 80)' );
-    translate( -20, 100 );
-    rotate( radians (345));
-    ellipse( 400, 250, 350, 500);
+    //fill('#ffd7af');
+    fill( 'rgb(255, 150, 80)' );
+    translate( 100, -100 );
+    rotate( radians (375));
+    ellipse( 400, 250, 375, 500);
 
   pop();
   
@@ -70,16 +70,34 @@ function draw() {
   push();
 
     fill( '#ffc896');
-    rotate( radians (345));
-     arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
+    //translate( 80, -100 );
+    //rotate( radians (385));
+    ellipse (430, 180, 365, 410 );
+    //arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
   
+    fill( '#ffdcc4');
+    ellipse(440, 130, 365, 300 ); 
+
   pop();
-  
+
 // hair highlights, do I still need these? YES!
 
+  fill( '#3e1f00' );
+  quad(300, 0, 600, 0, 600, 200, 550, 200 );
 
 
-// Glasses left side
+
+// adjustments to left side of face, adding hair shadows
+  
+    push();
+
+    fill('#3e1f00');
+    rotate ( radians (-18));
+    rect( 110, 250, 40, 300, 50 );
+
+  pop();
+
+  // Glasses left side
   
   // Glasses need to be off to the side of the face, a rect with rounded corners might just work.
 
@@ -114,7 +132,7 @@ function draw() {
   push();
 
   fill(40);
-  translate( 20, 10 );
+  translate( 40, 10 );
   rotate( radians (345));
   rect( 220, 210, 130, 120, 35 ); 
 
@@ -161,6 +179,7 @@ function draw() {
 // lip highlight
 
   // This occurs above the lips, so it must incorporate the lips as well and align on top of the face shape, below the nose.
+
   /*
   push();
 
@@ -172,34 +191,27 @@ function draw() {
 
   pop(); 
 */
+
 // lips
 
     // I'm thinking an arc would best represent this shape.
   
   //top lip
-  fill( 'rgb(255, 150, 150)' );
+  fill( 'rgb(255, 10, 50)' );
   arc( 230, 455, 80, 45, radians(180), radians(360), CHORD );
   rect( 190, 440, 50, 20, 3 );
 
   //bottom lip
-  fill( 'rgb(255, 140, 120)' );
+  fill( 'rgb(255, 50, 80)' );
   arc( 230, 455, 80, 45, radians(0), radians(180), CHORD );
   rect( 190, 456, 30, 20, 5 );
 
-  // adjustments to left side of face, adding hair shadows
-  
-  push();
-
-    fill('#3e1f00');
-    rotate ( radians (-1));
-    rect( 155, 345, 20, 150, 50 );
-
-  pop();
 
 // Nose
   
 fill('#ffc896');
-triangle( 230, 235, 245, 345, 155, 335);
+triangle( 250, 235, 265, 345, 155, 335);
 fill( 'rgb(255, 150, 80)' );
-rect( 155, 335, 90, 10, 5 );
+stroke( '#ffc896');
+triangle( 157, 335, 265, 345, 255, 365);
 }
