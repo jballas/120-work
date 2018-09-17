@@ -117,29 +117,31 @@ function draw() {
 
     // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
 
-    //todo: the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
+    // the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
+
+    // I am still updating the chin. I think it needs a mouth, and the coloring will help make it look like a chin and not just boxes.
 
   fill(30)
   arc( 315, 430, 100, 45, radians(260), radians(425), CHORD );
   rotate( radians(-15));
-  fill(60);
-  rect( 200, 510, 410, 10, 10 );
+  //fill (60);
+  //rect( 200, 510, 410, 10, 10 );
   fill(70);
-  rect( 200, 520, 410, 10, 10 );
+  rect( 380, 480, 410, 20, 10 );
   fill(80);
-  rect( 205, 530, 410, 10, 10 );
+  rect( 300, 500, 410, 20, 10 );
   fill(90);
-  rect( 210, 540, 410, 10, 10 );
+  rect( 210, 520, 410, 20, 10 );
   fill(100);
-  rect( 215, 550, 410, 10, 10 );
+  rect( 215, 540, 410, 10, 10 );
   fill(110);
-  rect( 220, 560, 410, 10, 10 );
+  rect( 220, 550, 410, 10, 10 );
   fill(120);
-  rect( 225, 570, 410, 10, 10 );
+  rect( 225, 560, 410, 10, 10 );
   fill(130);
-  rect( 230, 580, 410, 10, 10 );
+  rect( 230, 570, 410, 10, 10 );
   fill(140);
-  rect( 235, 590, 410, 10, 10 );
+  rect( 235, 580, 410, 15, 10 );
 
   // lip highlight
 
