@@ -27,7 +27,7 @@ function draw() {
   noStroke();
   ellipse( 425, 100, 500, 400 );
 
-  // neck
+// neck
 
   // The neck shape is basically a triangle, until I realized a quad would be better for the shadows, with a triangle for the hightlights.
   
@@ -43,7 +43,7 @@ function draw() {
 
   pop();
 
-  // head shape
+// head shape
 
   // My face is an oval shape, but its tilted in my mockup, so I have to figure out how to rotate it, just enough. 
 
@@ -56,7 +56,7 @@ function draw() {
 
   pop();
   
-  // face shading
+// face shading
   
   // Struggling with this part, the shading is an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
 
@@ -70,9 +70,9 @@ function draw() {
   
   pop();
   
-  // hair highlights, do I still need these?
+// hair highlights, do I still need these?
 
-  // Glasses left side
+// Glasses left side
   
   // Glasses need to be off to the side of the face, a rect with rounded corners might just work.
 
@@ -85,7 +85,7 @@ function draw() {
 
   pop();
   
-  // face/glasses shadows
+// face/glasses shadows
   
   // this is going to be tricky. It is sort of a oval shape, but I need to add in more highlights over the top, including the nose and above the mouth and under the eye. 
 
@@ -98,7 +98,7 @@ function draw() {
 
   pop();
 
-  // Glasses right side
+// Glasses right side
 
   // I copied the same specs as the left side, I just need to adjust where they are on the face.
 
@@ -109,13 +109,13 @@ function draw() {
   rotate( radians (345));
   rect( 220, 210, 130, 120, 35 ); 
 
-  //  the glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
+  // The glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
   
   rotate( radians (15));
   rect ( 350, 125, 250, 20 );
   pop();
 
-    // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
+// chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
 
     // the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
 
@@ -144,22 +144,44 @@ function draw() {
   fill(140);
   rect( 235, 580, 410, 15, 10 );
 
-  // lip highlight
+// lip highlight
 
   // This occurs above the lips, so it must incorporate the lips as well and align on top of the face shape, below the nose.
   
   push();
 
     fill(100);
-    //scale( .5, -1.5);
-    rotate( radians(-5));
-    ellipse( 210, 460, 135, 80 );
+    //translate( -80, -220 );
+    //rotate( radians(-5));
+    //scale( 1.5, 3.0);
+    ellipse( 230, 440, 100, 80 );
 
   pop(); 
 
-  // lips
+// lips
+
+    // I'm thinking an arc would best represent this shape.
   
-  // Nose
+  //top lip
+  fill(120);
+  arc( 230, 455, 80, 45, radians(180), radians(360), CHORD );
+  rect( 190, 440, 50, 20, 3 );
+
+  //bottom lip
+  fill(165)
+  arc( 230, 455, 80, 45, radians(0), radians(180), CHORD );
+  rect( 190, 456, 30, 20, 5 );
+
+  // adjustments to left side of face, adding hair shadows
   
+  push();
+
+    fill('brown');
+    rotate ( radians (-1));
+    rect( 155, 345, 20, 150, 50 );
+
+  pop();
+
+// Nose
   
 }
