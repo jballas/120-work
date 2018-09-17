@@ -114,7 +114,10 @@ function draw() {
 
   fill(70);
   rect( 335, 455, 110, 30, 10 );
-  arc()
+  fill(30)
+  arc( 315, 440, 100, 45, radians(260), radians(425), CHORD );
+
+  // lip highlight
 
   // lips
   
