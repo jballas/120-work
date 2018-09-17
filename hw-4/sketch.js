@@ -210,8 +210,20 @@ function draw() {
 // Nose
   
 fill('#ffc896');
-triangle( 250, 235, 265, 345, 155, 335);
+stroke(255);
+strokeWeight(3);
+triangle( 250, 245, 265, 345, 155, 335);
 fill( 'rgb(255, 150, 80)' );
 stroke( '#ffc896');
-triangle( 157, 335, 265, 345, 255, 365);
+triangle( 165, 337, 265, 345, 255, 365);
+
+// glasses, bridge
+
+fill(40);
+noStroke();
+rotate( radians(15));
+translate( 50, -70);
+rect(220, 240, 50, 20);
+
+
 }
