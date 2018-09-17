@@ -184,4 +184,8 @@ function draw() {
 
 // Nose
   
+fill('yellow');
+triangle( 230, 235, 245, 345, 155, 335);
+fill( 'rgb(200, 256, 0)' );
+rect( 155, 335, 90, 10, 5 );
 }
