@@ -56,39 +56,54 @@ function draw() {
   
   // face shading, should we try to drop in the light from outside?
 
- // Struggling with this part, the shading is arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work, so I went back to the arc and managed to make it align by using the same size as the ellipse. Still not quite working.
+ // Struggling with this part, the shading is an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
 
- /* todo
- -review my mockup
- -How does face shading layer with rest of features 
- -How can I do I make a curved line?
- -Can I made the arc smaller, but keep it aligned?
+ // I went with the arc and made it smaller, and rotated it.
 
- */
   push();
 
-    fill('black');
-   // translate( 100, 150 );
-  //  scale(.70);
+    fill(60);
     rotate( radians (345));
- //   ellipse( 400, 250, 350, 500);
-     arc( 340, 360, 350, 500, radians(60), radians(240), CHORD );
+     arc( 355, 345, 355, 500, radians(75), radians(240), CHORD );
   
   pop();
   
+  // hair highlights, do I still need these?
 
-  // hair highlights
-  
   // Glasses left side
   
-  // face shadows
+  //These need to be off to the side of the face, a rect with rounded corners.
+
+  push();
+
+    fill(40);
+    translate( -100, 50 );
+    rotate( radians (345));
+    rect( 220, 250, 130, 120, 35 ); 
+
+  pop();
   
+  // face/glasses shadows
+  
+  // this is going to be tricky, I have highlights to add over the top, including the nose and the mouth. 
+
+  push();
+
+  fill(80)
+  translate( -80, 200);
+  rotate( radians (335));
+  ellipse( 350, 300, 170, 300 );
+
+  pop();
+
+  // Glasses right side
+
   // chin
+
   
   // lips
   
   // Nose
   
-  // Glasses right side
   
 }
