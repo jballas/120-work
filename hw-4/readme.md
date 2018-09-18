@@ -36,6 +36,7 @@ This week we focused on learning the p5.js computer language. We studied basic s
 ### Practice
 
 First, I began with of study each shape available in the p5.js library. I needed to learn what the code created, the input parameters and how to use it.
+
 ```
 - ellipse()
 - line()
@@ -44,15 +45,16 @@ First, I began with of study each shape available in the p5.js library. I needed
 - rect()
 - triangle()
 ```
-![Practicing shapes screenshot](shapes-screenshot.PNG)
 
 #### notes after Practicing shapes
 
+![Practicing shapes screenshot](shapes-screenshot.PNG)
+
 I experimented with shapes and pulled out my calculator for the first time in order to be precise when I placed my column of ellipses. I confused myself at first about the xy location parameters, as opposed to the width and height parameters. But even my mistakes are interesting. The ``` quad() ``` is intimidating, using 8 different parameters. I winged it and then played around until I had an hourglass shape that stretched off the screen.
 
-![Practicing colors screenshot](colors-screenshot.PNG)
-
 #### notes after practicing color
+
+![Practicing colors screenshot](colors-screenshot.PNG)
 
 Adding color with the ```fill() ``` function and the ```stroke() ``` function gave me some headaches. The order of operations confused me because when I placed a strokeWeight function below the ellipses it still applied the heavier weight to everything. I fixed this by adding in more details. The transparency gave me grief too. I got confused about when to use commas and when to leave them out of a function.
 
@@ -60,7 +62,7 @@ Next up is portrait practice. I'm going to do a rough draft based on an idea I h
 
 ### Mockup and Bright Face
 
-A portrait means to me a closeup. I chose a selfie I took earlier this year during a trip to the Netherlands. It more dramatic and I'm looking off to the side. I changed the contrast and added a filter to make it 'watercolor' style. My goal was to get at the basic shapes of my face.
+To me a portrait means a closeup, like a profile picture you use online. I chose a selfie I took earlier this year during a trip to the Netherlands. It is dramatic and I'm looking off to the side. I changed the contrast and added a filter to make it a 'watercolor' style. My goal was to get at the basic shapes of my face.
 
 ![Mockup Portrait](mockup.jpg)
 
