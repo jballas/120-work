@@ -203,14 +203,14 @@ function draw() {
 
   push();
 
-    fill( 'rgb(255, 10, 50)' );
-    arc( 230, 455, 90, 45, radians(150), radians(370), CHORD );
-    rect( 185, 440, 50, 20, 3 );
+      fill( 'rgb(255, 10, 50)' );
+    arc( 230, 450, 90, 45, radians(150), radians(375), CHORD );
+    //rect( 215, 425, 50, 20, 3 );
 
   //bottom lip
     fill( 'rgb(255, 50, 80)' );
-    arc( 230, 455, 90, 45, radians(0), radians(180), CHORD );
-    rect( 185, 454, 50, 20, 3 );
+    arc( 230, 455, 90, 35, radians(-40), radians(190) );
+    //rect( 185, 454, 50, 15, 3 );
 
   pop();
 
