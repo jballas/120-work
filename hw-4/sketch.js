@@ -7,6 +7,8 @@ function setup(){
 
 // I finished a basic layout, and adjusted the colors, but I'm still not satisfied with the face shape and especially the chin. So I reviewed my mockup and traced some of the shapes again. I'm going to try to change up the face to try and get the chin to work. Unfortunately, I'm concerned that this will effec the rotation and layout of everything else, but I won't be satisfied until I try.
 
+//todo: highlight on left lens. Can I make myself smile? What about those face shadows? Or hair shadow. Lastly, any strands of hair sticking out?
+
 function draw() {
 
 // hair background
