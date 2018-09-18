@@ -3,17 +3,17 @@ function setup(){
   background( 200 );
 }
 
-// I'm beginning my layout of my portrait, with basic shapes. using bright colors to identify parts of them. Then will fix colors later. For now I'm focusing on the shapes. I have a photograph I put some filters and styles on to make it a "watercolor" to give me a basic layout.
+// I'm beginning with a basic layout of my portrait, with basic shapes, and using bright colors to identify parts, such as face and neck and hair. Later I will fix the colors. For now I'm focusing on the shapes. I have a photograph which I used some filters and styles on to make it a "watercolor". This is my mockup.
 
 // I finished a basic layout, and adjusted the colors, but I'm still not satisfied with the face shape and especially the chin. So I reviewed my mockup and traced some of the shapes again. I'm going to try to change up the face to try and get the chin to work. Unfortunately, I'm concerned that this will effec the rotation and layout of everything else, but I won't be satisfied until I try.
 
-//todo: Can I make myself smile? What about those face shadows? Or hair shadow. Lastly, any strands of hair sticking out?
+// I attempted a few more details on the glasses, and tried to make a smile, but these didn't work out very well and I scraped the code. It came out like a poster or pop art, but I am satisfied.
 
 function draw() {
 
-// hair background
+// HAIR BACKGROUND ****************
 
-// hair is in the far background, so I have to do that first, I has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a curved shape?
+// hair is in the far background, so I have to do that first. It has a curve to it that I will try to recreate with a rectangle and then an arc cut out. How else can you make a curved shape?
 
   fill( '#3e1f00' );
   noStroke();
@@ -31,9 +31,9 @@ function draw() {
   noStroke();
   ellipse( 425, 100, 500, 400 );
 
-// neck
+// NECK ****************
 
-  // The neck shape is basically a triangle, until I realized a quad would be better for the shadows, with a triangle for the hightlights.
+  // The neck shape is basically a triangle, but  I realized a quad would be better for the shadows, with a triangle for the hightlights.
   
   push();
 
@@ -51,7 +51,7 @@ function draw() {
 
   pop();
 
-// head shape
+// HEAD SHAPE ****************
 
   // My face is an oval shape, but its tilted in my mockup, so I have to figure out how to rotate it, just enough. 
 
@@ -65,7 +65,7 @@ function draw() {
 
   pop();
   
-// face shading
+// FACE SHADING ****************
   
   // Struggling with this part: I'll try the shading as an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
 
@@ -73,7 +73,7 @@ function draw() {
 
  // Adjusted the shading lower and bigger.
 
- // Now I've removed the brightest shading, and returned to an ellipse shape.
+ // In the end I removed the brightest shading, and returned it to an ellipse shape.
 
   push();
 
@@ -85,7 +85,10 @@ function draw() {
         
     //arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
   
-// EAR Turned this into an ear, might as well use the code for something. 
+// EAR ****************
+
+  // At first I was trying to make more shadows, but I turned this into an ear, thinking 'I might as well use the code for something.'
+
     fill(  'rgb(255, 150, 80)' );
     ellipse(600, 250, 60, 150 ); 
     fill(  'rgb(90, 50, 40)' );
@@ -94,14 +97,15 @@ function draw() {
 
   pop();
 
-// hair highlights, do I still need these? YES!
+// HAIR HIGHLIGHTS ****************
+
+  // Do I still need these? YES! However, I didn't made them a seperate color, just the same brown.
 
   fill( '#3e1f00' );
   quad(300, 0, 600, 0, 600, 200, 550, 200 );
 
 
-
-// adjustments to left side of face, adding hair shadows
+// I added hair to the left side of the face, behind the glasses. This helped define the face and made it not just an oval.
   
   push();
 
@@ -111,9 +115,9 @@ function draw() {
 
   pop();
 
-  // Glasses left side
+// GLASSES left side ****************
   
-  // Glasses need to be off to the side of the face, a rect with rounded corners might just work.
+  // The lenses need to be off to the side of the face; a rect with rounded corners might just work.
 
   push();
 
@@ -124,9 +128,9 @@ function draw() {
 
     pop();
   
-// Glasses right side
+// GLASSES, right side ****************
 
-  // I copied the same specs as the left side, I just need to adjust where they are on the face.
+  // I copied the same specs as the left side, Then I just  adjusted them on the face.
 
   push();
   
@@ -135,7 +139,7 @@ function draw() {
     rotate( radians (345));
     rect( 220, 210, 130, 120, 35 ); 
 
-    // The glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
+  // The glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
   
     fill(40);
     rotate( radians (15));
@@ -143,98 +147,63 @@ function draw() {
    
   pop();
 
-// chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
+// CHIN SHADOW ****************
 
-    // the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
+  //This appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
 
-    // I am still updating the chin. I think it needs a mouth, and the coloring will help make it look like a chin and not just boxes.
+  // the chin is giving me grief. I added in the curved part. That's alright, but the actual chin doesn't align with the neck at all. Maybe longer? and titlted? What if I do a shading effect, with like six or seven of them in different shades?
+
+  // I am still updating the chin. I think it needs a mouth, and the coloring will help make it look like a chin and not just boxes. 
+
+  // Ultimately, I ended up using my face shadow to give the impression on a rounded chin, with a little bit of a shadow to define it. That was by chance.
+
+  // This is when I added in a rotate without adding in the push-pop sandbox, so the rest of my objects I didn't realized I'd already rotated.
 
   fill( 'rgb(255, 150, 80)' )
   arc( 320, 430, 100, 45, radians(245), radians(405), CHORD );
   
   rotate( radians(-15));
-  
-  /*
-  
-  //fill (60);
-  //rect( 200, 510, 410, 10, 10 );
-  fill( '#ffe1e1' );
-  rect( 380, 480, 410, 20, 10 );
-  fill( 'rgb(130, 85, 0)' );
-  rect( 300, 500, 410, 20, 10 );
-  fill( 'rgb(140, 95, 0)' );
-  rect( 210, 520, 410, 20, 10 );
-  fill( 'rgb(150, 100, 0)');
-  rect( 215, 540, 410, 10, 10 );
-  fill(110);
-  rect( 220, 550, 410, 10, 10 );
-  fill(120);
-  rect( 225, 560, 410, 10, 10 );
-  fill(130);
-  rect( 230, 570, 410, 10, 10 );
-  fill(140);
-  rect( 235, 580, 410, 15, 10 );
- 
-*/
 
-// lip highlight
-
-  // This occurs above the lips, so it must incorporate the lips as well and align on top of the face shape, below the nose.
-
-  /*
-  push();
-
-    fill( 'rgb(255, 150, 80)' );
-    //translate( -80, -220 );
-    //rotate( radians(-5));
-    //scale( 1.5, 3.0);
-    ellipse( 230, 440, 100, 80 );
-
-  pop(); 
-*/
-
-// lips
+// LIPS ****************
 
     // I'm thinking an arc would best represent this shape.
 
-    // how do I make myself smile?
+    // how do I make myself smile? Its tricky, but I got a bit of a curved shape. I'm going to try another ellipse on top to really make it curve. Nope. Maybe a stroke? Nope.
   
-  //top lip
+  // TOP LIP
 
   push();
 
-      fill( 'rgb(255, 10, 50)' );
+    fill( 'rgb(255, 10, 50)' );
     arc( 230, 450, 90, 45, radians(150), radians(375), CHORD );
-    //rect( 215, 425, 50, 20, 3 );
 
-  //bottom lip
+  // BOTTOM LIP
+
     fill( 'rgb(255, 50, 80)' );
     arc( 230, 455, 90, 35, radians(-40), radians(190) );
-    //rect( 185, 454, 50, 15, 3 );
 
   pop();
 
-// Nose
+// NOSE  ****************
 
-// a simple triangle, except for the shadow underneath
+  // a simple triangle, except for the shadow underneath
 
-fill('#ffc896');
-stroke(255);
-strokeWeight(3);
-triangle( 250, 245, 265, 345, 155, 335);
-fill( 'rgb(255, 150, 80)' );
-stroke( '#ffc896');
-triangle( 165, 337, 265, 345, 255, 365);
+  fill('#ffc896');
+  stroke(255);
+  strokeWeight(3);
+  triangle( 250, 245, 265, 345, 155, 335);
+  fill( 'rgb(255, 150, 80)' );
+  stroke( '#ffc896');
+  triangle( 165, 337, 265, 345, 255, 365);
 
-// glasses, bridge
+// GLASSES, bridge ****************
 
 // I need to connect the two lenses, otherwise the nose sticks out funny,
 
-fill(40);
-noStroke();
-rotate( radians(15));
-translate( 50, -70);
-rect(220, 240, 50, 20);
-
+  fill(40);
+  noStroke();
+  rotate( radians(15));
+  translate( 50, -70);
+  rect(220, 240, 50, 20);
 
 }
