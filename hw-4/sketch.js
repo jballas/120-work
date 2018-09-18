@@ -41,7 +41,11 @@ function draw() {
 
     fill('#512b13');
     stroke('#3e1f00')
-    triangle( 340, 450, 600, 350, 400, 700 );
+    triangle( 340, 450, 590, 350, 400, 700 );
+
+    fill( 'rgb(255, 170, 90)' );
+    stroke('#512b13')
+    triangle( 350, 460, 600, 340, 400, 650 );
 
   pop();
 
@@ -61,22 +65,30 @@ function draw() {
   
 // face shading
   
-  // Struggling with this part, the shading is an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
+  // Struggling with this part: I'll try the shading as an arc, but how do I make that line up with the edge of the ellipse from above? Scaling the ellipse didn't work.
 
  // I went with the arc and made it smaller, and rotated it.
 
- // Adjusted the shading lower and bigger
+ // Adjusted the shading lower and bigger.
+
+ // Now I've removed the brightest shading, and returned to an ellipse shape.
 
   push();
 
     fill( '#ffc896');
     //translate( 80, -100 );
     //rotate( radians (385));
-    ellipse (430, 180, 365, 410 );
+    ellipse (430, 180, 405, 550 );
+    
+        
     //arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
   
-    fill( '#ffdcc4');
-    ellipse(440, 130, 365, 300 ); 
+  // Turned this into an ear, might as well use the code for something. 
+    fill(  'rgb(255, 150, 80)' );
+    ellipse(600, 250, 60, 150 ); 
+    fill(  'rgb(90, 50, 40)' );
+    ellipse(605, 250, 30, 80 );
+
 
   pop();
 
@@ -208,7 +220,9 @@ function draw() {
 
 
 // Nose
-  
+
+// a simple triangle, except for the shadow underneath
+
 fill('#ffc896');
 stroke(255);
 strokeWeight(3);
@@ -218,6 +232,8 @@ stroke( '#ffc896');
 triangle( 165, 337, 265, 345, 255, 365);
 
 // glasses, bridge
+
+// I need to connect the two lenses, otherwise the nose sticks out funny,
 
 fill(40);
 noStroke();
