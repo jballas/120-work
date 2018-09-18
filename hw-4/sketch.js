@@ -7,7 +7,7 @@ function setup(){
 
 // I finished a basic layout, and adjusted the colors, but I'm still not satisfied with the face shape and especially the chin. So I reviewed my mockup and traced some of the shapes again. I'm going to try to change up the face to try and get the chin to work. Unfortunately, I'm concerned that this will effec the rotation and layout of everything else, but I won't be satisfied until I try.
 
-//todo: highlight on left lens. Can I make myself smile? What about those face shadows? Or hair shadow. Lastly, any strands of hair sticking out?
+//todo: Can I make myself smile? What about those face shadows? Or hair shadow. Lastly, any strands of hair sticking out?
 
 function draw() {
 
@@ -85,7 +85,7 @@ function draw() {
         
     //arc( 330, 360, 365, 515, radians(30), radians(260), CHORD );
   
-  // Turned this into an ear, might as well use the code for something. 
+// EAR Turned this into an ear, might as well use the code for something. 
     fill(  'rgb(255, 150, 80)' );
     ellipse(600, 250, 60, 150 ); 
     fill(  'rgb(90, 50, 40)' );
@@ -103,7 +103,7 @@ function draw() {
 
 // adjustments to left side of face, adding hair shadows
   
-    push();
+  push();
 
     fill('#3e1f00');
     rotate ( radians (-18));
@@ -122,38 +122,25 @@ function draw() {
     rotate( radians (345));
     rect( 220, 210, 130, 120, 35 ); 
 
-  pop();
+    pop();
   
-// face/glasses shadows
-  
-  // this is going to be tricky. It is sort of a oval shape, but I need to add in more highlights over the top, including the nose and above the mouth and under the eye. 
-
-  push();
-
-  /*fill( '#ffb464');
-  translate( -80, 220);
-  rotate( radians (335));
-  ellipse( 380, 290, 250, 300 );
-
-  */
- 
-  pop();
-
 // Glasses right side
 
   // I copied the same specs as the left side, I just need to adjust where they are on the face.
 
   push();
-
-  fill(40);
-  translate( 40, 10 );
-  rotate( radians (345));
-  rect( 220, 210, 130, 120, 35 ); 
-
-  // The glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
   
-  rotate( radians (15));
-  rect ( 350, 125, 250, 20 );
+    fill(40);
+    translate( 40, 10 );
+    rotate( radians (345));
+    rect( 220, 210, 130, 120, 35 ); 
+
+    // The glasses have an arm extending from the right lense off the screen. So I have to add a skinny rect and rotate it
+  
+    fill(40);
+    rotate( radians (15));
+    rect ( 350, 125, 250, 20 );
+   
   pop();
 
 // chin shadow, appears to be an arc. But there is also the very bottom of the chin which is above the neck shadows.
@@ -209,17 +196,23 @@ function draw() {
 // lips
 
     // I'm thinking an arc would best represent this shape.
+
+    // how do I make myself smile?
   
   //top lip
-  fill( 'rgb(255, 10, 50)' );
-  arc( 230, 455, 80, 45, radians(180), radians(360), CHORD );
-  rect( 190, 440, 50, 20, 3 );
+
+  push();
+
+    fill( 'rgb(255, 10, 50)' );
+    arc( 230, 455, 90, 45, radians(150), radians(370), CHORD );
+    rect( 185, 440, 50, 20, 3 );
 
   //bottom lip
-  fill( 'rgb(255, 50, 80)' );
-  arc( 230, 455, 80, 45, radians(0), radians(180), CHORD );
-  rect( 190, 456, 30, 20, 5 );
+    fill( 'rgb(255, 50, 80)' );
+    arc( 230, 455, 90, 45, radians(0), radians(180), CHORD );
+    rect( 185, 454, 50, 20, 3 );
 
+  pop();
 
 // Nose
 
