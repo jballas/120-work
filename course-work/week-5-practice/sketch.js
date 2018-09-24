@@ -1,14 +1,26 @@
+var bgColor= 0;
+
 function setup(){
 
     createCanvas( 600, 800 );
 
-
+    // Making background color a variable, so we can try to change the color overtime
 }
 
 function draw(){
 
     // background moved to draw section so it will be redrawn everytime I move my mouse
-    background('blue');
+    background( bgColor );
+
+    // Changed background color to gradually lighten
+       bgColor = bgColor + 1;
+
+    // followed Dr Musick's code, using the modulo to make the background loop through the grayscale spectrum
+       bgColor = bgColor % 255
+
+    // Lastly changed the Framerate so the background  has a slower movement. It doesn't really effect the animation of the pyramid at this rate.
+
+    frameRate(30);
 
     // create variables for triangle coordinates
     let centerX = mouseX;
@@ -36,4 +48,5 @@ function draw(){
 
     fill( 'rgba(0, 255, 255, .50 )');
     triangle( centerX, centerY, bottomRightX, bottomRightY, bottomLeftX, bottomLeftY );
+
 }
