@@ -9,7 +9,7 @@ var sunY = 400;
 
  function draw(){
 
-    //moved background to draw
+    //moved background to draw, so sun moves clearly across the sky.
     background( 'rgb(5, 4, 255)');
 
     // added variables on the building
@@ -18,41 +18,45 @@ var sunY = 400;
 
     frameRate(15);
 
-// sunrise
+    // sunrise
     
-push();
+        push();
 
-sunX = sunX - 1 * 2;
-sunY = sunY - 1 ;
+            sunX = sunX - 1 * 2;
+            sunY = sunY - 1 ;
 
-fill( 'green')
-ellipse( sunX, sunY, 75, 75 );
+            strokeWeight(10);
+            stroke('orange');
+            fill( 'yellow' );
+            ellipse( sunX, sunY, 200, 200 );
 
-strokeWeight(10);
-stroke('orange');
-fill( 'yellow' );
-ellipse( sunX, sunY, 200, 200 );
-
-pop();
-
+        pop();
 
     // horizon added
     fill(0);
     rect(0, 400, windowWidth, 600);
 
     // mountains added
-
     fill(0);
     triangle( 100, 300, 350, 400, 0, 600 );
     triangle( 0, 300, 350, 400, 0, 600 );
     triangle( 440, 300, 500, 400, 0, 600 );
     triangle( 540, 300, 800, 600, 0, 600 );
 
-    // yard added
+    // ground added
+    fill( 'rgb(40, 40, 0)' );
+    rect(0, 500, windowWidth, 200);
 
-    fill( 'brown' );
-    rect(0, 500, windowWidth, 600);
+    // roadway
+    fill(50);
+    rect(0, 500, windowWidth, 15);    
 
+    // car
+    fill( 'rgb(255, 255, 0 )');
+    rect( mouseX, 490, 45, 25, 4);
+    fill(0);
+    ellipse( mouseX + 2, 508, 15, 15, );
+    ellipse( mouseX + 45, 508, 15, 15, );
 
     // main building
     fill(50);
@@ -77,10 +81,5 @@ pop();
     pop();
 
     
-    // spotlight
-    fill( 'rgb(255, 255, 0 )');
-    rect( mouseX, 490, 45, 25, 4);
-    fill(0);
-    ellipse( mouseX + 2, 508, 15, 15, );
-    ellipse( mouseX + 45, 508, 15, 15, );
+
     }
