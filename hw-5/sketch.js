@@ -1,24 +1,47 @@
  function setup(){
-     createCanvas( 1000, 400);
+     createCanvas( windowWidth, 600);
 
-     topX = 150
-     topY = 15
- }
+
+    
+      }
 
  function draw(){
 
-    frameRate(5);
-    // star shape
+    //moved to draw
+    background( 'rgb(5, 4, 255)');
 
-    strokeWeight(2);
-    line( topX, topY, 15, 60 );
-    line( topX, topY, 30, 30 );
+    // added variables on the building
+    var buildingX = windowWidth / 2;
+    var buildingY = windowHeight / 2;
 
-    bezier( topX, topY, 200, 20, 5, 250, 10, 90 );
+    frameRate(10);
 
-  //  background(0);
+    // horizon added
+    fill(0)
+    rect(0, 400, windowWidth, 600);
 
-// topX = topX + 2 ;
+    // main building
+    fill(50);
+    rect( buildingX, buildingY, 200, 500 );
 
-  topY = topY * 2;
-}
+    // adjusting location of window using simple math
+    buildingX = buildingX + 25;
+
+    buildingY = buildingY + 25;
+
+    // first window
+    fill(75);
+    rect( buildingX , buildingY, 50, 50 );
+
+    push();
+
+        // moving location of second window
+        translate(100, 50)
+        fill(75);
+        rect( buildingX , buildingY, 50, 50 );
+
+    pop();
+
+    fill( 'rgba(255, 255, 0, .50)');
+    ellipse( mouseX, mouseY, 50, 50)
+ }
