@@ -25,6 +25,10 @@ I made a 3D pyramid, and it worked surprisingly well for just an experiment. Fir
 
 My next experiment was to recreate the background color changing, and I struggled with where to put my background variable. The Variable Scope still confuses me.
 
+###
+Sketch #1 
+
+I made a sketch with a building and mountains and then I added a sunrise. My car is controlled by mouseX and my clouds by mouseY parameters. The sun just drifts off to the left and disappears. So, I guess this qualifies as changing over time. I'm still not quite satisfied with this. I don't feel like I've really explored the ideas this week. I'm going to experiment some more with abstract shapes and overlapping colors.
 
 ### 
 
