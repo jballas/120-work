@@ -1,15 +1,18 @@
 function setup(){
 
     createCanvas( 600, 800 );
-    background('blue');
+
 
 }
 
 function draw(){
 
+    // background moved to draw section so it will be redrawn everytime I move my mouse
+    background('blue');
+
     // create variables for triangle coordinates
-    let centerX = 250;
-    let centerY = 250;
+    let centerX = mouseX;
+    let centerY = mouseY;
     let topRightX = 350;
     let topRightY = 150;
     let topLeftX = 50;
