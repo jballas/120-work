@@ -37,7 +37,7 @@ Here is a link to the practice experiment: [3D pyramid](https://jballas.github.i
 
 I made a sketch with a building and mountains and then I added a sunrise. My car is controlled by mouseX and my clouds by mouseY parameters. The sun just drifts off to the left and disappears.
 
-However, I wanted to make the scene dynamic. I couldn't discover a method to make the sky change color, but adding the clouds gave it a sense of time. Having one car attached directly to my mouse felt like I had too much control, so I added a second car and attempted to make it drive backwards.
+However, I wanted to make the scene dynamic. I couldn't discover a method to make the sky change color, but adding the clouds gave it a sense of time. With my mouse and car directly connected, I felt like I had too much control, so I added a second car and attempted to make it drive backwards.
 
 ![Timelapse Sketch and code](screenshot_sunrise.PNG)
 
