@@ -1,6 +1,6 @@
 Julia Ballas 50
 
-[Timelapse Sketch]https://jballas.github.io/120-work/hw-5/index.html
+[Timelapse Sketch](https://jballas.github.io/120-work/hw-5/index.html)
 
 # Week 5 Response
 
@@ -12,8 +12,8 @@ This week we animated our sketches. I've been excited for this part from the beg
 
 ## Projects
 
-- pyramid
-- timelapse sketch
+- 3D pyramid
+- Timelapse sketch
 
 ## Assignment
 
@@ -29,9 +29,7 @@ In my first experiment I made a 3D pyramid, and it surprised me when I first tes
 
 My next experiment was to recreate the background color changing, and I struggled with where to put my background variable. The Variable Scope still confuses me.
 
-Here is a link to the practice experiment.
-
-[3D pyramid]https://jballas.github.io/120-work/course-work/week-5-practice/index.html
+Here is a link to the practice experiment: [3D pyramid](https://jballas.github.io/120-work/course-work/week-5-practice/index.html)
 
 ### Sketch
 
@@ -39,16 +37,18 @@ I made a sketch with a building and mountains and then I added a sunrise. My car
 
 However, I wanted to make the scene dynamic. I couldn't discover a method to make the sky change color, but adding the clouds gave it a a sense of time. Having one car attached directly to my mouse felt like I had too much control, so I added a second car and attempted to make it drive backwards.
 
-[Timelapse Sketch](screenshot_sunrise.PNG)
+![Timelapse Sketch and code](screenshot_sunrise.PNG)
 
 ## Problems or Issues this week
 
-I discovered a method for inverting mouseX and mouseY on the p5.js website. [Invert Mouse]https://p5js.org/assets/learn/interactivity/. However, even using a push() and pop() it effected both of my cars. Ultimately, I decided just to speed up the movement by multipying the mouse speed. When I used a simple equation: ```//mouseX = mouseX * .70;```. It only made the movement accelerate, but when I used a more complex equation, adding and multiplying, then I caused the images to stutter and the illusion that they are speeding across the highway.
+I discovered a method for inverting mouseX and mouseY on the p5.js website, regarding the [Invert Mouse](https://p5js.org/assets/learn/interactivity/) option. However, even using a ```push()``` and ```pop()``` it effected both of my cars. Ultimately, I decided just to speed up the movement by multipying the mouse speed. When I used a simple equation: ```mouseX = mouseX * .70;```. It only made the movement accelerate, but when I used a more complex equation, adding and multiplying, then I caused the images to stutter and the illusion that they are speeding across the highway.
 
-I used this equation to speed up my red car.
+I used this equation to speed up my red car:
+
 ```mouseX = mouseX + (mouseX * .70);```
 
 For the yellow car, I gave it a slightly slower speed, hoping to have both cars overlap occationally.
+
 ```mouseX = mouseX + (mouseX * .20);```
 
 ## Specific questions/concerns for next week
@@ -59,3 +59,4 @@ I realized something about **simple math**. It is easy to understand, but I stru
 
 ## Conclusion
 
+Animation changes a sketch in terms of time, but also in how you think about it. It can change because of your imput, because your mouse is moving around, or because of a math equation within the code. When you animate something with code you have to consider movement: how it moves, where it moves, and it feels a bit tedious. What I enjoy is the liberating feeling of experimenting, when you don't know how your code is going to work exactly, or whether it will turn blank because you misplaced a semi-colon. There is a sense of wonder, or anticipation. What will happen when you hit the refesh button? Are you about to discover something unexpected in your code? There is only one way to find out.
