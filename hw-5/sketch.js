@@ -3,6 +3,7 @@ function setup(){
 
 }
 
+// added variables for the location of the sun, a global scope
 var sunX = 400;
 var sunY = 400;
 
@@ -18,7 +19,7 @@ var sunY = 400;
     // adjust frame rate of animation
     frameRate(15);
 
-    // cursor
+    // cursor removed
     noCursor();
 
 
@@ -75,7 +76,7 @@ var sunY = 400;
     // A simplier equation only accelerates their movement forward, and doesn't cause the same speeding effect.
     //mouseX = mouseX * .70;
 
-    // Can I make one car to drive backwards? 
+    // Can I make one car drive backwards? 
     //Invert mouse: trick discovered at p5js.org/assets/learn/interactivity/
     //mouseX = width - mouseX;
 
