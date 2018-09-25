@@ -1,5 +1,5 @@
 function setup(){
-     createCanvas( windowWidth, 600);
+     createCanvas( windowWidth, 600 );
 
 }
 
@@ -31,15 +31,17 @@ var sunY = 400;
         sunY = sunY - 1 ;
 
         strokeWeight(10);
-        stroke('orange');
+        stroke( 'orange' );
         fill( 'yellow' );
         ellipse( sunX, sunY, 200, 200 );
 
     pop();
 
+    
     // horizon added
     fill(0);
-    rect(0, 400, windowWidth, 600);
+    rect( 0, 400, windowWidth, 600 );
+
 
     //Clouds controlled by MouseY
     
@@ -47,11 +49,12 @@ var sunY = 400;
         stroke(200);
         strokeWeight(3);
         fill(255);
-        ellipse( 4, mouseY, 100, 50);
-        ellipse( 160, mouseY, 220, 110);
-        ellipse( 280, mouseY + 40, 180, 9);
-        ellipse( 20, mouseY - 3, 400, 25);
+        ellipse( 4, mouseY, 100, 50 );
+        ellipse( 160, mouseY, 220, 110 );
+        ellipse( 280, mouseY + 40, 180, 9 );
+        ellipse( 20, mouseY - 3, 400, 25 );
     pop();
+
 
     // mountains added
     fill(0);
@@ -60,14 +63,18 @@ var sunY = 400;
     triangle( 440, 300, 500, 400, 0, 600 );
     triangle( 540, 300, 800, 600, 0, 600 );
 
+
     // ground added
     fill( 'rgb(40, 40, 0)' );
-    rect(0, 500, windowWidth, 200);
+    rect( 0, 500, windowWidth, 200 );
+
 
     // roadway
     fill(50);
-    rect(0, 500, windowWidth, 15);    
+    rect( 0, 500, windowWidth, 15 );    
 
+
+    // Red car
     push();
 
     // This makes both yellow and the red car into speeding cars.
@@ -81,16 +88,16 @@ var sunY = 400;
     //mouseX = width - mouseX;
 
     
-        // red car 
         fill( 'rgb(255, 25, 0 )');
-        rect( mouseX + 200, 475, 45, 25, 4);
+        rect( mouseX + 200, 475, 45, 25, 4 );
         fill(0);
         ellipse( mouseX + 202, 495, 15, 15, );
         ellipse( mouseX + 245, 495, 15, 15, );
 
     pop();
 
-    // car
+
+    // Yellow car
 
     push();
 
@@ -98,33 +105,37 @@ var sunY = 400;
     mouseX = mouseX + (mouseX * .20);
 
         fill( 'rgb(255, 255, 0 )');
-        rect( mouseX - 50, 485, 45, 25, 4);
+        rect( mouseX - 50, 485, 45, 25, 4 );
         fill(0);
         ellipse( mouseX - 48, 505, 15, 15, );
         ellipse( mouseX -5 , 505, 15, 15, );
 
     pop();
      
+
     // main building
     fill(50);
     rect( buildingX, buildingY, 200, 500 );
+
 
     // adjusting location of windows using simple math
     buildingX = buildingX + 25;
 
     buildingY = buildingY + 25;
 
+
     // first window
     fill(75);
     rect( buildingX , buildingY, 50, 50 );
 
+
     push();
 
         // moving location of second window
-        translate(100, 50)
+        translate( 100, 50 )
         fill(75);
         rect( buildingX , buildingY, 50, 50 );
 
     pop();
 
-    }
+}
