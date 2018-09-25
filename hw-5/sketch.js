@@ -62,13 +62,36 @@ var sunY = 400;
     fill(50);
     rect(0, 500, windowWidth, 15);    
 
-    // car
-    fill( 'rgb(255, 255, 0 )');
-    rect( mouseX, 490, 45, 25, 4);
-    fill(0);
-    ellipse( mouseX + 2, 508, 15, 15, );
-    ellipse( mouseX + 45, 508, 15, 15, );
+    push();
 
+    // this makes both yellow and the red car zoom forward
+    mouseX = mouseX + (mouseX * .90);
+
+    // Can I make one car to drive backwards? 
+        //Invert mouse
+        //mouseX = width - mouseX;
+
+    
+        fill( 'rgb(255, 25, 0 )');
+        rect( mouseX + 200, 475, 45, 25, 4);
+        fill(0);
+        ellipse( mouseX + 202, 495, 15, 15, );
+        ellipse( mouseX + 245, 495, 15, 15, );
+
+    pop();
+
+    // car
+
+    push();
+
+        fill( 'rgb(255, 255, 0 )');
+        rect( mouseX - 50, 485, 45, 25, 4);
+        fill(0);
+        ellipse( mouseX - 48, 505, 15, 15, );
+        ellipse( mouseX -5 , 505, 15, 15, );
+
+    pop();
+     
     // main building
     fill(50);
     rect( buildingX, buildingY, 200, 500 );
