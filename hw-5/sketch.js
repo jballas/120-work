@@ -1,4 +1,4 @@
- function setup(){
+function setup(){
      createCanvas( windowWidth, 600);
 
 }
@@ -8,28 +8,33 @@ var sunY = 400;
 
  function draw(){
 
-    //moved background to draw, so sun moves clearly across the sky.
+    //moved background to draw function, so sun moves clearly across the sky.
     background( 'rgb(5, 4, 255)');
 
     // added variables on the building
     var buildingX = windowWidth / 2;
     var buildingY = windowHeight / 2;
 
+    // adjust frame rate of animation
     frameRate(15);
+
+    // cursor
+    noCursor();
+
 
     // sunrise
     
-        push();
+    push();
 
-            sunX = sunX - 1 * 2;
-            sunY = sunY - 1 ;
+        sunX = sunX - 1 * 2;
+        sunY = sunY - 1 ;
 
-            strokeWeight(10);
-            stroke('orange');
-            fill( 'yellow' );
-            ellipse( sunX, sunY, 200, 200 );
+        strokeWeight(10);
+        stroke('orange');
+        fill( 'yellow' );
+        ellipse( sunX, sunY, 200, 200 );
 
-        pop();
+    pop();
 
     // horizon added
     fill(0);
@@ -64,14 +69,15 @@ var sunY = 400;
 
     push();
 
-    // this makes both yellow and the red car zoom forward
-    mouseX = mouseX + (mouseX * .90);
+    // This makes both yellow and the red car into speeding cars.
+    mouseX = mouseX + (mouseX * .70);
 
     // Can I make one car to drive backwards? 
-        //Invert mouse
-        //mouseX = width - mouseX;
+    //Invert mouse: trick discovered at p5js.org/assets/learn/interactivity/
+    //mouseX = width - mouseX;
 
     
+        // red car 
         fill( 'rgb(255, 25, 0 )');
         rect( mouseX + 200, 475, 45, 25, 4);
         fill(0);
@@ -83,6 +89,9 @@ var sunY = 400;
     // car
 
     push();
+
+    // Changed rate of yellow car's speed so they will sometimes overlap
+    mouseX = mouseX + (mouseX * .20);
 
         fill( 'rgb(255, 255, 0 )');
         rect( mouseX - 50, 485, 45, 25, 4);
