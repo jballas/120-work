@@ -72,6 +72,9 @@ var sunY = 400;
     // This makes both yellow and the red car into speeding cars.
     mouseX = mouseX + (mouseX * .70);
 
+    // A simplier equation only accelerates their movement forward, and doesn't cause the same speeding effect.
+    //mouseX = mouseX * .70;
+
     // Can I make one car to drive backwards? 
     //Invert mouse: trick discovered at p5js.org/assets/learn/interactivity/
     //mouseX = width - mouseX;
