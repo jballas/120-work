@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas( 600, 800 );
+    createCanvas( 800, 800 );
     background(0);
 }
 
@@ -21,6 +21,7 @@ function draw() {
 
     frameRate(10);
     noStroke();
+    noCursor();
     
     //draw first triangle
     push();
@@ -33,12 +34,11 @@ function draw() {
         
     push();
         fill( 'rgba( 120, 20, 255, .40)' );
-        translate ( 200, 200 );
-    //    rotate ( QUARTER_PI) ;
+        translate ( 400, 400 );
         rotate (mouseX);
         triangle( centerX, centerY, rightX, rightY, leftX, leftY );
     pop();
-
+/*
     push();
         fill( 'rgba( 120, 20, 255, .20)' );
         translate ( 350, 200 );
@@ -68,5 +68,5 @@ function draw() {
         rotate (mouseY);
         triangle( centerY, centerX, rightY, rightX, leftY, leftX );
     pop();
-
+*/
 }
