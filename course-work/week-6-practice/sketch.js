@@ -30,12 +30,21 @@ function setup(){
     
     constrain( valueA, 10, 100 )
 
-    // first triangle
-
-    fill( red, green, blue, valueA );
-    triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
-    //triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
+    push()
     
+    noStroke();
+
+        // first triangle
+        fill( red, green, blue, valueA );
+        triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
+    
+        //second triangle
+        fill( blue, green, red, valueA );
+        triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
+        
+    pop();
+
+    //Bezier curve
     fill( 'rgba(255, 25, 200, .10)' );
     bezier( postionX, postionY, 200, 20, 5, 250, 10, 90 );
 
@@ -43,9 +52,9 @@ function setup(){
     postionX += 5
     postionY /= random();
 
-    // movement of Y restrained to under
+    // movement of X and Y restrained by modulo
+    postionX %= 500;
     postionY %= 300;
-    //postionY *= 2;    
     
 
 
