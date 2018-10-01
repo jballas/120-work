@@ -1,6 +1,9 @@
 //Global variables
 var postionX = 1
 var postionY = 15
+var red
+var green
+var blue
 var valueA
 
 //setup background here
@@ -18,14 +21,20 @@ function setup(){
     //translate to middle of screen
     //translate( width*.25, height*.25 );
 
-    // change alpha value, valueA to be a random number
-    valueA = random(); 
+    // change alpha value, 
+    //Can valueA to be a random number?
+    valueA = random();
+    red = 255; 
+    green = 255
+    blue = 100
 
-    strokeWeight(2);
-    stroke( 'rgba(255, 25, 200, valueA)');
-    line( postionX, postionY, 15, 60 );
-    line( postionX, postionY, 30, 30 );
+    //constrain( valueA, 0, 1 )
 
+
+    fill( red, green, blue, valueA );
+    triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
+    //triangle( postionX, postionY, 30, 30, postionY + 500, postionX );
+    
     fill( 'rgba(255, 25, 200, .10)' );
     bezier( postionX, postionY, 200, 20, 5, 250, 10, 90 );
 
@@ -37,6 +46,6 @@ function setup(){
     postionY %= 300;
     //postionY *= 2;    
     
-    
+
 
 }
