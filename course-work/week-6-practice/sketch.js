@@ -23,17 +23,18 @@ function setup(){
 
     // change alpha value, 
     //Can valueA to be a random number?
-    valueA = random();
     red = 255; 
-    green = 255
-    blue = 100
+    green = 255;
+    blue = 100;
+    valueA = ceil( random(100) );
+    
+    constrain( valueA, 10, 100 )
 
-    //constrain( valueA, 0, 1 )
-
+    // first triangle
 
     fill( red, green, blue, valueA );
     triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
-    //triangle( postionX, postionY, 30, 30, postionY + 500, postionX );
+    //triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
     
     fill( 'rgba(255, 25, 200, .10)' );
     bezier( postionX, postionY, 200, 20, 5, 250, 10, 90 );
