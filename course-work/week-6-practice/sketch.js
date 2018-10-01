@@ -18,9 +18,6 @@ function setup(){
    
     frameRate(2);
    
-    //translate to middle of screen
-    //translate( width*.25, height*.25 );
-
     // change alpha value, 
     //Can valueA to be a random number?
     red = 255; 
@@ -37,11 +34,19 @@ function setup(){
         // first triangle
         fill( red, green, blue, valueA );
         triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
-    
-        //second triangle
-        fill( blue, green, red, valueA );
-        triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
+
         
+        push()
+
+            //translate to middle of screen
+            translate( width*.25, height*.25 );
+
+            //second triangle
+            fill( blue, green, red, valueA );
+            triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
+
+        pop();
+
     pop();
 
     //Bezier curve
