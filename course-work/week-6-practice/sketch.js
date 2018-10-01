@@ -35,17 +35,19 @@ function setup(){
         fill( red, green, blue, valueA );
         triangle( postionX, postionY, 150, 60, postionX + 200, postionY + 200 );
 
-        
+        /*
         push()
 
             //translate to middle of screen
             translate( width*.25, height*.25 );
+            scale(.50);
 
             //second triangle
             fill( blue, green, red, valueA );
             triangle( postionX, postionY, 30, 30, postionY + 500, postionX + 500 );
 
         pop();
+        */
 
     pop();
 
