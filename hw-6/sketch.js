@@ -38,4 +38,16 @@ function draw() {
     //animate the rotation
     flip += random(360);
 
+    // move the triangle side to side
+
+    
+    
+    tri.topX += random();
+    tri.topY += random();
+    
+    tri.topX %= 150;
+
+    //tri.leftX /= random( floor(50) );
+    //tri.leftY /= random( ceil(50 ) );
+
 }
