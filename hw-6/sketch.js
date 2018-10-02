@@ -23,10 +23,6 @@ function draw() {
     //translate to middle of page
     translate(width * 0.5, height * 0.5 );
 
-       // continually rotate
-    //flip *= 2;
-   
-
     //Triangle
     fill(255);
     rotate( radians ( flip ) );
@@ -41,13 +37,18 @@ function draw() {
     // move the triangle side to side
 
     
-    
+    // Changed placement of top triangle parameters, and limited it within 150 
     tri.topX += random();
     tri.topY += random();
     
     tri.topX %= 150;
 
-    //tri.leftX /= random( floor(50) );
-    //tri.leftY /= random( ceil(50 ) );
+    tri.leftX /= random( floor(5) );
+    tri.leftY /= random( floor(5) );
 
-}
+    constrain( tri.rightX += 3, 0, width);
+    constrain( tri.rightY += 3, 0, 500);
+
+    tri.rightX %= 50;
+    tri.rightY %= 50;
+}    
