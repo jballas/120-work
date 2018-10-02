@@ -45,10 +45,10 @@ function draw() {
     tri.topX += random();
     tri.topY += random();
     
-    tri.topX %= 50;
+    tri.topX %= 100;
 
     tri.leftX /= random( floor(5) );
-    tri.leftY /= random( floor(5) );
+    //tri.leftY /= random( floor(5) );
 
     tri.rightX *= 3;
     tri.rightY *= 3;
