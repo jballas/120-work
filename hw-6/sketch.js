@@ -1,6 +1,6 @@
 //global variables
 
-//Javascript object
+//Javascript object, my triangle variables
 var tri = {
     topX: 50,
     topY: 50,
@@ -9,6 +9,7 @@ var tri = {
     leftX: 40,
     leftY: 70
 }
+// Variable for rotation
 var flip
 
 // setup fuction
@@ -20,35 +21,38 @@ function setup() {
 //draw function
 function draw() {
 
+    //frameRate(5);
+
     //translate to middle of page
     translate(width * 0.5, height * 0.5 );
+
+    //simple rotation 90 degrees
+    flip = 90;
+
+    //animate the rotation
+    flip -= random(360);
 
     //Triangle
     fill(255);
     rotate( radians ( flip ) );
     triangle( tri.topX, tri.topX, tri.rightX, tri.rightY, tri.leftX, tri.leftY);
-   
-    //simple rotation 90 degrees
-    flip = 91;
-   
-    //animate the rotation
-    flip += random(360);
 
-    // move the triangle side to side
+
+    // move the triangle pattern from side to side. I really want the whole thing to drift side to side. Can I do that by containing it within another function? Like the translate? Or map?
 
     
-    // Changed placement of top triangle parameters, and limited it within 150 
+    // Changed placement of triangle parameters, and limited them using math operations
     tri.topX += random();
     tri.topY += random();
     
-    tri.topX %= 150;
+    tri.topX %= 50;
 
     tri.leftX /= random( floor(5) );
     tri.leftY /= random( floor(5) );
 
-    constrain( tri.rightX += 3, 0, width);
-    constrain( tri.rightY += 3, 0, 500);
+    tri.rightX *= 3;
+    tri.rightY *= 3;
 
-    tri.rightX %= 50;
+    tri.rightX %= 100;
     tri.rightY %= 50;
 }    
