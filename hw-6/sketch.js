@@ -9,8 +9,13 @@ var tri = {
     leftX: 40,
     leftY: 70
 }
+
+// Variable for movement
+var moveX = 50;
+var moveY = 50;
+
 // Variable for rotation
-var flip
+var flip;
 
 // setup fuction
 function setup() {
@@ -21,10 +26,16 @@ function setup() {
 //draw function
 function draw() {
 
-    //frameRate(5);
+    frameRate(20);
 
-    //translate to middle of page
-    translate(width * 0.5, height * 0.5 );
+    // move the triangles using translate and restrict using modulo.
+    translate(moveX, moveY);
+
+    moveX += 50;
+    moveY += 50;
+
+    moveX %= width;
+    moveY %= height;
 
     //simple rotation 90 degrees
     flip = 90;
@@ -36,11 +47,7 @@ function draw() {
     fill(255);
     rotate( radians ( flip ) );
     triangle( tri.topX, tri.topX, tri.rightX, tri.rightY, tri.leftX, tri.leftY);
-
-
-    // move the triangle pattern from side to side. I really want the whole thing to drift side to side. Can I do that by containing it within another function? Like the translate? Or map?
-
-    
+   
     // Changed placement of triangle parameters, and limited them using math operations
     tri.topX += random();
     tri.topY += random();
@@ -48,11 +55,11 @@ function draw() {
     tri.topX %= 100;
 
     tri.leftX /= random( floor(5) );
-    //tri.leftY /= random( floor(5) );
+    tri.leftY /= random( floor(5) );
 
     tri.rightX *= 3;
     tri.rightY *= 3;
 
     tri.rightX %= 100;
     tri.rightY %= 50;
-}    
+    }    

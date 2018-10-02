@@ -6,6 +6,9 @@ var green
 var blue
 var valueA
 
+var posX = 100;
+var posY = 50;
+
 //setup background here
 function setup(){
      createCanvas( 1000, 600);
@@ -16,8 +19,8 @@ function setup(){
 
     // show framerate
    
-    frameRate(2);
-   
+    frameRate(20);
+/*   
     // change alpha value, 
     //Can valueA to be a random number?
     red = 255; 
@@ -48,7 +51,7 @@ function setup(){
 
         pop();
         */
-
+/*
     pop();
 
     //Bezier curve
@@ -63,6 +66,24 @@ function setup(){
     postionX %= 500;
     postionY %= 300;
     
+*/
+    push();
 
+
+    translate(posX, posY);
+        
+    ellipse(posX, posY, 50, 100);
+    
+    posX += 50;
+    posY += 50;
+
+    posX %= width;
+    posY %= height;
+
+    posX += 1;
+        //translate to middle of page
+
+
+    pop();
 
 }
