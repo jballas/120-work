@@ -20,15 +20,20 @@ function setup(){
     // show framerate
    
     frameRate(20);
-/*   
+   
     // change alpha value, 
     //Can valueA to be a random number?
-    red = 255; 
+    red = 0; 
     green = 255;
     blue = 100;
     valueA = ceil( random(100) );
     
     constrain( valueA, 10, 100 )
+
+    // can red color move?
+    red += 10;
+
+    constrain( red, 0, 255);
 
     push()
     
@@ -51,7 +56,7 @@ function setup(){
 
         pop();
         */
-/*
+
     pop();
 
     //Bezier curve
@@ -66,7 +71,7 @@ function setup(){
     postionX %= 500;
     postionY %= 300;
     
-*/
+/*
     push();
 
 
@@ -85,5 +90,5 @@ function setup(){
 
 
     pop();
-
+*/
 }

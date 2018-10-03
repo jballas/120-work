@@ -11,11 +11,17 @@ var tri = {
 }
 
 // Variable for movement
-var moveX = 50;
-var moveY = 50;
+var moveX = 2;
+var moveY = 2;
 
 // Variable for rotation
 var flip;
+
+// Variables for color
+var red
+var green
+var blue
+var opacity
 
 // setup fuction
 function setup() {
@@ -28,14 +34,22 @@ function draw() {
 
     frameRate(20);
 
-    // move the triangles using translate and restrict using modulo.
+    red = random( 200, 255);
+    green = 0;
+    blue = random(20, 100);
+    opacity = random ( abs(10), abs(50) );
+
+    //move the triangles around using translate and the randomwalker technique, restrict movement using modulo.
     translate(moveX, moveY);
 
-    moveX += 50;
-    moveY += 50;
+    moveX += random( -moveX, moveX + 1);
+    moveY += random( -moveX, moveX + 1);
 
     moveX %= width;
     moveY %= height;
+
+
+    translate( width * .5, height * .5);
 
     //simple rotation 90 degrees
     flip = 90;
@@ -44,7 +58,8 @@ function draw() {
     flip -= random(360);
 
     //Triangle
-    fill(255);
+    stroke(10);
+    fill(red, green, blue, opacity);
     rotate( radians ( flip ) );
     triangle( tri.topX, tri.topX, tri.rightX, tri.rightY, tri.leftX, tri.leftY);
    
