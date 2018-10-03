@@ -51,15 +51,15 @@ The lecture notes, and  including Dan Shiffman's video, only showed an example o
 I mapped the green variable to appear on the left side of the canvas as follows: 
 ```green = map(moveX, 0, 255, 100, width );```
 
+I appears to work as I intended. I think I made my sketch difficult because I had both rotation and then used translate to shift it around the canvas. I'm sure there is a more efficient method for this. I really would have preferred to have triangles behave like a single  object that drifted around the screen.
+
+## Too many variables and operations
 
 If we are required to have a bunch of different variables, or p5.js functions then I would tackle the project differently. I would make four quadrants and in each explore a different math function, essentially 4 different sketches in one canvas.
-
-## Specific questions/concerns for next week
-
-Apply 
 
 ## Other Classmates Issues/discussions
 
 @HagenNathaniel posted a problem about his let function not working. I noticed a few capitalization issues within the variables and let him know. The difference between ```let``` and ```var``` is still confusing to me, but I typically stick with ```var```.
 
 ## Conclusion
+
