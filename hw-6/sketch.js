@@ -26,7 +26,7 @@ var opacity
 // setup fuction
 function setup() {
     createCanvas(windowWidth, 400);
-    background(0);
+    background(255);
 }
 
 //draw function
@@ -37,9 +37,11 @@ function draw() {
     red = random( 200, 255);
     green = 0;
     blue = random(20, 100);
-    opacity = random ( abs(10), abs(50) );
+    opacity = random ( abs(100), abs(255) );
 
     //move the triangles around using translate and the randomwalker technique, restrict movement using modulo.
+    translate( width * .5, height * .5);
+
     translate(moveX, moveY);
 
     moveX += random( -moveX, moveX + 1);
@@ -48,9 +50,6 @@ function draw() {
     moveX %= width;
     moveY %= height;
 
-
-    translate( width * .5, height * .5);
-
     //simple rotation 90 degrees
     flip = 90;
 
@@ -58,7 +57,7 @@ function draw() {
     flip -= random(360);
 
     //Triangle
-    stroke(10);
+    stroke( 'red' );
     fill(red, green, blue, opacity);
     rotate( radians ( flip ) );
     triangle( tri.topX, tri.topX, tri.rightX, tri.rightY, tri.leftX, tri.leftY);
