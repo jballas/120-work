@@ -11,12 +11,13 @@ ball.scale_y = 1;
 
 function setup() {
     createCanvas(windowWidth, 400);
-    background(255);
+
 }
 
 
 
 function draw() {
+    background(25);
 
     ball.x += ball.delta_x * ball.scale_x;
     ball.y += ball.delta_y * ball.scale_y;
@@ -34,6 +35,6 @@ function draw() {
 }
 
 function mousePressed() {
-    ball.scale_x = map(mouseX, 0, width, 0.5, 10);
-    ball.scale_y = map(mouseY, 0, height, 0.5, 10);
+    ball.scale_x = map(mouseX, 0, width, pmouseX, 10);
+    ball.scale_y = map(mouseY, 0, height, pmouseY, 10);
 }

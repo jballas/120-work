@@ -55,3 +55,17 @@ function mousePressed() {
 <!--
 Please describe how and why you changed the sketch?
 -->
+
+### First Experiment: `pMouse()` added
+
+According to the **Makep: Getting Started with p5.js** by Lauren Mccarthy, "the `pmouseX()` and `pMouseY()` variables store the position of the mouse at a previous frame". I'm going to add try to put these variable in the code, and move the background to the `draw()` function.
+
+```JS
+function mousePressed() {
+    ball.scale_x = map(mouseX, 0, width, pmouseX, 10);
+    ball.scale_y = map(mouseY, 0, height, pmouseY, 10);
+}
+```
+The speed of the ball was out of control as soon as I clicked too far to the left.
+
+##
