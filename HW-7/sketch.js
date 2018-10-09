@@ -22,8 +22,6 @@ function draw() {
 
 
     ball.x += ball.delta_x * ball.scale_x;
-
-/*
     ball.y += ball.delta_y * ball.scale_y;
 
     if (ball.x >= width || ball.x <= 0) {
@@ -32,17 +30,24 @@ function draw() {
     if (ball.y >= height || ball.y <= 0) {
         ball.delta_y = -1 * ball.delta_y;   
     }
+  
     
-    var timeBlue = millis();
 
-    if (timeBlue == 5000){
-        colBlack('blue')
-    }
-*/
     fill( colBlack );
     ellipse(ball.x, ball.y, ball.width, ball.width);
 
-    
+    if (ball.x >= 100 && ball.x <= 200) {
+        stroke(255);
+        colBlack = 0;
+    } else if ( ball.x >= 200 && ball.x <= 300) {
+        stroke(200);
+        colBlack = 100;
+    }else {
+        stroke(0);
+        colBlack = 255;
+    }
+ 
+
 }
 
 function mousePressed() {

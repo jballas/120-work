@@ -14,13 +14,8 @@ function setup(){
 function draw(){
 
     if( ball_y >= 100 && ball_y <= 150){
-        fill('green');
+        fill( abs(random(0, 255)), 100, 255);
 
-    }else if ( ball_y >= 200 && ball_y <= 250){
-        fill('blue');
-
-    }else if ( ball_y >= 300 && ball_y <= 350){
-        fill('red');
     }else {
         fill('pink');
     }
