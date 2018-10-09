@@ -69,7 +69,7 @@ function mousePressed() {
 
 The speed of the ball was out of control as soon as I clicked too far to the left.
 
-### Adding a `rect()`
+### Experiment Adding a `rect()`
 
 I added in a rectangle that was attached to mouseX and move side to side. I wanted to make the ball bounce off my rectangular, like a pong game, and it almost worked. I added another this `if()` statement:
 
@@ -79,6 +79,21 @@ I added in a rectangle that was attached to mouseX and move side to side. I want
     }
 ```
 
-### Adding a timed animation?
+### Experiment adding grayscale
+
+By adding another `if()` statement below the ellipse, I can change the color of the ball within a certain range.
+
+```JS
+    if (ball.x >= 100 && ball.x <= 200) {
+        stroke(255);
+        colBlack = 0;
+    } else if ( ball.x >= 200 && ball.x <= 300) {
+        stroke(200);
+        colBlack = 100;
+    }else {
+        stroke(0);
+        colBlack = 255;
+    }
+ ```
 
 This
