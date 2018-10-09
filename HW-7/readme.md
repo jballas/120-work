@@ -101,7 +101,7 @@ I added text to make this option clear to anyone viewing the sketch.
 
 ## Frustrations this week
 
-I found working with someone else code very difficult. There was a limit to what I could adjust. It was already using mouseX, so I could **not** effectively use that in my alterations. So, I tried adding another shape.
+I found working with someone's code very difficult. There was a limit to what I could adjust. It was already using mouseX, so I could not effectively use that in my alterations. So, I tried adding another shape.
 
 ### I experimented with adding a `rect()` to make a Pong-Copy
 
@@ -119,4 +119,4 @@ But I ultimately I abandoned this idea. It was too complicated to make it a game
 
 The boolean logic only works if you really have a grasp on what you're trying to make happen. I finally managed that with my color variation. Other attempts at logic slipped through my grasp.
 
-Although, a few weeks ago I was frustrated by what I didn't know, now it feels like I have the opposite problem. There are so many options for animating and changing shapes I don't know which one is best, or which one to try first to solve my problem, or if that particular function is the one I need. The only way past this will be to keep experimenting with the code, and trying to actualize my ideas.
+Although, a few weeks ago I was frustrated by what I didn't know, now it feels like I have the opposite problem. There are so many options for animating and changing shapes I don't know which one is best, or which one to try first to solve my problem, or if that particular function is the one I need. The only way past this will be to keep experimenting with the code and trying to actualize my ideas.
