@@ -6,11 +6,14 @@ function setup() {
     // angle in global scope
     var angle = 0
 
+    var centerX = 25;
+    var centerY = 100;
+
+    var d_circle = 50;    
 function draw() {
 
     // set up triangle variables
-    var centerX = 25;
-    var centerY = 100;
+
     var rightX = 50;
     var rightY = 200;
     var leftX = 5;
@@ -21,8 +24,32 @@ function draw() {
 
     frameRate(10);
     noStroke();
-    noCursor();
-    
+
+
+    ellipse(centerX, centerY, d_circle );
+
+    centerX ++;
+    centerY ++;
+    d_circle ++;
+
+    if( centerY > 200) {
+        centerY = 250;
+        centerX = 250;
+    }
+
+    push();
+        strokeWeight(1);
+        stroke(255);
+    //   line(500, 500, 800, 800);
+
+    for( let c = 500; c < 550; c +=10 ){
+        line(c, 500, c+ 300, 800);
+    }
+
+    pop();
+
+
+/* BELOW IS AN EXPERIMENT WITH TRIANGLES THAT ROTATE
     //draw first triangle
     push();
         fill( red_Value );
@@ -38,7 +65,7 @@ function draw() {
         rotate (mouseX);
         triangle( centerX, centerY, rightX, rightY, leftX, leftY );
     pop();
-/*
+
     push();
         fill( 'rgba( 120, 20, 255, .20)' );
         translate ( 350, 200 );
