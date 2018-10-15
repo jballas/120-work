@@ -10,6 +10,7 @@ function setup() {
     var centerY = 100;
 
     var d_circle = 50;    
+    let movement = 3;
 
 function draw() {
 
@@ -26,7 +27,45 @@ function draw() {
     frameRate(10);
     //noStroke();
 
+    //let t = width * .1;
+    
 
+    //let s = .5;
+
+  
+// EXPERIMENT with _for loops_. HOW DO I MAKE THIS ENTIRE CODE REPEAT?
+
+    //draw first triangle
+push();
+   // scale(s);
+    
+for (let x = 5; x <= width; x +=150 ) {
+    for( let y = 5; y < height; y +=100) {
+     
+            //translate(t,t);
+            fill( red_Value );
+            rotate( movement);
+            triangle( x, y, x + 50, y + 100, x - 90, y + 100 );
+        
+    
+    }
+}
+
+pop();
+
+//movement = mouseX - width * 2;
+
+//movement % 3;
+
+
+push();
+fill( 'rgba( 120, 20, 255, .40)' );
+translate ( 200, 200 );
+rotateX(PI);
+triangle( centerX, centerY, rightX, rightY, leftX, leftY );
+pop();
+
+/*
     // EXPERIMENT with for statement, consecutive hill shapes on the bottom of the screen
 
 
@@ -38,7 +77,7 @@ for(let hill_x = 20; hill_x < width; hill_x += 20) {
     }
 
 
-
+*/
 
 
 
@@ -69,7 +108,7 @@ for(let hill_x = 20; hill_x < width; hill_x += 20) {
     //   line(500, 500, 800, 800);
 */
 
-/* EXPERIMENT with four line sinto the corner of the canvas
+/* EXPERIMENT with four lines into the corner of the canvas
     for( let c = 500; c < 550; c +=10 ){
         line(c, 500, c+ 300, 800);
     }
