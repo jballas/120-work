@@ -26,7 +26,7 @@ for (let flower_x = 25; flower_x < width; flower_x += 2) {
     translate(width * .5, width * .5);
     fill( c_Value );
     rotate (60);
-        triangle( flower_x, centerY, flower_x * .5, rightX , flower_x * 5, leftX);
+        triangle( flower_x, centerY, rightX, rightY , leftX, leftY);
 }
 
 /*
