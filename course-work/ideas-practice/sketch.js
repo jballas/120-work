@@ -81,12 +81,12 @@ for(let hill_x = 20; hill_x < width; hill_x += 20) {
 
 /* BELOW IS AN EXPERIMENT WITH TRIANGLES THAT ROTATE
     //draw first triangle
-    push();
-        fill( red_Value );
-        rotate (mouseY);
-        triangle( centerX, centerY, rightX, rightY, leftX, leftY );
-    pop();
-    
+        push();
+            fill( red_Value );
+            rotate (mouseY);
+            triangle( centerX, centerY, rightX, rightY, leftX, leftY );
+        pop();
+        
     // second triangle
         
     push();
