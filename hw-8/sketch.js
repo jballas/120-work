@@ -9,20 +9,21 @@ let right_x = 50;
 let right_y = 200;
 
 // Variables for movement
-let angle = 1;
+let angle = 2;
 let speed = 1;
 
 function draw(){
 
+// Background moved to draw function so it redraws every loop.
 background(0);
 
-//Color variable
+//Color variable, because there was some dicussion on the forum and I wanted to use the color() function as a varaible.
 let c_Value = color(255, 200, 0);
 
-frameRate(3);
+frameRate(15);
 
 
-// _For loop_ with variable flower_x that adjusts
+// _For loop_ using variable I'm calling flower_x, because originally I was trying to make a flower shape, but it became something else.
 for (let flower_x = 25; flower_x < width; flower_x ++ ) {
 
     // create a triangle that rotates
@@ -32,28 +33,20 @@ for (let flower_x = 25; flower_x < width; flower_x ++ ) {
     triangle( flower_x, flower_x + 75, right_x, right_y , left_x, left_y);
 }
 
-//Animation
+//Animation, a bouncing effect
 if(left_x >= 50 || left_x < 0 ) {
     speed = speed * -1;
 }
 
 left_x = left_x + speed;
 
-angle ++;
-angle % 360;
+print('The value of angle is ' + angle);
+}
 
-
-/* This was my original code I started with. It was a rotating triangle, then when I applied the _for loop _ it changed completely.
-push();
-
-    translate(width * .5, width * .5);
-    fill( c_Value );
-    rotate ( random (360));
-    triangle( centerX, centerY, rightX, rightY, leftX, leftY );
-
-pop();
-*/
-
-
-
+// Click mouse to change the angle. Angle 0 and 1 are not impressive, so I restricted them from 2-15. Because after that the shapes are very similiar to what you've already seen.
+function mousePressed(){
+    angle ++;
+    if (angle == 16){
+        angle = 2;
+    }
 }
