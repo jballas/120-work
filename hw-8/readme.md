@@ -29,9 +29,7 @@ In Week 6 I took a triangle rotating and added randomness and other math feature
 
 I ended up with some interesting static designs.
 
-![blackhole](screenshot_blackhole.PNG)
-![staircase](screenshot_staircase.PNG)
-![sun](screenshot_sun.PNG)
+
 
 ### Adding `if` statements
 
@@ -49,7 +47,7 @@ left_x = left_x + speed;
 ## Problems or Issues this week
 ![final sunbursts](screenshot_final_sunburst.PNG)
 
-I also noticed whenever I changed my angle, I would have a completely different pattern, and I wanted a way to rotate between these patterns. I tried using a modulo. I tried using other `if` statements on the angle variable. None of it was working. I spent most of my time struggle with this problem.
+I noticed whenever I changed my angle, I would have a completely different pattern, and I wanted a way to rotate between these patterns. I tried using a modulo. I tried using other `if` statements on the angle variable. None of it was working. I spent most of my time struggle with this problem.
 
 Finally, I realized I needed to use a `mousePressed()` function to switch between the designs manually. This way you can discover your favorite and watch each of them fade in and out.
 
