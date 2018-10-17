@@ -66,7 +66,7 @@ pop();
 for(let hill_x = 20; hill_x < width; hill_x += 20) {
     for (let hill_y = height * .6; hill_y < height - 100; hill_y += 60 ) {
     fill('#4d2f20');
-    ellipse( hill_x, hill_y, 50, 200 );    
+    ellipse( hill_x, hill_y, random(ceil(50)), 200 );    
 }   
     }
 
