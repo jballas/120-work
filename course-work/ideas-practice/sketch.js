@@ -30,21 +30,21 @@ function draw() {
     //let t = width * .1;
     
 
-    //let s = .5;
+    let s = .5;
 
   
 // EXPERIMENT with _for loops_. HOW DO I MAKE THIS ENTIRE CODE REPEAT?
 
     //draw first triangle
 push();
-   // scale(s);
+    scale(s);
     
 for (let x = 5; x <= width; x +=150 ) {
-    for( let y = 5; y < height; y +=100) {
+    for( let y = 5; y < height *.75; y +=100) {
      
             //translate(t,t);
             fill( red_Value );
-            rotate( movement);
+            //rotate( movement);
             triangle( x, y, x + 50, y + 100, x - 90, y + 100 );
         
     
@@ -58,30 +58,32 @@ pop();
 //movement % 3;
 
 
-push();
-fill( 'rgba( 120, 20, 255, .40)' );
-translate ( 200, 200 );
-rotateX(PI);
-triangle( centerX, centerY, rightX, rightY, leftX, leftY );
-pop();
 
-/*
+
     // EXPERIMENT with for statement, consecutive hill shapes on the bottom of the screen
 
 
 for(let hill_x = 20; hill_x < width; hill_x += 20) {
     for (let hill_y = height * .6; hill_y < height - 100; hill_y += 60 ) {
     fill('#4d2f20');
-    ellipse( hill_x, hill_y, random(ceil(50)), 200 );    
+    ellipse( hill_x, hill_y, 50, 200 );    
 }   
     }
 
 
-*/
+    push();
+        strokeWeight(1);
+        stroke(255);
+    //   line(500, 500, 800, 800);
 
 
+// EXPERIMENT with four lines into the corner of the canvas
+    for( let c = 50; c < 550; c +=10 ){
+        line(c, 550, c+ 300, 800);
+    }
 
-//if( hill_x)
+    pop();
+
 
 /* EXPERIMENT with if statements, a pear shape into a circle shapes until it grows so big it  set to a simple variable. 
     ellipse(centerX, centerY, d_circle );
@@ -101,21 +103,9 @@ for(let hill_x = 20; hill_x < width; hill_x += 20) {
      //else ( d_circle < 25) {
     //    d_circle = d_circle ++;
     //}
-
-    push();
-        strokeWeight(1);
-        stroke(255);
-    //   line(500, 500, 800, 800);
 */
 
-/* EXPERIMENT with four lines into the corner of the canvas
-    for( let c = 500; c < 550; c +=10 ){
-        line(c, 500, c+ 300, 800);
-    }
 
-    pop();
-
-*/
 
 
 /* BELOW IS AN EXPERIMENT WITH TRIANGLES THAT ROTATE
