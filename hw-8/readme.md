@@ -35,7 +35,7 @@ I ended up with some interesting static designs.
 
 ### Adding `if` statements
 
-It wasn't until I added `if` statements that I was able to animated my design how I wanted. I did a bouncing effect, like the bouncing ball from week 7's code to make the sunburst fade in and out.
+It wasn't until I added the `if` statements that I was able to animated my design how I wanted. I did a bouncing effect, like the bouncing ball from week 7's code to make the sunburst fade in and out.
 
 ```JS
 //Animation, a bouncing effect
@@ -49,15 +49,15 @@ left_x = left_x + speed;
 ## Problems or Issues this week
 ![final sunbursts](screenshot_final_sunburst.PNG)
 
-I also noticed whenever I changed my angle, I would have a completely different pattern, and I wanted a way to rotate between these patterns. I tried using a modulo, I tried using `if` statements on the angle variable. None of it was working. I spent most of my time.
+I also noticed whenever I changed my angle, I would have a completely different pattern, and I wanted a way to rotate between these patterns. I tried using a modulo. I tried using other `if` statements on the angle variable. None of it was working. I spent most of my time struggle with this problem.
 
-Finally, I realized I needed to use a `mousePressed()` function to switch between the designs manually. This way you can discover your favorite, and watch each of them fade in and out.
+Finally, I realized I needed to use a `mousePressed()` function to switch between the designs manually. This way you can discover your favorite and watch each of them fade in and out.
 
-Some of the angles I did not make any patterns at all, and I had no idea why. (Angle 0, angle 44.) Why do some of the patterns look so similiar.
+Some of the angles did not make any patterns at all, and I had no idea why. Angle 0, seems obvious, that's just my triangle, but why angle 44, angle 88? And why do some of the patterns look so similiar? I have no idea what my math is doing.
 
 ## Specific questions/concerns for next week
 
-As I researched my problem with the angle and the animation, I discovered that we're going to eventually make our own functions. And I realized that this might be what I wanted to do all along. So I am really looking forward to Week 10!
+As I researched my problem with the angle and the animation, I discovered that we're going to eventually make our own functions. And I realized that this might be what I wanted to do all along. So I'm really looking forward to Week 10!
 
 I'm really concerned about my final project. I have such frivolous ideas, and I'm not sure if any of them will be big enough to consider a final project.
 
