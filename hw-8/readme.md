@@ -79,9 +79,9 @@ I'm really concerned about my final project. I have such frivolous ideas, and I'
 
 ## Forum Questions
 
-Having a color variable is a tricky one, but I used one in my code this week since the forum had a discussion on `color()` and `rgb()` variables.
+Color variable are a tricky situation, but I used one in my code this week since the forum had a discussion on `color()` and `rgb()` variables.
 
-I also tried to help @HaganNataniel with his project, suggesting he use a `for()` loop to make a pattern with his ellipses.
+I also tried to help @HagenNathaniel with his project, suggesting he use a `for()` loop to make a pattern with his ellipses.
 
 ## Conclusion
 
