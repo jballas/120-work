@@ -1,13 +1,16 @@
 
-let r = 0
+let r = 100
 let g = 255
-let b = 0
+let b = 100
 
 function setup() {
     background( r,g,b );
 }
 
 function draw(){
-    fill( 'rgb(g, 255, 255)' );
-    ellipse( 50, 50, 25, 25);
+    fill( 'rgb(255, 255, 25)' );
+    ellipse( 50, 50, 25, 35);
+
+
+
 }
