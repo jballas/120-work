@@ -52,6 +52,7 @@ pop();
 } // end of draw function
 ```
 
+Unfortunately, I'm going to have to modify this to get my uniform flowers across the screen. I want them to have a grid of them 3 x 3, with different colors. Or I want a randomized pattern of them across the entire screen, also in different colors. Somehow I'm going to have to add an array to this project. Tricky.
 
 ### 
 
