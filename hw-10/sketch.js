@@ -17,24 +17,27 @@ function draw(){
 push();
 
     // I want to make my flower repeat all over the screen
-    let number_per_row = 20;
-    let flowers = width / number_per_row;
+    let number_per_row = 3;
+    let number_per_col = 3;
+    let across = width / number_per_row;
+    let down = width / number_per_col;
 
-    for( let x_pos = 100; x_pos < width; x_pos += flowers){
+    for( let x_pos = 100; x_pos < width; x_pos += across){
 
-        for( let y_pos = 100; y_pos < height; y_pos += flowers){
+        for( let y_pos = 100; y_pos < height; y_pos += down){
 
         //I was able to use translate to make my drawFlower function repeat.
-        translate( x_pos, y_pos);
-        drawFlower();
-        }// end of nest for()loop
+        //Translate( x_pos, y_pos)
+        //ellipse( x_pos, y_pos, 50, 50);
+        drawFlower( x_pos, y_pos);
+        }// end of nested for()loop
     } // end of for() loop
 pop();
 
 } // end of draw function
 
 
-function drawFlower(){
+function drawFlower(x, y){
 push();
     scale( .5, .5);
     fill( "rgba( 120, 20, 255, .40)" );
