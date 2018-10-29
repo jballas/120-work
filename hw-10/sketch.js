@@ -1,6 +1,6 @@
 function setup(){
     createCanvas( 600, 600);
-    background(0);
+    background(255);
 }
 
 //flower variables
@@ -14,18 +14,17 @@ let flower = {
     };
 
 
-// Flower array 
-let flowerPetals = [ 25, 100, 50, 200, 5, 200];
+// Flower array for the colors
+/*let petal_colors = [ "rgba( 120, 20, 255, .40)", "rgba(0, 200, 255, .40)", "rgba(22, 244, 0, .60)", "rgba(195, 2, 255, .40)", "rgba(0, 115, 250, .40)", "rgba(0, 245, 140, .40)" ];
+*/
 
-    
-//let f_width = width * .5;
-//let f_height = height * .5;
+
+
+
 
 function draw(){
 
-
-
-    // I want to make my flower repeat all over the screen
+    // I want to make my flower repeat in a grid on the screen
     for( let x_pos = 100; x_pos < 600; x_pos +=200 ){
         for( let y_pos = 100; y_pos < 600; y_pos +=200){
             push();
@@ -35,17 +34,18 @@ function draw(){
         }// end of nested for()loop
     } // end of for() loop
 
-
-
+    // create variable with random number from 1-5
 
 } // end of draw function
 
 
 function drawFlower(){
+    let flower_petal = round( random( 50 ));
+    console.log(flower_petal);
 
 push();
     scale( .5, .5);
-    fill( "rgba( 120, 20, 255, .40)" );
+    fill(flower_petal);
     rotate ( mouseX );
     //ellipse( center_x, center_y, right_x, right_y);
     //triangle( flowerPetals[0], flowerPetals[1], flowerPetals[2], flowerPetals[3], flowerPetals[4], flowerPetals[5] );
