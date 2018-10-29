@@ -19,9 +19,6 @@ let petal_colors = [ "rgba( 120, 20, 255, .40)", "rgba(0, 200, 255, .40)", "rgba
 
 
 
-
-
-
 function draw(){
 
     frameRate(10)
