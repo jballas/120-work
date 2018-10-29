@@ -23,65 +23,20 @@ let flowerPetals = [ 25, 100, 50, 200, 5, 200];
 
 function draw(){
 
-    push();
-    translate(100,100);
-    drawFlower();
-    pop();  
-
-    push();
-    translate(300,100);
-    drawFlower();
-    pop();    
-
-    push();
-    translate(500,100);
-    drawFlower();
-    pop(); 
-
-    push();
-    translate(100,300);
-    drawFlower();
-    pop(); 
-
-    push();
-    translate(300,300);
-    drawFlower();
-    pop(); 
-
-    push();
-    translate(500,300);
-    drawFlower();
-    pop(); 
-
-    push();
-    translate(100,500);
-    drawFlower();
-    pop();
-    
-    push();
-    translate(300,500);
-    drawFlower();
-    pop(); 
-
-    push();
-    translate(500,500);
-    drawFlower();
-    pop();
 
 
-/*
-push();
     // I want to make my flower repeat all over the screen
-    for( let x_pos = 100; x_pos < 300; x_pos +=100 ){
-        for( let y_pos = 100; y_pos < 300; y_pos +=100){
-
-        translate(100, 100);
-        drawFlower();
+    for( let x_pos = 100; x_pos < 600; x_pos +=200 ){
+        for( let y_pos = 100; y_pos < 600; y_pos +=200){
+            push();
+                translate(x_pos, y_pos);
+                drawFlower();
+            pop();
         }// end of nested for()loop
     } // end of for() loop
 
-pop();
-*/
+
+
 
 } // end of draw function
 
