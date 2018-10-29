@@ -3,7 +3,7 @@ function setup(){
     background(0);
 }
 
-/* flower variables
+/*flower variables
 let flower = {
     center_x: 25,
     center_y: 100,
@@ -12,25 +12,30 @@ let flower = {
     left_x: 5,
     left_y: 200
     };
+*/
 
-    */
+// Flower array
+
+let flowerPetals = [ 25, 100, 50, 200, 5, 200];
+
+    
+//let f_width = width * .5;
+//let f_height = height * .5;
+
 function draw(){
-    translate( width * .5, height * .5);
+
         
 
 push();
     // I want to make my flower repeat all over the screen
-    for( let x_pos = 100; x_pos < width; x_pos += width / 3){
+    for( let x_pos = 100; x_pos < width; x_pos += 20){
 
-        for( let y_pos = 100; y_pos < height; y_pos += width / 3){
+        for( let y_pos = 100; y_pos < height; y_pos += 20){
 
-        //I was able to use translate to make my drawFlower function repeat.
-        //ellipse( x_pos, y_pos, 50, 50);
-        drawFlower( x_pos, y_pos, 50, 200, 5, 200);
+        translate(x_pos, y_pos);
+        drawFlower();
         }// end of nested for()loop
     } // end of for() loop
-
-
 
 pop();
 
@@ -38,13 +43,13 @@ pop();
 } // end of draw function
 
 
-function drawFlower( center_x, center_y, right_x, right_y, left_x, left_y){
+function drawFlower(){
 
 push();
     scale( .5, .5);
     fill( "rgba( 120, 20, 255, .40)" );
-    rotate (mouseX);
+    rotate ( mouseX );
     //ellipse( center_x, center_y, right_x, right_y);
-    triangle( center_x, center_y, right_x, right_y, left_x, left_y );
+    triangle( flowerPetals[0], flowerPetals[1], flowerPetals[2], flowerPetals[3], flowerPetals[4], flowerPetals[5] );
 pop();
 }
