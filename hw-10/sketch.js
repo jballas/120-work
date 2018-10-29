@@ -1,5 +1,5 @@
 function setup(){
-    createCanvas( windowWidth, 600);
+    createCanvas( 600, 600);
     background(0);
 }
 
@@ -23,42 +23,65 @@ let flowerPetals = [ 25, 100, 50, 200, 5, 200];
 
 function draw(){
 
-        
+    push();
+    translate(100,100);
+    drawFlower();
+    pop();  
 
+    push();
+    translate(300,100);
+    drawFlower();
+    pop();    
+
+    push();
+    translate(500,100);
+    drawFlower();
+    pop(); 
+
+    push();
+    translate(100,300);
+    drawFlower();
+    pop(); 
+
+    push();
+    translate(300,300);
+    drawFlower();
+    pop(); 
+
+    push();
+    translate(500,300);
+    drawFlower();
+    pop(); 
+
+    push();
+    translate(100,500);
+    drawFlower();
+    pop();
+    
+    push();
+    translate(300,500);
+    drawFlower();
+    pop(); 
+
+    push();
+    translate(500,500);
+    drawFlower();
+    pop();
+
+
+/*
 push();
     // I want to make my flower repeat all over the screen
-    for( let x_pos = 100; x_pos < width; x_pos += 20){
+    for( let x_pos = 100; x_pos < 300; x_pos +=100 ){
+        for( let y_pos = 100; y_pos < 300; y_pos +=100){
 
-        for( let y_pos = 100; y_pos < height; y_pos += 20){
-
-        translate(x_pos, y_pos);
+        translate(100, 100);
         drawFlower();
         }// end of nested for()loop
     } // end of for() loop
 
 pop();
-
-/*
-if (mouseIsPressed) {
-   
-    flower.center_x += 100;
-    flower.center_y += 100;
-    flower.right_x += 100;
-    flower.right_y += 100;
-    flower.left_x += 100;
-    flower.left_y += 100;
-} else {
-
-flower.center_x = flowerPetals[0] ;
-flower.center_y = flowerPetals[1];
-flower.right_x = flowerPetals[2];
-flower.right_y = flowerPetals[3];
-flower.left_x = flowerPetals[4];
-flower.left_y = flowerPetals[5];
-    
-}
 */
-
 
 } // end of draw function
 
@@ -75,18 +98,3 @@ push();
     pop();
 }
 
-function mousePressed(){
-    flower.center_x + 100;
-}
-
-
-function mousePressed(){
- 
-flower.center_x += 100;
-//flower.center_y += 100;
-flower.right_x += 100;
-//flower.right_y += 100;
-flower.left_x += 100;
-flower.left_y += 100;
-    
-}
