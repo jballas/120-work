@@ -10,8 +10,7 @@ let flower = {
     right_x: 50,
     right_y: 200,
     left_x: 5,
-    left_y: 200,
-    color: 0
+    left_y: 200
     };
 
 
@@ -29,41 +28,49 @@ function draw(){
                 translate(x_pos, y_pos);
                 drawFlower();
             pop();
-        }// end of nested for()loop
-    } // end of for() loop
+        }// end of nested loop
+    } // end loop
 
-if (mouseY > 300 && mouseY > 300){
-    flower.color = petal_colors[4];
-} 
-else if(mouseX < 300 && mouseY < 300){
-    flower.color = petal_colors[5];
-}
-else if (mouseX > 300 && mouseX < 600){
-    flower.color = petal_colors[2];
-}
-else {
-    flower.color = petal_colors[0];
-}
-
-
+    bee();
 } // end of draw function
 
 
 function drawFlower(){
 
     // variable for random petal fill colors
-    //let flower_petal = random(petal_colors );
+    let flower_petal = random(petal_colors );
     
-    //I needed to check if I was getting the random numbers
+    //I needed to check if I was getting the random numbers, so I used the console.log below
     //console.log(flower_petal);
 
 push();
     scale( .5, .5);
-    fill(flower.color);
+    fill( flower_petal );
     rotate ( mouseX );
-    //ellipse( center_x, center_y, right_x, right_y);
-    //triangle( flowerPetals[0], flowerPetals[1], flowerPetals[2], flowerPetals[3], flowerPetals[4], flowerPetals[5] );
     triangle( flower.center_x, flower.center_y, flower.right_x, flower.right_y, flower.left_x, flower.left_y); 
     pop();
 }
 
+function bee(){
+    
+    // body
+    fill('yellow')
+    ellipse( 300, 300, 20, 40);
+    
+    // wings
+    push();
+        fill(0)
+        stroke(250);
+        ellipse( 280, 300, 20, 10);
+        ellipse( 320, 300, 20, 10);
+    pop();
+
+    // stripes
+    push();
+        stroke(0)
+        line(280, 300, 315, 300);
+        line(280, 305, 315, 305);
+        line(280, 310, 315, 310);
+        line(280, 315, 315, 315);
+    pop();
+}
