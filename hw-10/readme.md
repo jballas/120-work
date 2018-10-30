@@ -89,12 +89,12 @@ Next, I added an array called `petal_colors []` and put rgba strings inside the 
 
 ![Bee](bee.PNG)![Bee](bee.PNG)![Bee](bee.PNG)![Bee](bee.PNG)![Bee](bee.PNG)![Bee](bee.PNG)
 
-My third step was adding a second function. I decided to make a bee right in the middle of my flowers. 
+My third task was adding a second function. I decided to make a bee right in the middle of my flowers. Here are the steps I took:
 
-1. Step one: create the shape of the bee and add wings and stripes.
-2. Step two: Make a `for()` loop for the stripes
-3. Step three: After trying variables, I realized I needed to have a parameter in my function for the bee's location.
-4. Step 4: Bee's location
+1. Create the shape of the bee and add wings and stripes.
+2. Make a `for()` loop for the stripes
+3. After trying variables, I realized I needed to have a parameter in my function for the bee's location.
+4. Set Bee's location
 
     - I had 9 spots I wanted to put the bee in:
     - After making a grid with the exact x, y locations I realized there was a clear pattern. I wanted them at 100, 300, or 500.
@@ -108,7 +108,7 @@ My third step was adding a second function. I decided to make a bee right in the
     - I made an Array called `position[]` with the three variables, then I connected the Array to my bee function. The bee's initial location is in the middle.
     - I added a `mousePressed()` function so I could make the bee's location random when you clicked the mouse.
 
-5. Step 5: I discovered a conundrum with my bees. Either the bees stayed permanently on the screen, or I could add a `background()` to my `mousePressed()` and wipe the sketch clean every time. I decided to go with the former.
+5. I discovered a conundrum with my bees. Either the bees stayed permanently on the screen, or I could add a `background()` to my `mousePressed()` and wipe the sketch clean every time. I decided to go with the former.
 
 ### Final touchups
 
