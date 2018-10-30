@@ -3,7 +3,7 @@ function setup(){
     background(0);
 }
 
-//flower variables
+// Flower variables
 let flower = {
     center_x: 25,
     center_y: 100,
@@ -13,6 +13,13 @@ let flower = {
     left_y: 200
     };
 
+// Bee location. I want b_location_x to be 100, 300, or 500. I want b_location_y to be 100, 300, or 500. I think I'll use an array.
+
+// Bee position Array
+let position = [ 100, 300, 500];
+
+let b_location_x ;
+let b_location_y ;
 
 // Flower array for the colors
 let petal_colors = [ "rgba( 120, 20, 255, .40)", "rgba(0, 200, 255, .40)", "rgba(22, 244, 0, .60)", "rgba(195, 2, 255, .40)", "rgba(0, 115, 250, .40)", "rgba(0, 245, 140, .40)" ];
@@ -31,7 +38,13 @@ function draw(){
         }// end of nested loop
     } // end loop
 
-    bee();
+    // Bee function using two arguments for x and y. I'm going to make these variables I can change.
+
+    // Bee location variables
+    b_location_x = position[0];
+    b_location_y = position[0];
+
+    bee(b_location_x, b_location_y);
 } // end of draw function
 
 
@@ -51,26 +64,38 @@ push();
     pop();
 }
 
-function bee(){
+function bee(x,y){
     
     // body
     fill('yellow')
-    ellipse( 300, 300, 20, 40);
+    ellipse( x, y, 20, 40);
     
     // wings
     push();
         fill(0)
         stroke(250);
-        ellipse( 280, 300, 20, 10);
-        ellipse( 320, 300, 20, 10);
+        ellipse( x - 20, y, 20, 10);
+        ellipse( x + 20, y, 20, 10);
     pop();
 
     // stripes
     push();
         stroke(0)
-        line(280, 300, 315, 300);
+        
+        // pattern for stripes using loop. I had to add in a second loop to make sure the x,y variables could be changed. Math hurts.
+        for(s = x; s < x + 20; s+= 5){
+            for ( t = y; t < y + 20; t+=5){
+                line(x - 20, t, x + 15, t);
+            }
+        }
+    pop();
+    
+    // Before I can make a loop, I still have to create all the lines with all the various numbers. Otherwise I don't understand the math. Here the original code for stripes:
+
+    /*  line(280, 300, 315, 300);
         line(280, 305, 315, 305);
         line(280, 310, 315, 310);
         line(280, 315, 315, 315);
-    pop();
+
+    */
 }
