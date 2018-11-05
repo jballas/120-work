@@ -2,6 +2,7 @@ function setup() {
     createCanvas(400, 400);
 }
 
+//TODO Figure out what my class constructor parts might be, like every attribute for the popped corn, and the seed, I think. Including this one, of jumped
 let jump = 100;
 
 
@@ -11,6 +12,8 @@ function draw() {
 
     frameRate(30);
 
+// look, now I have lots of seeds, but they all move at the same time, and they are no longer in a function. drat.
+//TODO make an empty array in global scope, then a for() in setup, and reference it in function for heatingUp.
 
     for( x = 150; x <= 300; x += 20){
         fill('rgb( 255, 150, 20)');
