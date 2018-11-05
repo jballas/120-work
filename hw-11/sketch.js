@@ -1,66 +1,75 @@
-function setup() {
+let bucket = [];
+let kernals = 4;
+
+function setup(){
     createCanvas(400, 400);
+
+    for ( let i = 0; i < kernals; i++) {
+        bucket.push( new Popcorn() );
+    }
 }
-
-//TODO Figure out what my class constructor parts might be, like every attribute for the popped corn, and the seed, I think. Including this one, of jumped
-let jump = 100;
-
 
 function draw() {
 
     background(0);
-
     frameRate(30);
 
-// look, now I have lots of seeds, but they all move at the same time, and they are no longer in a function. drat.
-//TODO make an empty array in global scope, then a for() in setup, and reference it in function for heatingUp.
-
-    for( x = 150; x <= 300; x += 20){
-        fill('rgb( 255, 150, 20)');
-        ellipse( x, jump, 15, 30)   
-    
+    //This should call new popcorns from the popcorn Class, using the bucket Array I put the set-up function. 
+    for( i = 0; i < bucket.length; i ++){
+        bucket[i].frame(); 
     }
 
 
-seed();
-heatingUp();
-
-    
-poppedCorn();
-
-
 }
 
-function seed(){
-// Seed
-        fill('rgb( 255, 150, 20)');
-        ellipse( 100, jump, 15, 30)   
-}
+//TODO Figure out what my class constructor parts might be, like every attribute for the popped corn, and the seed, I think. Including this one, of jumped
+class Popcorn {
 
-function heatingUp(){
-// random number so it doesn't jump constantly
-let r = ceil(random(1,5));
+    constructor() {
+        this.seed_color = 'rgb( 255, 150, 20)';
+        this.poppedCorn_color = 255;
+        this.seed_move = ceil( random(-5,5) );
+        this.seed_x = random(width);
+        this.seed_y = random(height);
+        this.seed_size_w = 15;
+        this.seed_size_h = this.seed_size_w * 2;
+    }
 
+    frame(){
+        this.seed();
+        this.heatingUp();
+        this.poppedCorn();
+    }
 
-// Seeds need to jump around, as if it's heating up
-    if (r === 2) {
-        jump ++;
+    // Display Seed
+    seed(){
+            fill(this.seed_color);
+            ellipse( this.seed_x, this.seed_y, this.seed_size_w, this.seed_size_h )   
+    }
 
-        if( jump >= 110){
-            jump = 100;
+    heatingUp(){
+
+    // Seeds need to jump around, as if it's heating up
+        if (this.seed_move <= 2) {
+            this.seed_y += random(-2, 3);
+
+            if( this.seed_x >= height ){
+                this.poppedCorn();
+            }
+
         }
 
+        console.log(this.seed_move);
     }
 
-    //console.log(r);
-}
+    // Display popped popcorn
+    poppedCorn() {
+        
+            fill( this.poppedCorn_color);
+            ellipse(205, 205, 30, 45);
+            ellipse(195, 225, 15, 15);
+            ellipse(211, 225, 25, 20);
+            ellipse(220, 215, 18, 18);
+    }
 
-function poppedCorn() {
-    
-    //popped corn
-        fill(255)
-        ellipse( 205, 205, 30, 45);
-        ellipse(195, 225, 15, 15);
-        ellipse(211, 225, 25, 20);
-        ellipse(220, 215, 18, 18);
 }
