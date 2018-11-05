@@ -11,7 +11,7 @@ function setup(){
 
 function draw() {
 
-    background(0);
+    background(255);
     frameRate(30);
 
     //This should call new popcorns from the popcorn Class, using the bucket Array I put the set-up function. 
@@ -19,7 +19,12 @@ function draw() {
         bucket[i].frame(); 
     }
 
+//TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
 
+push();
+    strokeWeight(5);
+    point(250,250);
+pop();
 }
 
 //TODO Figure out what my class constructor parts might be, like every attribute for the popped corn, and the seed, I think. Including this one, of jumped
@@ -62,6 +67,7 @@ class Popcorn {
         // timed event, after 5 seconds the seeds expand. I'm aiming for an explosion.
         if( millis() >= 5000 ){
             this.seed_size_w ++ && this.seed_size_h ++;
+            
                 if( this.seed_size_w >= 50){
                     background(0);
                     this.poppedCorn();
