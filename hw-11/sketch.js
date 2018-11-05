@@ -11,6 +11,14 @@ function draw() {
 
     frameRate(30);
 
+
+    for( x = 150; x <= 300; x += 20){
+        fill('rgb( 255, 150, 20)');
+        ellipse( x, jump, 15, 30)   
+    
+    }
+
+
 seed();
 heatingUp();
 
@@ -41,7 +49,7 @@ let r = ceil(random(1,5));
 
     }
 
-    console.log(r);
+    //console.log(r);
 }
 
 function poppedCorn() {
