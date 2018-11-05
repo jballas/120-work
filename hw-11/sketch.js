@@ -1,5 +1,5 @@
 let bucket = [];
-let kernals = 4;
+let kernals = 20;
 
 function setup(){
     createCanvas(400, 400);
@@ -33,12 +33,17 @@ class Popcorn {
         this.seed_y = random(height);
         this.seed_size_w = 15;
         this.seed_size_h = this.seed_size_w * 2;
+        this.popped_size = random(10, 25) ;
+        this.x = random(width);
+        this.y = random(height);
+        this.popped_x = random(this.x - 3, this.x + 5) ;
+        this.popped_y = random(this.y, this.y + 10) ;
+        
     }
 
     frame(){
         this.seed();
         this.heatingUp();
-        this.poppedCorn();
     }
 
     // Display Seed
@@ -53,7 +58,7 @@ class Popcorn {
         if (this.seed_move <= 2) {
             this.seed_y += random(-2, 3);
 
-            if( this.seed_x >= height ){
+            if( this.seed_y >= height ){
                 this.poppedCorn();
             }
 
@@ -62,14 +67,20 @@ class Popcorn {
         console.log(this.seed_move);
     }
 
+    // problem - despite the randomness, each one is coming out the same!!
     // Display popped popcorn
     poppedCorn() {
         
             fill( this.poppedCorn_color);
-            ellipse(205, 205, 30, 45);
-            ellipse(195, 225, 15, 15);
-            ellipse(211, 225, 25, 20);
-            ellipse(220, 215, 18, 18);
+            ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
+            //fill('red');
+            ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
+            //fill('blue');
+            ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
+            //fill('yellow');
+            ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
+           
+            
     }
 
 }
