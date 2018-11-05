@@ -57,11 +57,15 @@ class Popcorn {
     // Seeds need to jump around, as if it's heating up
         if (this.seed_move <= 2) {
             this.seed_y += random(-2, 3);
+        }
 
-            if( this.seed_y >= height ){
-                this.poppedCorn();
-            }
-
+        // timed event, after 5 seconds the seeds expand. I'm aiming for an explosion.
+        if( millis() >= 5000 ){
+            this.seed_size_w ++ && this.seed_size_h ++;
+                if( this.seed_size_w >= 50){
+                    background(0);
+                    this.poppedCorn();
+                }
         }
 
         console.log(this.seed_move);
