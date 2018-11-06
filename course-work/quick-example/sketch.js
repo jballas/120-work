@@ -17,6 +17,7 @@ function draw(){
     background( r,g,b );
     frameRate(30);
 
+
 //REPEATING LINES, flashing effect.
 
 for ( a = 0; a < 50; a += 15){

@@ -1,5 +1,6 @@
 let bucket = [];
 let kernals = 20;
+let bg_color = 255;
 
 function setup(){
     createCanvas(400, 400);
@@ -11,7 +12,7 @@ function setup(){
 
 function draw() {
 
-    background(0);
+    background(bg_color);
     frameRate(30);
 
     //This should call new popcorn from the popcorn Class, using the bucket Array I put the set-up function. 
@@ -36,7 +37,7 @@ class Popcorn {
         this.loc_y = random(height);
         this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
         this.popped_y = random(this.loc_y, this.loc_y + 10) ;
-        
+        this.a;
     }
 
     // I'm using frame to call these methods in the draw function above.
@@ -53,7 +54,7 @@ class Popcorn {
     }
 
     // Display popped popcorn
-    // How do I make lots of popped corn? With a for loop? parameter?
+    // How do I make lots of popped corn?
     poppedCorn(){
         
 
@@ -89,9 +90,24 @@ class Popcorn {
             this.seed_size_w ++ && this.seed_size_h ++;
             
                 if( this.seed_size_w >= 40){
-                    background(0);
-                    this.poppedCorn();
+                    background(bg_color);
+                    
+                    this.explosion()
+                    
+                    //this.poppedCorn();
                 }
+        }
+    }
+
+    explosion(){
+        
+        for ( this.a = 0; this.a < 50; this.a += 15){
+            push();
+                //stroke(255);
+                translate( width * .25, height * .25);
+                rotate(this.a);
+                line(-50, 0, 50, 0);       
+            pop();
         }
     }
 }
