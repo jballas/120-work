@@ -11,23 +11,18 @@ function setup(){
 
 function draw() {
 
-    background(255);
+    background(0);
     frameRate(30);
 
-    //This should call new popcorns from the popcorn Class, using the bucket Array I put the set-up function. 
+    //This should call new popcorn from the popcorn Class, using the bucket Array I put the set-up function. 
     for( i = 0; i < bucket.length; i ++){
         bucket[i].frame(); 
     }
 
 //TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
-
-push();
-    strokeWeight(5);
-    point(250,250);
-pop();
 }
 
-//TODO Figure out what my class constructor parts might be, like every attribute for the popped corn, and the seed, I think. Including this one, of jumped
+// I'm making a class called Popcorn, and using the constructor to list all the various properties of popcorn, like color, size, movement, etc.
 class Popcorn {
 
     constructor() {
@@ -46,9 +41,11 @@ class Popcorn {
         
     }
 
+    // I'm using frame to call these methods in the draw function above.
     frame(){
         this.seed();
         this.heatingUp();
+        this.explodes();
     }
 
     // Display Seed
@@ -57,40 +54,43 @@ class Popcorn {
             ellipse( this.seed_x, this.seed_y, this.seed_size_w, this.seed_size_h )   
     }
 
-    heatingUp(){
+    // Display popped popcorn
+    // How do I make lots of popped corn? With a for loop?
+    poppedCorn(){
+        
+    fill( this.poppedCorn_color);
+    ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
+    
+    ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
+                
+    ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
+                
+    ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
+    
+    }
 
     // Seeds need to jump around, as if it's heating up
-        if (this.seed_move <= 2) {
-            this.seed_y += random(-2, 3);
-        }
+    heatingUp(){
 
-        // timed event, after 5 seconds the seeds expand. I'm aiming for an explosion.
+        if (this.seed_move <= 2) {
+        this.seed_y += random(-2, 2);
+
+            if( this.seed_size_w >= 50){
+                background(0);
+                this.poppedCorn();
+            }
+        }
+    }
+
+  // A timed event, after 5 seconds the seeds expand, and "explode". How do I get that?
+    explodes(){
         if( millis() >= 5000 ){
             this.seed_size_w ++ && this.seed_size_h ++;
             
-                if( this.seed_size_w >= 50){
+                if( this.seed_size_w >= 40){
                     background(0);
                     this.poppedCorn();
                 }
         }
-
-        console.log(this.seed_move);
     }
-
-    // problem - despite the randomness, each one is coming out the same!!
-    // Display popped popcorn
-    poppedCorn() {
-        
-            fill( this.poppedCorn_color);
-            ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
-            //fill('red');
-            ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
-            //fill('blue');
-            ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
-            //fill('yellow');
-            ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
-           
-            
-    }
-
 }
