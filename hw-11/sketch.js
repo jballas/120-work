@@ -27,7 +27,7 @@ class Popcorn {
     constructor() {
         this.seed_color = 'rgb( 255, 150, 20)';
         this.poppedCorn_color = 255;
-        this.seed_move = ceil( random(-5,5) );
+        this.seed_move = ceil( random(-5,2) );
         this.seed_x = random(width);
         this.seed_y = random(height);
         this.seed_size_w = 15;
@@ -35,10 +35,11 @@ class Popcorn {
         this.popped_size = random(10, 25);
         this.loc_x = random(width);
         this.loc_y = random(height);
+        this.delta = 10;
         //this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
         //this.popped_y = random(this.loc_y, this.loc_y + 10) ;
-        //this.loc_x = this.loc_x;
-        //this.loc_y = this.loc_y;
+        this.ln_x = 50;
+        this.ln_y = 0;
         this.a;
         this.c = random(50);
     }
@@ -98,22 +99,10 @@ class Popcorn {
                 if( this.seed_size_w >= 40){
                     background(bg_color);
                     
-                    //this.explosion()
-                    
                     this.poppedCorn();
                 }
         }
     }
-/*
-    explosion(){
-        
-        for ( this.a = 0; this.a < 50; this.a += 15){
-            push();
-                stroke(255);
-                translate( width * .25, height * .25);
-                rotate(this.a);
-                line(-50, 0, 50, 0);       
-            pop();
-        }
-    }*/
+
+    
 }

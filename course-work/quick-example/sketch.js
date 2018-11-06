@@ -17,9 +17,12 @@ function draw(){
     background( r,g,b );
     frameRate(3);
 
+star( width * .25, height * .25);
+star(width * .75, height * .75);
+move();
 
 //REPEATING LINES, flashing effect.
-
+/*
 for ( a = 0; a < 50; a += random(15)){
     push();
         translate( width * .25, height * .25);
@@ -27,13 +30,7 @@ for ( a = 0; a < 50; a += random(15)){
         line(loc_x * -1, loc_y, loc_x, loc_y);       
     pop();
 }
-
-loc_x += delta_x;
-
-if(loc_x + delta_x >= 100) {
-    loc_x *= -1;
-}
-
+*/
 
 
 //POINT
@@ -55,4 +52,25 @@ for(x = 0; x < width; x += 50){
     }
 */
 
+}
+
+function star(x, y){
+
+    for ( a = 0; a < 50; a += random(5, 15)){
+        push();
+            translate(x, y );
+            rotate(a);
+            line(loc_x * -1, loc_y, loc_x, loc_y);       
+        pop();
+    }
+    
+}
+
+function move(){
+
+    loc_x += delta_x;
+
+    if(loc_x + delta_x >= 100) {
+        loc_x *= -1;
+    }
 }
