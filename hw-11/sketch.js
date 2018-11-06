@@ -41,10 +41,9 @@ class Popcorn {
 
     // I'm using frame to call these methods in the draw function above.
     frame(){
-        //this.seed();
-        //this.heatingUp();
-        //this.explodes();
-        this.poppedCorn();
+        this.seed();
+        this.heatingUp();
+        this.explodes();
     }
 
     // Display Seed
@@ -91,6 +90,7 @@ class Popcorn {
             
                 if( this.seed_size_w >= 40){
                     background(0);
+                    this.poppedCorn();
                 }
         }
     }
