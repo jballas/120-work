@@ -15,12 +15,12 @@ let delta_x = 10;
 function draw(){
 
     background( r,g,b );
-    frameRate(30);
+    frameRate(3);
 
 
 //REPEATING LINES, flashing effect.
 
-for ( a = 0; a < 50; a += 15){
+for ( a = 0; a < 50; a += random(15)){
     push();
         translate( width * .25, height * .25);
         rotate(a);

@@ -1,6 +1,6 @@
 let bucket = [];
 let kernals = 20;
-let bg_color = 255;
+let bg_color = 0;
 
 function setup(){
     createCanvas(400, 400);
@@ -32,12 +32,15 @@ class Popcorn {
         this.seed_y = random(height);
         this.seed_size_w = 15;
         this.seed_size_h = this.seed_size_w * 2;
-        this.popped_size = random(10, 25) ;
+        this.popped_size = random(10, 25);
         this.loc_x = random(width);
         this.loc_y = random(height);
-        this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
-        this.popped_y = random(this.loc_y, this.loc_y + 10) ;
+        //this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
+        //this.popped_y = random(this.loc_y, this.loc_y + 10) ;
+        //this.loc_x = this.loc_x;
+        //this.loc_y = this.loc_y;
         this.a;
+        this.c = random(50);
     }
 
     // I'm using frame to call these methods in the draw function above.
@@ -57,18 +60,21 @@ class Popcorn {
     // How do I make lots of popped corn?
     poppedCorn(){
         
+        for( this.loc_x = 0; this.loc_x <= 200; this.loc_x += 50 ) {
+            for ( this.loc_y = 0; this.loc_y <= 200; this.loc_y += 50 ){
 
-            push();
-                fill( this.poppedCorn_color);
-                ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
-                
-                ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
-                            
-                ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
-                            
-                ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
-            pop();
-        
+                push();
+                    fill( this.poppedCorn_color);
+                    ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
+                    
+                    ellipse(this.loc_x - 10, this.loc_y, this.popped_size, this.popped_size);
+                                
+                    ellipse(this.loc_x - 2, this.loc_y, this.popped_size, this.popped_size);
+                                
+                    ellipse(this.loc_x + 4, this.loc_y +3, this.popped_size, this.popped_size);
+                pop();
+            }
+        }
     
     }
 
@@ -92,22 +98,22 @@ class Popcorn {
                 if( this.seed_size_w >= 40){
                     background(bg_color);
                     
-                    this.explosion()
+                    //this.explosion()
                     
-                    //this.poppedCorn();
+                    this.poppedCorn();
                 }
         }
     }
-
+/*
     explosion(){
         
         for ( this.a = 0; this.a < 50; this.a += 15){
             push();
-                //stroke(255);
+                stroke(255);
                 translate( width * .25, height * .25);
                 rotate(this.a);
                 line(-50, 0, 50, 0);       
             pop();
         }
-    }
+    }*/
 }
