@@ -18,8 +18,6 @@ function draw() {
     for( i = 0; i < bucket.length; i ++){
         bucket[i].frame(); 
     }
-
-//TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
 }
 
 // I'm making a class called Popcorn, and using the constructor to list all the various properties of popcorn, like color, size, movement, etc.
@@ -55,34 +53,36 @@ class Popcorn {
     }
 
     // Display popped popcorn
-    // How do I make lots of popped corn? With a for loop?
+    // How do I make lots of popped corn? With a for loop? parameter?
     poppedCorn(){
-        
-    fill( this.poppedCorn_color);
-    ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
-    
-    ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
+        //for( this.x = 0; this.x > 10; this.x ++){
+
+            push();
+                fill( this.poppedCorn_color);
+                ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
                 
-    ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
-                
-    ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
-    
+                ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
+                            
+                ellipse(this.popped_x - 2, this.popped_y, this.popped_size, this.popped_size);
+                            
+                ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
+            pop();
+        //}
     }
 
     // Seeds need to jump around, as if it's heating up
     heatingUp(){
 
         if (this.seed_move <= 2) {
-        this.seed_y += random(-2, 2);
-
-            if( this.seed_size_w >= 50){
-                background(0);
-                this.poppedCorn();
-            }
+           this.seed_y += random(-2, 2);
         }
+
+        // checking the randomness of this.seed_move
+        console.log(this.seed_move);
     }
 
-  // A timed event, after 5 seconds the seeds expand, and "explode". How do I get that?
+    //TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
+    // A timed event, after 5 seconds the seeds expand, and "explode". How do I get that?
     explodes(){
         if( millis() >= 5000 ){
             this.seed_size_w ++ && this.seed_size_h ++;
@@ -90,6 +90,7 @@ class Popcorn {
                 if( this.seed_size_w >= 40){
                     background(0);
                     this.poppedCorn();
+                
                 }
         }
     }
