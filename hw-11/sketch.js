@@ -36,12 +36,11 @@ class Popcorn {
         this.loc_x = random(width);
         this.loc_y = random(height);
         this.delta = 10;
-        //this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
-        //this.popped_y = random(this.loc_y, this.loc_y + 10) ;
-        this.ln_x = 50;
-        this.ln_y = 0;
+        this.popped_x = random(-3, 5) ;
+        this.popped_y = random(5, 10) ;
         this.a;
-        this.c = random(50);
+        this.move_x = 1;
+        this.delta_x = 10;
     }
 
     // I'm using frame to call these methods in the draw function above.
@@ -58,11 +57,11 @@ class Popcorn {
     }
 
     // Display popped popcorn
-    // How do I make lots of popped corn?
+    // How do I make lots of popped corn? Okay, so I figured out I need to have the location_x inside the for()loop as well as in the ellipse parameters. That works now, but its a uniform pattern. how do I make lots of popcorn in random locations?
     poppedCorn(){
         
-        for( this.loc_x = 0; this.loc_x <= 200; this.loc_x += 50 ) {
-            for ( this.loc_y = 0; this.loc_y <= 200; this.loc_y += 50 ){
+        for( this.loc_x = this.popped_x; this.loc_x <= width; this.loc_x += 50 ) {
+            for ( this.loc_y = this.popped_y; this.loc_y <= height; this.loc_y += 50 ){
 
                 push();
                     fill( this.poppedCorn_color);
@@ -90,8 +89,7 @@ class Popcorn {
         console.log(this.seed_move);
     }
 
-    //TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
-    // A timed event, after 5 seconds the seeds expand, and "explode". How do I get that?
+    // A timed event, after 5 seconds the seeds expand, and "explode". 
     explodes(){
         if( millis() >= 5000 ){
             this.seed_size_w ++ && this.seed_size_h ++;
@@ -99,10 +97,32 @@ class Popcorn {
                 if( this.seed_size_w >= 40){
                     background(bg_color);
                     
-                    this.poppedCorn();
+                    this.explosion();
+                    this.move();
+                    //this.poppedCorn();
                 }
         }
     }
 
+    explosion(){
+        
+        for ( this.a = 0; this.a < 50; this.a += 15){
+            push();
+                stroke(255);
+                translate( width * .25, height * .25);
+                rotate(this.a);
+                line(this.move_x * -1, 0, this.move_x, 0);       
+            pop();
+        }
+ 
+    }
+
+    move(){
+
+        this.move_x += this.delta_x;
     
+        if(this.move_x + this.delta_x >= 100) {
+            this.move_x *= -1;
+        }
+    }
 }
