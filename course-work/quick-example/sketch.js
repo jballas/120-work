@@ -5,22 +5,32 @@ let b = 100
 
 function setup() {
     createCanvas(400,400)
-    background( r,g,b );
 }
 
-let angle = 0;
+let loc_x = 0;
+let loc_y = 0;
+let delta_x = 10;
 
 
 function draw(){
 
-//REPEATING LINES with 
+    background( r,g,b );
+    frameRate(30);
+
+//REPEATING LINES, flashing effect.
 
 for ( a = 0; a < 50; a += 15){
     push();
         translate( width * .25, height * .25);
         rotate(a);
-        line(-50, 0, 50, 0);       
+        line(loc_x * -1, loc_y, loc_x, loc_y);       
     pop();
+}
+
+loc_x += delta_x;
+
+if(loc_x + delta_x >= 100) {
+    loc_x *= -1;
 }
 
 
