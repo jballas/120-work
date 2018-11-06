@@ -32,18 +32,19 @@ class Popcorn {
         this.seed_size_w = 15;
         this.seed_size_h = this.seed_size_w * 2;
         this.popped_size = random(10, 25) ;
-        this.x = random(width);
-        this.y = random(height);
-        this.popped_x = random(this.x - 3, this.x + 5) ;
-        this.popped_y = random(this.y, this.y + 10) ;
+        this.loc_x = random(width);
+        this.loc_y = random(height);
+        this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
+        this.popped_y = random(this.loc_y, this.loc_y + 10) ;
         
     }
 
     // I'm using frame to call these methods in the draw function above.
     frame(){
-        this.seed();
-        this.heatingUp();
-        this.explodes();
+        //this.seed();
+        //this.heatingUp();
+        //this.explodes();
+        this.poppedCorn();
     }
 
     // Display Seed
@@ -55,11 +56,11 @@ class Popcorn {
     // Display popped popcorn
     // How do I make lots of popped corn? With a for loop? parameter?
     poppedCorn(){
-        //for( this.x = 0; this.x > 10; this.x ++){
+        
 
             push();
                 fill( this.poppedCorn_color);
-                ellipse(this.x, this.y, this.popped_size + 10, this.popped_size + 15);
+                ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
                 
                 ellipse(this.popped_x - 10, this.popped_y, this.popped_size, this.popped_size);
                             
@@ -67,7 +68,8 @@ class Popcorn {
                             
                 ellipse(this.popped_x + 4, this.popped_y +3, this.popped_size, this.popped_size);
             pop();
-        //}
+        
+    
     }
 
     // Seeds need to jump around, as if it's heating up
@@ -89,8 +91,6 @@ class Popcorn {
             
                 if( this.seed_size_w >= 40){
                     background(0);
-                    this.poppedCorn();
-                
                 }
         }
     }
