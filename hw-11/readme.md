@@ -43,7 +43,7 @@ Over the last few weeks I had a typically workflow. When I start coding I first 
 
 As a result, I felt like was mimicking Dr. Musick's code a lot more. I wasn't figuring out how to make the Array; I was just changing the names of it from dudes to bucket. I was copying the `for()` loops in `setup()` and `draw()` with my variables. Then I put in an `.frame()` because that's how I would call the specific methods I was creating for my popcorn.
 
-Where was the code my own? When I tackled the math, and this I ran into a particular problem that took up all my time and was terribly frustrating. I never really came to a satisfying conclusion with my code, instead I compromised.
+Where was the code my own? I suppose it was inside the funtions. And especially when I tried to tackle the math. This I ran into a particular problem that took up all my time and was terribly frustrating. I never really came to a satisfying conclusion with my code, instead I compromised.
 
 ## Problems or Issues this week
 
