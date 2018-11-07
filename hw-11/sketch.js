@@ -36,8 +36,9 @@ class Popcorn {
         this.loc_x = random(width);
         this.loc_y = random(height);
         this.delta = 10;
-        this.popped_x = random(this.loc_x -4, this.loc_x + 4) ;
-        this.popped_y = random(this.loc_y, this.loc_y + 10 ) ;
+        this.popped_x = random(this.loc_x - 3, this.loc_x + 5) ;
+        this.popped_y = random(this.loc_y, this.loc_y + 10) ;
+
     }
 
     // I'm using frame to call these methods in the draw function above.
@@ -54,9 +55,11 @@ class Popcorn {
     }
 
     // Display popped popcorn
-    // How do I make lots of popped corn? Okay, so I figured out I need to have the location_x inside the for()loop as well as in the ellipse parameters. That works now, but it's a uniform pattern. How do I make lots of popcorn in random locations?
+    // How do I make lots of popped corn?
     poppedCornPieces(){
         
+        
+
                 push();
                     fill( this.poppedCorn_color);
                     ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
@@ -84,7 +87,7 @@ class Popcorn {
         // Eventually the seeds wiggle off the screen and appear as poppedCorn
         if( this.seed_y >= height ){
             this.poppedCornPieces();
-            this.popped();
+            this.poppedCorn();
             }
     
 
@@ -92,35 +95,29 @@ class Popcorn {
         console.log(this.seed_move);
     }
 
-    // Movement to poppedCornPieces. I might as well make them wiggle.
-    popped(){
-
+    poppedCorn(){
+        
         this.loc_x += random(-1, 1);
         this.loc_y += random(-1, 1);
+
     }
 
-
-    // A timed event, after 5 seconds the seeds expand, and "explode". 
-    //This is so disappointing, but I ended up being unable to use the timed explosion. Because after the explosion, instead of having random pices of popcorn I would have a pattern of popped corn, uniform across the sketch.
-    /*
-   
-    
+    //TODO: I need to make an explosion method, lines flashing outward from a center point, or something like that.
+    // A timed event, after 5 seconds the seeds expand, and "explode". How do I get that?
     explodes(){
         if( millis() >= 8000 ){
             this.seed_size_w ++ && this.seed_size_h ++;
             
                 if( this.seed_size_w >= 50){
                     background(bg_color);
-
-                    for( this.loc_x = this.popped_x; this.loc_x <= width; this.loc_x += 50 ) {
-                        for ( this.loc_y = this.popped_y; this.loc_y <= height; this.loc_y += 50 ){
-                            this.poppedCornPieces( );
-                            this.popped();
+                    for( this.loc_x = 0; this.loc_x <= 200; this.loc_x += 50 ) {
+                        for ( this.loc_y = 0; this.loc_y <= 200; this.loc_y += 50 ){
+                            this.poppedCorn();
                         }
                     }
                 }
         }
     }
-    */
 
+    
 }
