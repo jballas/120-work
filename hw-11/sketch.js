@@ -36,7 +36,7 @@ class Popcorn {
         this.loc_x = random(width);
         this.loc_y = random(height);
         this.delta = 10;
-        this.popped_x = random(this.loc_x -10, this.loc_x + 4) ;
+        this.popped_x = random(this.loc_x -4, this.loc_x + 4) ;
         this.popped_y = random(this.loc_y, this.loc_y + 10 ) ;
     }
 
@@ -61,11 +61,11 @@ class Popcorn {
                     fill( this.poppedCorn_color);
                     ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
                     
-                    ellipse(this.loc_x - 10, this.loc_y, this.popped_size, this.popped_size);
+                    ellipse(this.loc_x + this.popped_x, this.loc_y, this.popped_size, this.popped_size);
                                 
-                    ellipse(this.loc_x - 2, this.loc_y, this.popped_size, this.popped_size);
+                    ellipse(this.loc_x, this.loc_y, this.popped_size, this.popped_size);
                                 
-                    ellipse(this.loc_x + 4, this.loc_y + 3, this.popped_size, this.popped_size);
+                    ellipse(this.loc_x, this.loc_y, this.popped_size, this.popped_size);
                 pop();
 
               
