@@ -103,4 +103,4 @@ I also don't understand how branches work. I think it would have been helpful th
 
 ## Conclusion
 
-I found OOP useful, because most of my projects are about a certain object and making it do things, but I miss experimenting moments of pure delight when the code does something unexpected. Maybe I need to go back to algorithmic artwork, instead of trying to make simple animations like 'popcorn'.
+I found OOP useful, because most of my projects are about a certain object and making it do things, but I miss experimenting, and those moments of pure delight when the code does something unexpected. Maybe I need to go back to algorithmic artwork, instead of trying to make simple animations like 'popcorn'.
