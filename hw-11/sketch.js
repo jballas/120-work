@@ -3,20 +3,21 @@ let kernals = 20;
 let bg_color = 0;
 
 function setup(){
-    createCanvas(windowWidth, 400);
+    
+    createCanvas( windowWidth, 400 );
 
-    for ( let i = 0; i < kernals; i++) {
+    for ( let i = 0; i < kernals; i++ ) {
         bucket.push( new Popcorn() );
     }
 }
 
 function draw() {
 
-    background(bg_color);
-    frameRate(30);
+    background( bg_color );
+    frameRate( 30 );
 
     //This should call new popcorn from the popcorn Class, using the bucket Array I put the set-up function. 
-    for( i = 0; i < bucket.length; i ++){
+    for( i = 0; i < bucket.length; i ++ ){
         bucket[i].frame(); 
     }
 }
@@ -25,48 +26,54 @@ function draw() {
 class Popcorn {
 
     constructor() {
+
         this.seed_color = 'rgb( 255, 150, 20)';
         this.poppedCorn_color = 255;
         this.seed_move = ceil( random(-5,2) );
-        this.seed_x = random(width);
-        this.seed_y = random(height);
+        this.seed_x = random( width );
+        this.seed_y = random( height );
         this.seed_size_w = 15;
         this.seed_size_h = this.seed_size_w * 2;
-        this.popped_size = random(10, 25);
-        this.loc_x = random(width);
-        this.loc_y = random(height);
+        this.popped_size = random( 10, 25 );
+        this.loc_x = random( width );
+        this.loc_y = random( height );
         this.delta = 10;
-        this.popped_x = random(-2, 5) ;
-        this.popped_y = random(5, 15) ;
+        this.popped_x = random( -2, 5 ) ;
+        this.popped_y = random( 5, 15 ) ;
     }
 
     // I'm using frame to call these methods in the draw function above.
     frame(){
+
         this.seed();
         this.heatingUp();
-        //this.explodes();
+
     }
 
     // Display Seed
     seed(){
-            fill(this.seed_color);
+
+            fill( this.seed_color );
             ellipse( this.seed_x, this.seed_y, this.seed_size_w, this.seed_size_h )   
+
     }
 
     // Display popped popcorn
-    // How do I make lots of popped corn? Okay, so I figured out I need to have the location_x inside the for()loop as well as in the ellipse parameters. That works now, but its a uniform pattern. how do I make lots of popcorn in random locations?
+    // How do I make lots of popped corn? 
+    //Okay, so I figured out I need to have the location_x inside the for()loop as well as in the ellipse parameters. That works now, but its a uniform pattern. 
+    //How do I make lots of popcorn in random locations? (I never figured this out.)
     poppedCornPieces(){
         
-                push();
-                    fill( this.poppedCorn_color);
-                    ellipse(this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15);
+        push();
+            fill( this.poppedCorn_color );
+            ellipse( this.loc_x, this.loc_y, this.popped_size + 10, this.popped_size + 15 );
                     
-                    ellipse(this.loc_x + this.popped_x - 4, this.loc_y + this.popped_y, this.popped_size, this.popped_size);
+            ellipse( this.loc_x + this.popped_x - 4, this.loc_y + this.popped_y, this.popped_size, this.popped_size );
                                 
-                    ellipse(this.loc_x + this.popped_x +5, this.loc_y + this.popped_y, this.popped_size, this.popped_size);
+            ellipse( this.loc_x + this.popped_x +5, this.loc_y + this.popped_y, this.popped_size, this.popped_size );
                                 
-                    ellipse(this.loc_x + this.popped_x -5, this.loc_y + this.popped_y, this.popped_size, this.popped_size);
-                pop();
+            ellipse( this.loc_x + this.popped_x -5, this.loc_y + this.popped_y, this.popped_size, this.popped_size );
+        pop();
     
     }
 
@@ -74,47 +81,28 @@ class Popcorn {
     heatingUp(){
 
         if ( this.seed_move <= 2 ) {
-           this.seed_y += random(-2, 3);
+           this.seed_y += random( -2, 3 );
         } 
 
-        // Eventually the seeds wiggle off the screen and appear as poppedCorn
+        // Eventually the seeds wiggle off the screen and appear as poppedCorn.
+        // Having them appear one at a time means they Pop into existance in a random pattern. This is what I want to happen.
         if( this.seed_y >= height ){
-               this.poppedCornPieces();
-              this.poppedCorn();
+            this.poppedCornPieces();
+            this.poppedCorn();
         }
     
 
-        // checking the randomness of this.seed_move
+        // I'm checking the randomness of this.seed_move
         console.log(this.seed_move);
+
     }
 
-    //This method makes the poppedCorn pieces wiggles now.
+    //This method makes the poppedCorn pieces wiggle.
     poppedCorn(){
         
-        this.loc_x += random(-1, 1);
-        this.loc_y += random(-1, 1);
+        this.loc_x += random( -1, 1 );
+        this.loc_y += random( -1, 1 );
 
     }
 
-    
-    // A timed event, after 5 seconds the seeds expand, and "explode". 
-    //This is so disappointing, but I ended up being unable to use the timed explosion. Because after the explosion, instead of having random pices of popcorn I would have a pattern of popped corn, uniform across the sketch.
-      /*
-    explodes(){
-        if( millis() >= 5000 ){
-            this.seed_size_w ++ && this.seed_size_h ++;
-            
-                if( this.seed_size_w >= 50){
-                    background(bg_color);
-                    for( this.loc_x = 0; this.loc_x <= width; this.loc_x += 50 ) {
-                        for ( this.loc_y = 0; this.loc_y <= height; this.loc_y += 50 ){
-                            this.poppedCornPieces();
-                            this.poppedCorn();
-                        }
-                    }
-                }
-        }
-    }
-    
-    */    
 }
