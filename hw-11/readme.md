@@ -54,10 +54,12 @@ I discovered two options for my popcorn: the popcorn could expand and explode, o
 Here's a screenshot of the Exploding Popcorn pattern.
 ![Exploded popcorn in a pattern](popcorn_pattern.PNG)
 
-Here is the code:
+Here is the code I couldn't use:
 ```JS
     // I created a timed event, after 5 seconds the seeds expand, and "explode".
-    //This is so disappointing, but I ended up being unable to use the timed explosion. Because after the explosion, instead of having random pieces of popcorn I would have a pattern of popped corn, uniform across the sketch.
+    //This is so disappointing, but I ended up being unable to use the timed explosion. 
+    //Because after the explosion, instead of having random pieces of popcorn 
+    //I would have a pattern of popped corn, uniform across the sketch.
     
     explodes(){
         if( millis() >= 5000 ){
@@ -75,17 +77,18 @@ Here is the code:
         }
     }
 ```
-Since the exploding method didn't work like I wanted, I discovered I could put an `if` statement in my `heatingUp()` method.
+Since the exploding method didn't work like I wanted, I discovered another way. I could put an `if` statement in my `heatingUp()` method.
 
-Here is a screenshot of how the poppedCornPieces appear randomly on screen after the seeds disappear offscreen.
+Here is a screenshot of how the poppedCornPieces appears randomly on screen after the seeds disappear offscreen.
 
 ![random popped corn](popped_corn_pieces.PNG)
 
-Here is the code:
+Here is the code I used:
 
 ```JS
         // Eventually the seeds wiggle off the screen and appear as poppedCorn.
-        // Having them appear one at a time means they Pop into existence in a random pattern. This is what I want to happen.
+        // Having them appear one at a time means they Pop into existence in a random pattern. 
+        //This is what I want to happen.
         if( this.seed_y >= height ){
             this.poppedCornPieces();
             this.poppedCorn();
