@@ -39,7 +39,7 @@ Methods
 
 ### Embracing the Class
 
-Over the last few weeks I had a typically workflow. When I start coding I first create the simple shapes and movement. I want to make sure I'm going to get them to display and to do what I wanted. Then I would add in variables, then recently I converted these into functions. This week I started off the same, but I  realized I was making more work for myself. Instead, I dived straight into the Class and attributes.
+Over the last few weeks I had a typically workflow. When I start coding I first create the simple shapes and movement I want, to make sure I'm going to get them to display and to do what I want. Then I would add in variables, then recently I converted these into functions. This week I started off the same, but I  realized I was making more work for myself. Instead, I dived straight into the Class and attributes.
 
 As a result, I felt like was mimicking Dr. Musick's code a lot more. I wasn't figuring out how to make the Array; I was just changing the names of it from dudes to bucket. I was copying the `for()` loops in `setup()` and `draw()` with my variables. Then I put in an `.frame()` because that's how I would call the specific methods I was creating for my popcorn.
 
