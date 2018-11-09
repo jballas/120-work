@@ -63,8 +63,8 @@ class Butterfly {
 
        //this.flip *= -1;
         
-        this.wingTip_x += this.delta;
-        if (this.wingTip_x == 100){
+        this.wingTip_x -= this.delta;
+        if (this.wingTip_x == 0){
             this.wingTip_x = 50;
 
         }
