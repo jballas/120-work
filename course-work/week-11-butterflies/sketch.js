@@ -60,10 +60,13 @@ class Butterfly {
     //Move wings, flapping
     move() {
 
-        this.flip *= -1;
+       //this.flip *= -1;
         
-        //this.wingTip += this.delta;
-        //this.wingTip % 50;
+        this.wingTip += this.delta;
+        if (this.wingTip == 100){
+            this.wingTip = 50;
+
+        }
 
     }
     
