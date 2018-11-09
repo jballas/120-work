@@ -25,7 +25,8 @@ class Butterfly {
     constructor(){
         this.top_x = 5;
         this.top_y = 50;
-        this.wingTip = 50;
+        this.wingTip_x = 50;
+        this.wingTip_y = 50;
         this.bottom_x = 5;
         this.bottom_y = 100;
         this.flip = 1;
@@ -43,7 +44,7 @@ class Butterfly {
     display() {
         translate(width * .25, height * .25);
 
-        triangle(this.top_x, this.top_y, this.wingTip, this.wingTip, this.bottom_x, this.bottom_y);
+        triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
 
         push();
 
@@ -51,7 +52,7 @@ class Butterfly {
             
             stroke(255);
             noFill();
-            triangle(this.top_x, this.top_y, this.wingTip, this.wingTip, this.bottom_x, this.bottom_y);
+            triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
         
         pop();
     }
@@ -62,9 +63,9 @@ class Butterfly {
 
        //this.flip *= -1;
         
-        this.wingTip += this.delta;
-        if (this.wingTip == 100){
-            this.wingTip = 50;
+        this.wingTip_x += this.delta;
+        if (this.wingTip_x == 100){
+            this.wingTip_x = 50;
 
         }
 
