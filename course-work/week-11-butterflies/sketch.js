@@ -25,7 +25,7 @@ class Butterfly {
     constructor(){
         this.top_x = 5;
         this.top_y = 50;
-        this.wingTip_x = 50;
+        this.wingTip_x = 0;
         this.wingTip_y = 50;
         this.bottom_x = 5;
         this.bottom_y = 100;
@@ -63,9 +63,9 @@ class Butterfly {
 
        //this.flip *= -1;
         
-        this.wingTip_x -= this.delta;
-        if (this.wingTip_x == 0){
-            this.wingTip_x = 50;
+        this.wingTip_x += this.delta;
+        if (this.wingTip_x == 50){
+            this.wingTip_x = 0;
 
         }
 
