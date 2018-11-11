@@ -2,7 +2,7 @@
 // This is an experiment in flapping wings
 
 let swarm = [];
-let how_many_bugs = 5;
+let how_many_bugs = 15;
 
 function setup() {
 
@@ -52,14 +52,16 @@ class Butterfly {
 
     //Display butterfly
     display() {
+        push()
+        
         translate(this.move_x, this.move_y);
-
+        
         // Right wing
     
-        //triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
+        triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
 
         // Left wing
-        /*push();
+        push();
 
             scale( -this.flip , this.flip );
             stroke(255);
@@ -67,11 +69,12 @@ class Butterfly {
             triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
         
         pop();
-        */
+        
         // Body
         
         ellipse( this.top_x - 5 , this.top_y + 20, 10, 50);
-    
+
+        pop();
     }
 
     
