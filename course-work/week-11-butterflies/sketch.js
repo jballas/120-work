@@ -15,6 +15,7 @@ function draw() {
 
     butterfly.display();
     butterfly.move();
+    butterfly.edgeCheck();
     
 }
 
@@ -30,12 +31,12 @@ class Butterfly {
         this.bottom_x = 5;
         this.bottom_y = 100;
         this.delta_x = 10;
-        this.delta_y = 10
+        this.delta_y = 10;
         this.move_x = width * .25;
         this.move_y = height * .25;
 
         this.flip = 1;
-
+        this.flap = 10;
         this.r = 3.0;
     }
 
@@ -67,7 +68,6 @@ class Butterfly {
         vertex(this.r, this.r*2);
         endShape(CLOSE);
     
-        console.log(this.move_x) ;
     }
 
     
@@ -78,22 +78,25 @@ class Butterfly {
         this.move_x += this.delta_x;
         this.move_y += this.delta_y;
 
+
         //this.r = 
        
-        this.wingTip_x += this.delta_x;
+        this.wingTip_x += this.flap;
         if (this.wingTip_x == 50){
             this.wingTip_x = 0;
         }
+
+        console.log( this.move_x);
 
     }
     
 
     edgeCheck(){
 
-        if (this.move_x <= width ){
+        if (this.move_x >= width | this.move_x <= 0 ){
             this.delta_x *= -1;
         }
-        if(this.move_y >= height) {
+        if(this.move_y >= height || this.move_y <= 0 ) {
             this.delta_y *= -1;
         }
         
