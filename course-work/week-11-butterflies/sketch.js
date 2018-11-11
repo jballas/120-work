@@ -6,7 +6,7 @@ let how_many_bugs = 15;
 
 function setup() {
 
-    createCanvas(400, 400);
+    createCanvas(windowWidth, 600);
     
     for ( let i = 0; i < how_many_bugs; i ++) {
         swarm.push( new Butterfly() );
@@ -35,13 +35,15 @@ class Butterfly {
         this.wingTip_y = 25;
         this.bottom_x = 5;
         this.bottom_y = 100;
-        this.delta_x = 10;//random(-2, 2);
-        this.delta_y = 10;//random(-2, 2);
+        this.delta_x = random(-10, 10);
+        this.delta_y = random(-10, 10);
         this.move_x = random(width);
         this.move_y = random(height);
 
         this.flip = 1;
         this.flap = 10;
+
+        this.diameter = 50;
     }
 
     frame(){
@@ -72,7 +74,7 @@ class Butterfly {
         
         // Body
         
-        ellipse( this.top_x - 5 , this.top_y + 20, 10, 50);
+        ellipse( this.top_x - 5 , this.top_y + 20, 10, this.diameter);
 
         pop();
     }
