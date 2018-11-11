@@ -1,21 +1,26 @@
+// Butterflies
+// This is an experiment in flapping wings
+
+let swarm = [];
+let how_many_bugs = 5;
+
 function setup() {
 
     createCanvas(400, 400);
-// This is an experiment in flapping wings
-butterfly = new Butterfly();
-
+    
+    for ( let i = 0; i < how_many_bugs; i ++) {
+        swarm.push( new Butterfly() );
+    }
 }
 
-//let swarm = [];
-//let how_many = 10;
 
 function draw() {
     background(0);
     frameRate(8);
 
-    butterfly.display();
-    butterfly.move();
-    butterfly.edgeCheck();
+    for ( let i = 0; i < swarm.length; i ++){
+        swarm[i].frame();
+    }
     
 }
 
@@ -30,8 +35,8 @@ class Butterfly {
         this.wingTip_y = 25;
         this.bottom_x = 5;
         this.bottom_y = 100;
-        this.delta_x = 10;
-        this.delta_y = 10;
+        this.delta_x = 10;//random(-2, 2);
+        this.delta_y = 10;//random(-2, 2);
         this.move_x = random(width);
         this.move_y = random(height);
 
@@ -50,10 +55,11 @@ class Butterfly {
         translate(this.move_x, this.move_y);
 
         // Right wing
-        triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
+    
+        //triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
 
         // Left wing
-        push();
+        /*push();
 
             scale( -this.flip , this.flip );
             stroke(255);
@@ -61,8 +67,9 @@ class Butterfly {
             triangle(this.top_x, this.top_y, this.wingTip_x, this.wingTip_y, this.bottom_x, this.bottom_y);
         
         pop();
-
+        */
         // Body
+        
         ellipse( this.top_x - 5 , this.top_y + 20, 10, 50);
     
     }
@@ -89,7 +96,7 @@ class Butterfly {
 
     edgeCheck(){
 
-        if (this.move_x >= width | this.move_x <= 0 ){
+        if (this.move_x >= width || this.move_x <= 0 ){
             this.delta_x *= -1;
         }
         if(this.move_y >= height || this.move_y <= -100 ) {
@@ -100,6 +107,5 @@ class Butterfly {
 
 
     
-
 }
 
