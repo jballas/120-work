@@ -7,7 +7,7 @@ function setup(){
     background(0);  
 
     for (let i = 0; i < 10; i ++ ){
-        wiggle.push ( ceil( random(40, 50)) )
+        wiggle.push ( ceil( random(40, 55)) )
     }
 
     console.log(wiggle);
@@ -27,6 +27,8 @@ function draw(){
     //}
 
     for( i = 0; i < wiggle.length; i ++){
-        ellipse(i* 50, wiggle[i],  50);
+        ellipse(i* 50, wiggle[i], 50);
     }
+
+
 }
