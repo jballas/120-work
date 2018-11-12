@@ -1,44 +1,27 @@
 
+let wiggle = [];
+let xPos = 0;
 function setup(){
     createCanvas( windowWidth, 600);
  
-    spinner = new Spinner();
-    
+    background(0);  
+
 }
 
 
 function draw(){
-    frameRate(2);
+    frameRate(20);
 
-    background(0);  
     translate( width/4, height/4);
 
-    let spring = ceil( random(40, 50) );
-    let size = ceil( random(50,120) );
+    wiggle.push ( ceil( random(40, 50)) );
 
-    
-    spinner.display( spring, 50, size);
-
-
-
-    console.log(spring);
-
-}
-
-class Spinner {
-
-    constructor(){
-        this.jump = 500;
-        
+    for (let i = 0; i < wiggle.length; i +=10 ){
+        ellipse(xPos, wiggle[i], 50);
     }
 
+    xPos = (xPos + 10) % windowHeight;
 
-    display(x,y, size) {
-
-        stroke(255);
-        noFill(); 
-        ellipse(x,y, size );
-    
-    }
+    console.log(wiggle);
 
 }
