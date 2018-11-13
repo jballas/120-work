@@ -1,7 +1,8 @@
 let bugs = [];
-let how_many_bugs = 3;
+let how_many_bugs = 10;
 
 
+// Setup a for() Loop and Array.
 function setup(){
     createCanvas( windowWidth, 600);
 
@@ -11,12 +12,12 @@ function setup(){
 
 }
 
-
+// Draw a for()loop that takes the data from the array and draws it according to the frame methods I wrote in my caterpillar class.
 function draw(){
     frameRate(20);
 
     background(0);
-    //translate( width * .25, height* .25);
+
     for(let i = 0; i < bugs.length; i ++){
         bugs[i].frame(bugs, i);
     }

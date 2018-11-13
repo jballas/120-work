@@ -1,10 +1,10 @@
-// I was attempting to make caterpillars, but it looks nothing like that. It's more like a 3D cylinder, or a waterfall. Anyway, I'm leaving the name. 
+// I was attempting to make caterpillars, but it looks nothing like that anymore. It's more like ripples, or concentric circles. Anyway, I'm leaving the name.
 class Caterpillar {
 
     constructor(){
         this.x_location = 50;
         this.y_location = ceil( random(40, 55) );
-        this.size = 50;
+        this.size = 20;
         this.diameter = this.size * 0.5;
         this.delta_x = 10;
         this.delta_y = random(10);
@@ -18,7 +18,7 @@ class Caterpillar {
         this.touching(objArr, myIdx);
     }
     
-    // Display the screen.
+    // Display the circles
     display() {
 
         push();
@@ -28,6 +28,7 @@ class Caterpillar {
                 stroke(255);
                 ellipse(this.x_location + i, this.y_location + i, this.size);
             }
+            // First I made one single circle, then I looped it. But I don't understand why only the first circle is effected by my bouncing and the touching.
             //ellipse(this.x_location, this.y_location, this.size);
         pop();
 
@@ -59,21 +60,26 @@ class Caterpillar {
 
     // New goal. Make things interact, somehow.
 
-    // if the circles are touching, they bounce.
+    // If the circles are touching, they grow to a certain size. 
+    // Code adapted from Dr. Musick's 'Bouncing Happy Face' 
+    // montana-media-arts.github.io/creative-coding-1/modules/week-12/more-examples/
     touching(objArr, myIdx) {
-            for (var i = 0; i < objArr.length; i++) {
-                if (myIdx !== i) {
-                    var obj = objArr[i];
-                    var objDist = dist(this.x_location, this.y_location, obj.x_location, obj.y_location);
-                    var maxDist = this.diameter + obj.diameter;
-                    if (objDist <= maxDist) {
-                        
-                        this.delta_x *= -1;
-                        this.delta_y *= -1;
-                        }
-                        
+        for (var i = 0; i < objArr.length; i++) {
+            if (myIdx !== i) {
+                var obj = objArr[i];
+                var objDist = dist(this.x_location, this.y_location, obj.x_location, obj.y_location);
+                var maxDist = this.diameter + obj.diameter;
+                if (objDist <= maxDist) {
+                    this.size += 2;
+
+                    if (this.size > height || this.size > width){
+                        this.size = 10;
                     }
+                    
                 }
+                    
+            }
+        }
     }
 
 
