@@ -1,5 +1,5 @@
 let bugs = [];
-let how_many_bugs = 30;
+let how_many_bugs = 3;
 
 
 function setup(){
@@ -18,7 +18,7 @@ function draw(){
     background(0);
     //translate( width * .25, height* .25);
     for(let i = 0; i < bugs.length; i ++){
-        bugs[i].frame();
+        bugs[i].frame(bugs, i);
     }
 
 }

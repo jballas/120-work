@@ -5,16 +5,17 @@ class Caterpillar {
         this.x_location = 50;
         this.y_location = ceil( random(40, 55) );
         this.size = 50;
-        this.diamter = this.size/2;
+        this.diameter = this.size * 0.5;
         this.delta_x = 10;
         this.delta_y = random(10);
     }
 
 
-    frame() {
+    frame(objArr, myIdx) {
         this.display();
         this.move();
         this.bounce();
+        this.touching(objArr, myIdx);
     }
     
     // Display the screen.
@@ -43,12 +44,14 @@ class Caterpillar {
 
     }
 
+    // This makes the circles bounce left to right and up and down
     bounce(){
-
+        // left to right movement
         if (this.x_location >= width || this.x_location <= 0){
             this.delta_x *= -1;
         }
 
+        // up and down movement
         if (this.y_location >= height -100 || this.y_location <= 0){
             this.delta_y *= -1;
         }
@@ -56,11 +59,22 @@ class Caterpillar {
 
     // New goal. Make things interact, somehow.
 
-    //interact(){
-
-        //if (this.diameter)
-
-    //}
+    // if the circles are touching, they bounce.
+    touching(objArr, myIdx) {
+            for (var i = 0; i < objArr.length; i++) {
+                if (myIdx !== i) {
+                    var obj = objArr[i];
+                    var objDist = dist(this.x_location, this.y_location, obj.x_location, obj.y_location);
+                    var maxDist = this.diameter + obj.diameter;
+                    if (objDist <= maxDist) {
+                        
+                        this.delta_x *= -1;
+                        this.delta_y *= -1;
+                        }
+                        
+                    }
+                }
+    }
 
 
 }
