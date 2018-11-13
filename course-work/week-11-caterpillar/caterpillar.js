@@ -18,17 +18,14 @@ class Caterpillar {
 
         push();
             
-            //for( let i = 0; i <= 350; i +=50 ){
+            for( let i = 0; i <= 350; i +=50 ){
                 noFill();
                 stroke(255);
-                //this.x_location = i;
-                    ellipse(this.x_location, this.y_location, this.size);
-            //}
+                ellipse(this.x_location + i, this.y_location + i, this.size);
+            }
             //ellipse(this.x_location, this.y_location, this.size);
         pop();
 
-    
-        
     }
 
     move() {
@@ -41,16 +38,12 @@ class Caterpillar {
 
       this.y_location += this.delta_y;
 
-        if (this.y_location >= height || this.y_location <= 0){
+        if (this.y_location >= height -100 || this.y_location <= 0){
             this.delta_y *= -1;
         }
 
     }
 
 
-    pattern(){
-
-     diameter   
-    }
 
 }
