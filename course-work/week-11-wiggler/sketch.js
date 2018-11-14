@@ -31,10 +31,10 @@ function draw(){
     for( i = 0; i < wiggle.length; i ++){
         ellipse(i* 50 + xPos, wiggle[i] + yPos, 50);
         xPos ++;
-        yPos += random(-1, 1);
+        yPos = random(-2, 2) ;
     }
 
-    console.log(wiggle);
+    console.log(yPos);
 
    
 }
