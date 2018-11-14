@@ -2,9 +2,10 @@ let wiggle = [];
 let xPos = 1;
 let yPos = 1;
 let deltaX = .01;
+row = 0;
 
 function setup(){
-    createCanvas( windowWidth, 600);
+    createCanvas( 600, 600);
 
  
 
@@ -29,12 +30,18 @@ function draw(){
     //}
 
     for( i = 0; i < wiggle.length; i ++){
-        ellipse(i* 50 + xPos, wiggle[i] + yPos, 50);
+        ellipse(i* 50 + xPos, wiggle[i] + yPos + row, 50);
         xPos ++;
         yPos = random(-2, 2) ;
+
+
+        if (xPos >= width){
+            xPos = 0;yPos + 10;
+        }
     }
 
-    console.log(yPos);
+    //console.log(yPos);
+    console.log(xPos);
 
    
 }
