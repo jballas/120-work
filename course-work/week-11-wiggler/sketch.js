@@ -71,10 +71,10 @@ class Wiggler {
     nextAppears(){
         if (this.xPos >= width){
             this.xPos = -500;
-           //this.random_y = ceil( random(height));
+           this.random_y = ceil( random(height));
         }
 
-        //console.log(this.random_y);
+        console.log(this.random_y);
     }
 
 }
