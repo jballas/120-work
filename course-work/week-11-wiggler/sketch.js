@@ -1,53 +1,74 @@
-let wiggle = [];
-let xPos = 1;
-let yPos = 1;
-
-let ran_x = 0;
-let ran_y = 0;
+let net = [];
+let wiggler = [];
 
 function setup(){
     createCanvas( 600, 600);
 
- 
-
     for (let i = 0; i < 10; i ++ ){
-        wiggle.push ( ceil( random(40, 50)) )
+        net.push ( ceil( random(40, 50)) )
+        wiggler.push(new Wiggler());
+
     }
 
-    console.log(wiggle);
+    console.log(net);
 }
-
 
 function draw(){
     frameRate(30);
     background(0); 
 
-    for( i = 0; i < wiggle.length; i ++){
+    for( i = 0; i < net.length; i ++){
 
-        //wiggler body
-        push();
-            translate( ran_x, ran_y);
-
-            fill('rgba(0, 255, 20, .40)' );
-            ellipse(i* 50 + xPos, wiggle[i] + yPos, 50);
-
-        pop();
-
-        //sideways and vertical movement
-        xPos ++;
-        yPos = random(-2, 2) ;
+        wiggler[i].frame(net[i]);
+       // let wiggler = new Wiggler();
+    }
+  
+}
 
 
-        // Next wiggler appears
-        if (xPos >= width){
-            xPos = -500;
-            ran_y = ceil( random(height));
-        }
+class Wiggler {
+
+    constructor(){
+
+        this.xPos = 1;
+        this.yPos = 1;
+        this.bodyColor ='rgba(0, 255, 20, .40)';
+        this.random_x = 0;
+        this.random_y = 0;
 
     }
 
-    //console.log(yPos);
-    //console.log(xPos);
+    frame(index){
+        this.displayBody(index);
+        this.move();
+        this.nextAppears();
 
-   
+    }
+
+    //wiggler body
+    displayBody(index){
+        push();
+            translate( this.random_x, this.random_y);
+
+            fill(this.bodyColor );
+            ellipse(i* 50 + this.xPos, index + this.yPos, 50);
+
+        pop();
+    }
+
+    //sideways and vertical movement
+    move(){
+        this.xPos ++;
+        this.yPos = random(-2, 2) ;
+    }
+
+
+    // Next wiggler appears
+    nextAppears(){
+        if (this.xPos >= width){
+            this.xPos = -500;
+            //this.random_y = ceil( random(height));
+        }
+    }
+
 }
