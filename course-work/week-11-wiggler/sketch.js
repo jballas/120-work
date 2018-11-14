@@ -5,9 +5,9 @@ function setup(){
     createCanvas( 600, 600);
 
    
-        net.push( ceil( random(40, 50)) )
+
     for (let i = 0; i < 10; i ++ ){
-    
+            net.push( ceil( random(40, 50)) )
         wiggler.push(new Wiggler());
     }
 
