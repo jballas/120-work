@@ -24,6 +24,7 @@ function draw(){
 
     for( i = 0; i < wiggle.length; i ++){
 
+        //wiggler body
         push();
             translate( ran_x, ran_y);
 
