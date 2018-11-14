@@ -1,6 +1,7 @@
 let wiggle = [];
-let xPos;
-let yPos;
+let xPos = 1;
+let yPos = 1;
+let deltaX = .01;
 
 function setup(){
     createCanvas( windowWidth, 600);
@@ -16,29 +17,24 @@ function setup(){
 
 
 function draw(){
-    frameRate(2);
+    frameRate(10);
     background(0); 
 
     
     //translate( width/4, height/4);
-    //let spring = ceil( random(40, 50) );
-    
-    xPos = 1;
-    yPos = random( -10, 10);
+
 
     // for( let i = 0; i <= 350; i +=50 ){
     //    ellipse(i, xPos, 50);
     //}
 
     for( i = 0; i < wiggle.length; i ++){
-        ellipse(i* 50 + xPos, wiggle[i], 50);
-        xPos += random( -10, 10);
+        ellipse(i* 50 + xPos, wiggle[i] + yPos, 50);
+        xPos ++;
+        yPos += random(-1, 1);
     }
 
     console.log(wiggle);
 
    
-    yPos ++;
-    //yPos += random( -1, 1);
-
 }
