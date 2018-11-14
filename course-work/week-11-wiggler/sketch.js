@@ -5,8 +5,8 @@ function setup(){
     createCanvas( 600, 600);
 
    
-    for (let i = 0; i < 10; i ++ ){
         net.push( ceil( random(40, 50)) )
+    for (let i = 0; i < 10; i ++ ){
     
         wiggler.push(new Wiggler());
     }
@@ -71,7 +71,7 @@ class Wiggler {
     nextAppears(){
         if (this.xPos >= width){
             this.xPos = -500;
-           this.random_y = ceil( random(height));
+           //this.random_y = ceil( random(height));
         }
 
         console.log(this.random_y);
