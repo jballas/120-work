@@ -1,8 +1,9 @@
 let wiggle = [];
 let xPos = 1;
 let yPos = 1;
-let deltaX = .01;
-row = 0;
+
+let ran_x = 0;
+let ran_y = 0;
 
 function setup(){
     createCanvas( 600, 600);
@@ -18,30 +19,34 @@ function setup(){
 
 
 function draw(){
-    frameRate(10);
+    frameRate(30);
     background(0); 
 
-    
-    //translate( width/4, height/4);
-
-
-    // for( let i = 0; i <= 350; i +=50 ){
-    //    ellipse(i, xPos, 50);
-    //}
-
     for( i = 0; i < wiggle.length; i ++){
-        ellipse(i* 50 + xPos, wiggle[i] + yPos + row, 50);
+
+        push();
+            translate( ran_x, ran_y);
+
+            fill('rgba(0, 255, 20, .40)' );
+            ellipse(i* 50 + xPos, wiggle[i] + yPos, 50);
+
+        pop();
+
+        //sideways and vertical movement
         xPos ++;
         yPos = random(-2, 2) ;
 
 
+        // Next wiggler appears
         if (xPos >= width){
-            xPos = 0;yPos + 10;
+            xPos = -500;
+            ran_y = ceil( random(height));
         }
+
     }
 
     //console.log(yPos);
-    console.log(xPos);
+    //console.log(xPos);
 
    
 }
