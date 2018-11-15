@@ -10,7 +10,8 @@ function setup() {
 // Nice, I changed the initial location of X and Y from 0 to 10 and it make a scattered, dropping.
 // removing the Move function and making location of X to 1000 gets me a long scattered lines
 let loc_x = 25;
-let loc_y = 0;
+
+// When I changed y to 10, they became actual star shapes!!! let loc_y = 10;
 let delta_x = 10;
 
 
