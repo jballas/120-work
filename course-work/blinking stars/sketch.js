@@ -7,7 +7,9 @@ function setup() {
     createCanvas(400,400)
 }
 
-let loc_x = 0;
+// Nice, I changed the initial location of X and Y from 0 to 10 and it make a scattered, dropping.
+// removing the Move function and making location of X to 1000 gets me a long scattered lines
+let loc_x = 25;
 let loc_y = 0;
 let delta_x = 10;
 
@@ -56,7 +58,7 @@ for(x = 0; x < width; x += 50){
 
 function star(x, y){
 
-    for ( a = 0; a < 50; a += random(5, 15)){
+    for ( a = 0; a < 50; a += 5){
         push();
             translate(x, y );
             rotate(a);
@@ -68,9 +70,10 @@ function star(x, y){
 
 function move(){
 
-    loc_x += delta_x;
+    //I change from + to minus and not it bounces. It's very much like twinking stars.
+    loc_x -= delta_x;
 
-    if(loc_x + delta_x >= 100) {
+    if(loc_x + delta_x >= 0 || loc_x + delta_x <= 100) {
         loc_x *= -1;
     }
 }
