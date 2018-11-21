@@ -18,14 +18,24 @@ function draw() {
     player.move();
     player.inBounds();
 
-    
+    reachedGoal();   
+}
+
+function reachedGoal(){
+
+    let d = dist( goal.x, goal.y, player.player_x, player.player_y)
+    if (d < player.size + goal.size){
+        stroke(255)
+        text('You win', goal.x, goal.y);
+        noLoop();
+    }
 }
 
 
 class Goal {
 
     constructor(){
-        this.size = width * .25;
+        this.size = width * .02;
         this.x = width * .5;
         this.y = height * .5;
     }
@@ -36,3 +46,4 @@ class Goal {
     }
     
 }
+
