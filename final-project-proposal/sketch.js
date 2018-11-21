@@ -1,6 +1,5 @@
-let player_x = 50;
-let player_y = 50;
-let size = 50;
+let player_init_x = 50;
+let player_init_y = 50;
 
 function setup() {
   createCanvas(400, 400);
@@ -9,44 +8,58 @@ function setup() {
 function draw() {
   background(0);
 	
-	ellipse(player_x, player_y, size);
-	
-    move();
-    inBounds();
-	//player_x ++;
+    let player = new Player(player_init_x, player_init_y);
+    
+    player.display();
+    player.move();
+    player.inBounds();
 }
 
-function move(){
-    if (keyIsDown (LEFT_ARROW) ) {
 
-          player_x -=5;
+class Player {
 
-      } if (keyIsDown(RIGHT_ARROW) ) {
+    constructor(x,y){
 
-          player_x += 5;
-
-      } if (keyIsDown (UP_ARROW) ) {
-
-          player_y -=5;
-
-      } if (keyIsDown (DOWN_ARROW) ) {
-
-          player_y +=5;
-
+        this.player_x = x;
+        this.player_y = y;
+        this.size = 50;
     }
-  }
 
-function inBounds(){
-    if (player_x <= 0) {
-        player_x = 0;
+
+
+
+    display(){
+
+        ellipse(this.player_x, this.player_y, this.size);
     }
-    if (player_y <= 0) {
-        player_y = 0;
+
+    move(){
+        if (keyIsDown (LEFT_ARROW) ) {
+            this.player_x -=5;
+        } 
+        if (keyIsDown(RIGHT_ARROW) ) {
+            this.player_x += 5;
+        } 
+        if (keyIsDown (UP_ARROW) ) {
+            this.player_y -=5;
+        } 
+        if (keyIsDown (DOWN_ARROW) ) {
+            this.player_y +=5;
+        }
     }
-    if (player_x >= width ) {
-        player_x = width;
-    }
-    if (player_y >= height) {
-        player_y = height;
+
+    inBounds(){
+        if (this.player_x <= 0) {
+            this.player_x = 0;
+        }
+        if (this.player_y <= 0) {
+            this.player_y = 0;
+        }
+        if (this.player_x >= width ) {
+            this.player_x = width;
+        }
+        if (this.player_y >= height) {
+            this.player_y = height;
+        }
     }
 }
