@@ -8,19 +8,21 @@ date
 
 ## Overview
 
-My final project is a game called Lucy and the Ghost of Garnet
+Presenting my final project: Lucy and the Ghost of Garnet
+
+TODO: LOGO for GAME
 
 ## Projects
 
 - player.js
-- goal.js
+- sketch.js
 - 
 
-## Workflow
+## Workflow / Deadlines
 
 1. Coding (Finish by November 27th)
-    [.] Player movement (using `keyIsDown`)
-    - Player interacts with goal
+    - **Player movement (using `keyIsDown`)**
+    - **Player interacts with goal**
     - Enemy movement toward stationary target
     - Enemy movement toward moving target
     - Enemy interacts with Player
@@ -34,6 +36,7 @@ My final project is a game called Lucy and the Ghost of Garnet
         - PS coloring
     - Main Page
         - brainstorm ideas/draft
+        - Logo sketch
         - line art
         - coloring
     - Add final sprites to game
@@ -60,10 +63,24 @@ My final project is a game called Lucy and the Ghost of Garnet
 7. Submit Final Project **deadline Tuesday December 11th, 8:00AM**
 
 
-## Report
+## Progress Report
 
+date: 11-21-18
 
+**Summary:** After finishing up my proposal, I started working on first step: Coding. This included coding the player and making it move using `keyIsDown`, which is tied to each of the directional arrow keys. Right now I have the speed moving at 5, but this is quite fast. I may consider revising it.
 
-## Other Classmates Issues/discussions
+Secondly, I worked on the 'Player interacts with Goal'. I finally feel like I have a grasp on everything we learned in Week 12. I have a seperate file for the player, and it interacts with another class known as Goal.
+
+Next up is Enemy movement. I'm going to make a Enemy Class for my ghost. Possibly ghosts. But I will start with one ghost. I'd love to be able to have more than one, and they could appear randomly or two at once, for higher difficulty. But one thing at a time. 
+
+Later today I'm going to work on sketching and pixel art in Photoshop.
+
+I reviewed a p5.js pacman game to see how the code for a game was laid out, and specifcially how the objects interact(1), and our week 12 lesson for interaction between objects(2).
+
+## Sources
+
+(1) [Kuiphoff, John. "Pacman Game using p5.js". coursescript.com/notes/interactivecomputing/game/](http://coursescript.com/notes/interactivecomputing/game/pacman/sketch.js)
+
+(2) [Musick, Michael. "Week 12 Bouncing Balls".  montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/](https://montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/) 
 
 ## Conclusion

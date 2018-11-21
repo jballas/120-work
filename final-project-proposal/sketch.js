@@ -1,3 +1,7 @@
+// TODO: Make goal class into a seperate js file
+// Make Enemy Class
+// Review Dan Shiffman's Steering video
+
 let player_init_x = 50;
 let player_init_y = 50;
 let player;
