@@ -11,7 +11,8 @@ function draw() {
 	
 	ellipse(player_x, player_y, size);
 	
-	move();
+    move();
+    inBounds();
 	//player_x ++;
 }
 
@@ -31,6 +32,21 @@ function move(){
       } if (keyIsDown (DOWN_ARROW) ) {
 
           player_y +=5;
-          
+
     }
   }
+
+function inBounds(){
+    if (player_x <= 0) {
+        player_x = 0;
+    }
+    if (player_y <= 0) {
+        player_y = 0;
+    }
+    if (player_x >= width ) {
+        player_x = width;
+    }
+    if (player_y >= height) {
+        player_y = height;
+    }
+}
