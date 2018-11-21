@@ -23,7 +23,7 @@ function draw() {
 
 function reachedGoal(){
 
-    let d = dist( goal.x, goal.y, player.player_x, player.player_y)
+    let d = dist( goal.x, goal.y, player.xPos, player.yPos)
     if (d < player.size + goal.size){
         stroke(255)
         text('You win', goal.x, goal.y);
