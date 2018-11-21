@@ -7,6 +7,8 @@ class Player {
         this.xPos = x;
         this.yPos = y;
         this.size = 50;
+        // This controls how close you have to be to reach the goal.
+        this.radius = this.size/ 2.5;
     }
 
     // Lucy sprite will go here

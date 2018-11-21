@@ -23,10 +23,11 @@ function draw() {
 
 function reachedGoal(){
 
-    let d = dist( goal.x, goal.y, player.xPos, player.yPos)
-    if (d < player.size + goal.size){
+    let d = dist(player.xPos, player.yPos, goal.x, goal.y)
+    let combinedR = player.radius + goal.r;
+    if (d <= combinedR){
         stroke(255)
-        text('You win', goal.x, goal.y);
+        text('You win', width * .5, 50);
         noLoop();
     }
 }
@@ -35,7 +36,9 @@ function reachedGoal(){
 class Goal {
 
     constructor(){
-        this.size = width * .02;
+        this.size = width * .1;
+        // this controls how close to have to be to reach the goal
+        this.r = this.size / 2.5;
         this.x = width * .5;
         this.y = height * .5;
     }
@@ -44,6 +47,6 @@ class Goal {
 
         ellipse(this.x, this.y, this.size);
     }
-    
+
 }
 
