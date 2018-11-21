@@ -16,14 +16,14 @@ The story comes from a Young Adult novel I would like to write someday about Luc
 
 ## Workflow
 
-1. Coding
+1. Coding (Finish by November 27th)
     - Player movement (using `keyIsDown`)
     - Player interacts with goal
     - Enemy movement toward stationary target
     - Enemy movement toward moving target
     - Enemy interacts with Player
     - Random appearance on screen
-2. Sprites/ Concept Art
+2. Sprites/ Concept Art (Finish by November 30th)
     - Lucy and Edith
         - PS pixel art
         - Sprite animation/Sprite sheet
@@ -36,13 +36,13 @@ The story comes from a Young Adult novel I would like to write someday about Luc
         - coloring
     - Add final sprites to game
     - Add final background to game
-3. Main Page and About page
+3. Main Page and About page (Finish by December 1st)
     - Draft main page layout
         - A simple p5.JS animation loop?
     - Write About page
     - Final sketch
     - Link Main Page to About and Game
-4. Sound
+4. Sound (finish by Decemer 4th)
     - Search Hooksounds.com or Musopen.org offer for free background music
     - Add background music to Game
     - Add music to Main Page
@@ -51,7 +51,7 @@ The story comes from a Young Adult novel I would like to write someday about Luc
 
 5. Impliment other ideas?
 
-6. Playtesting/Feedback
+6. Playtesting/Feedback (Send to people around December 5th)
     - From friends and family
     - GitHub forum
 
