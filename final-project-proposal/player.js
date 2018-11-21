@@ -7,6 +7,8 @@ class Player {
         this.xPos = x;
         this.yPos = y;
         this.size = 50;
+        //this controls how fast the player moves
+        this.speed = 5;
         // This controls how close you have to be to reach the goal.
         this.radius = this.size/ 2.5;
     }
@@ -21,16 +23,16 @@ class Player {
     // Lucy's movement across the screen will be controlled by the user.
     move(){
         if (keyIsDown (LEFT_ARROW) ) {
-            this.xPos -=5;
+            this.xPos -= this.speed;
         } 
         if (keyIsDown(RIGHT_ARROW) ) {
-            this.xPos += 5;
+            this.xPos += this.speed;
         } 
         if (keyIsDown (UP_ARROW) ) {
-            this.yPos -=5;
+            this.yPos -= this.speed;
         } 
         if (keyIsDown (DOWN_ARROW) ) {
-            this.yPos +=5;
+            this.yPos += this.speed;
         }
     }
 
