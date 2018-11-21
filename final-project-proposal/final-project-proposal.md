@@ -39,6 +39,7 @@ The story comes from a Young Adult novel I would like to write someday about Luc
 3. Main Page and About page (Finish by December 1st)
     - Draft main page layout
         - A simple p5.JS animation loop?
+        - LOGO sketch
     - Write About page
     - Final sketch
     - Link Main Page to About and Game
@@ -65,7 +66,9 @@ There are three main elements I have to code.
 - Anvil Edith (enemy)
 - Portal (goal)
 
-The player will need to be restricted inside the canvas, and controlled with the arrows on the keyboard. If the player interacts with the goal, they win.
+The player will need to be restricted inside the canvas, and controlled with the arrows on the keyboard. If the player interacts with the goal, they win and game should pause.
+
+TODO:
 
 The enemy targets players and moves toward them. If the enemy intercects with the player then it's Game Over.
 
