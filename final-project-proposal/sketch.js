@@ -4,15 +4,17 @@
 
 let player_init_x = 50;
 let player_init_y = 50;
-let player;
+let player = [];
 let enemies = [];
 
 function setup() {
     createCanvas(600, 600);
-    player = new Player(player_init_x, player_init_y);
+    p = new Player(player_init_x, player_init_y);
+    player.push(p)
+
     goal = new Goal();
 
-    let enemy = new Enemy(500, 100, player.xPos, player.xPos);
+    let enemy = new Enemy(500, 100, player.xPos, player.yPos);
     enemies.push(enemy);
 
 }
@@ -23,10 +25,12 @@ function draw() {
 
     goal.displayPortal();
 
-    player.display();
-    player.move();
-    player.inBounds();
-
+    for (let i = 0; i < player.length; i ++){
+        player[i].display();
+        player[i].move();
+        player[i].inBounds();
+    }
+    
     //enemy.display();
 
     let e = enemies[0];
