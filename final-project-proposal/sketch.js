@@ -1,6 +1,6 @@
 // TODO: Make goal class into a seperate js file
-// Make Enemy Class
-// Review Dan Shiffman's Steering video
+// Find example of a code that targets a location that is constantly updating. Check the p5.js book as well as Dr. Musick's pacman and bubbles array: https://montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-interacting/
+// FIX the goal and player interactions. What happened?
 
 let player_init_x = 50;
 let player_init_y = 50;

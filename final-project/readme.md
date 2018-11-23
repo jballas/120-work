@@ -23,13 +23,14 @@ TODO: LOGO for GAME
 1. Coding (Finish by November 27th)
     - **Player movement (using `keyIsDown`)**
     - **Player interacts with goal**
-    - Enemy movement toward stationary target
+    - **Enemy movement toward stationary target**
     - Enemy movement toward moving target
     - Enemy interacts with Player
     - Random appearance on screen
 2. Sprites/ Concept Art (Finish by November 30th)
     - Lucy and Edith
-        - PS pixel art
+        - **PS pixel line art**
+        - PS coloring
         - Sprite animation/Sprite sheet
     - Background sketch
         - PS line art
@@ -77,10 +78,23 @@ Later today I'm going to work on sketching and pixel art in Photoshop.
 
 I reviewed a p5.js pacman game to see how the code for a game was laid out, and specifcially how the objects interact(1), and our week 12 lesson for interaction between objects(2).
 
+date: 11-23-18
+
+**Summary:** I focused on making the enemy movement today. I want it to target the player, and I modified code from Dan Shiffman's Steering Behaviors. In his tutorial he discusses how the steering behavior, in this case a `seek` behavior is defined by the simple equation of steering = desired velocity - current velocity (3). I used the code in my Enemy.js file and now the object zips across the screen toward a stationary x,y position. Now the trick will be to get it to target a constantly moving position. I think I just need to put the current X,Y posistions into an array and then have the enemy target those numbers.
+
+And I just discovered another problem. My goal function is not working. Somehow I deactivated that code so it doesn't recognize when the "player" reaches the goal. 
+
+Todo:
+
+1. Add colors to objects, so I can identify them better.
+2. Research code that targets a location that is constantly updating. Check the p5.js book as well as Dr. Musick's pacman and bubbles array for this behavior.
+
 ## Sources
 
 (1) [Kuiphoff, John. "Pacman Game using p5.js". coursescript.com/notes/interactivecomputing/game/](http://coursescript.com/notes/interactivecomputing/game/pacman/sketch.js)
 
 (2) [Musick, Michael. "Week 12 Bouncing Balls".  montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/](https://montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/) 
+
+(3) [Shiffman, Dan. "Coding Challenge #59: Steering Behaviors." The Coding Train](https://www.youtube.com/watch?v=4hA7G3gup-4) 
 
 ## Conclusion
