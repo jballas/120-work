@@ -5,12 +5,16 @@
 let player_init_x = 50;
 let player_init_y = 50;
 let player;
+let enemies = [];
 
 function setup() {
     createCanvas(600, 600);
     player = new Player(player_init_x, player_init_y);
     goal = new Goal();
-    enemy = new Enemy();
+
+    let enemy = new Enemy(500, 100, player_init_x, player_init_y);
+    enemies.push(enemy);
+
 }
 
 function draw() {
@@ -23,7 +27,12 @@ function draw() {
     player.move();
     player.inBounds();
 
-    enemy.display();
+    //enemy.display();
+
+    let e = enemies[0];
+    e.update();
+    e.show();
+
 
     reachedGoal();   
 }
@@ -39,6 +48,7 @@ function reachedGoal(){
     }
 }
 
+/*
 class Enemy {
 
     constructor(){
@@ -52,6 +62,7 @@ class Enemy {
 
     }
 }
+*/
 
 class Goal {
 
