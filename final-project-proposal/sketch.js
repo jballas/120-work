@@ -12,7 +12,7 @@ function setup() {
     player = new Player(player_init_x, player_init_y);
     goal = new Goal();
 
-    let enemy = new Enemy(500, 100, player_init_x, player_init_y);
+    let enemy = new Enemy(500, 100, player.xPos, player.xPos);
     enemies.push(enemy);
 
 }
@@ -30,9 +30,9 @@ function draw() {
     //enemy.display();
 
     let e = enemies[0];
+    e.behaviors();
     e.update();
     e.show();
-
 
     reachedGoal();   
 }
