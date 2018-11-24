@@ -1,6 +1,5 @@
 // TODO: Make goal class into a seperate js file
 // Find example of a code that targets a location that is constantly updating. Check the p5.js book as well as Dr. Musick's pacman and bubbles array: https://montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-interacting/
-// FIX the goal and player interactions. What happened?
 
 let player_init_x = 50;
 let player_init_y = 50;
@@ -10,7 +9,6 @@ let enemies = [];
 function setup() {
     createCanvas(600, 600);
     player = new Player(player_init_x, player_init_y);
-    //player.push(p)
 
     goal = new Goal();
 
@@ -24,16 +22,12 @@ function draw() {
 	
   goal.displayPortal();
 
- //   for (let i = 0; i < player.length; i ++){
-//    }
-player.display();
-player.move();
-player.inBounds();
+
+    player.display();
+    player.move();
+    player.inBounds();
 
     reachedGoal();   
-
-
-    //enemy.display();
 
     let e = enemies[0];
     e.behaviors();
@@ -53,36 +47,4 @@ function reachedGoal(){
     }
 }
 
-/*
-class Enemy {
-
-    constructor(){
-        this.enemyX = 500;
-        this.enemyY = 100;
-        this.enemySize = 32;
-    }
-
-    display(){
-        ellipse(this.enemyX, this.enemyY, this.enemySize);
-
-    }
-}
-*/
-
-class Goal {
-
-    constructor(){
-        this.size = width * .1;
-        // this controls how close to have to be to reach the goal
-        this.r = this.size / 2.5;
-        this.x = width * .5;
-        this.y = height * .5;
-    }
-
-    displayPortal(){
-
-        ellipse(this.x, this.y, this.size);
-    }
-
-}
 
