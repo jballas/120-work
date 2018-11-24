@@ -4,13 +4,13 @@
 
 let player_init_x = 50;
 let player_init_y = 50;
-let player = [];
+let player ;
 let enemies = [];
 
 function setup() {
     createCanvas(600, 600);
-    p = new Player(player_init_x, player_init_y);
-    player.push(p)
+    player = new Player(player_init_x, player_init_y);
+    //player.push(p)
 
     goal = new Goal();
 
@@ -22,15 +22,17 @@ function setup() {
 function draw() {
   background(0);
 	
+  goal.displayPortal();
 
-    goal.displayPortal();
+ //   for (let i = 0; i < player.length; i ++){
+//    }
+player.display();
+player.move();
+player.inBounds();
 
-    for (let i = 0; i < player.length; i ++){
-        player[i].display();
-        player[i].move();
-        player[i].inBounds();
-    }
-    
+    reachedGoal();   
+
+
     //enemy.display();
 
     let e = enemies[0];
@@ -38,7 +40,6 @@ function draw() {
     e.update();
     e.show();
 
-    reachedGoal();   
 }
 
 function reachedGoal(){
