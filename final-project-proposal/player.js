@@ -4,8 +4,10 @@ class Player {
 
     constructor(x,y){
 
-        this.xPos = x;
-        this.yPos = y;
+        this.pos = {
+            x,
+            y
+        }
         this.size = 50;
         //this controls how fast the player moves
         this.speed = 5;
@@ -17,38 +19,38 @@ class Player {
 
     display(){
 
-        ellipse(this.xPos, this.yPos, this.size);
+        ellipse(this.pos.x, this.pos.y, this.size);
     }
 
     // Lucy's movement across the screen will be controlled by the user.
     move(){
         if (keyIsDown (LEFT_ARROW) ) {
-            this.xPos -= this.speed;
+            this.pos.x -= this.speed;
         } 
         if (keyIsDown(RIGHT_ARROW) ) {
-            this.xPos += this.speed;
+            this.pos.x += this.speed;
         } 
         if (keyIsDown (UP_ARROW) ) {
-            this.yPos -= this.speed;
+            this.pos.y -= this.speed;
         } 
         if (keyIsDown (DOWN_ARROW) ) {
-            this.yPos += this.speed;
+            this.pos.y += this.speed;
         }
     }
 
     // Prevents Lucy from moving off the screen. She will be inside a house, and can't move through walls, unlike the ghosts. 
     inBounds(){
-        if (this.xPos <= 0) {
-            this.xPos = 0;
+        if (this.pos.x <= 0) {
+            this.pos.x = 0;
         }
-        if (this.yPos <= 0) {
-            this.yPos = 0;
+        if (this.pos.y <= 0) {
+            this.pos.y = 0;
         }
-        if (this.xPos >= width ) {
-            this.xPos = width;
+        if (this.pos.x >= width ) {
+            this.pos.x = width;
         }
-        if (this.yPos >= height) {
-            this.yPos = height;
+        if (this.pos.y >= height) {
+            this.pos.y = height;
         }
     }
 }

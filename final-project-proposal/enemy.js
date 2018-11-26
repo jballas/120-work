@@ -12,13 +12,13 @@ class Enemy {
         this.velocity = createVector(0,-2);
         this.acceleration = createVector(0,0);
         this.size = 32;
-        //this.r = this.size / 2;
+        this.r = this.size / 2;
         this.maxspeed = 5;
         this.maxforce = 0.2;
 
     }
 
-    // Creates an update function that will update my variables.
+    // Creates an update function that will update my vector variables.
     update(){
         this.position.add (this.velocity);
         this.velocity.add (this.acceleration);
