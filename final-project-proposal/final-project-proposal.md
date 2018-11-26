@@ -1,5 +1,7 @@
 Julia Ballas 50
 
+[Game in Progress](https://jballas.github.io/120-work/final-project-proposal/index.html)
+
 # Final Project Proposal
 
 date 11-21-18
@@ -23,6 +25,7 @@ The story comes from a Young Adult novel I would like to write someday about Luc
     - Enemy movement toward moving target
     - Enemy interacts with Player
     - Random appearance on screen
+    - Obstacles?
 2. Sprites/ Concept Art (Finish by November 30th)
     - Lucy and Edith
         - PS pixel art
@@ -68,15 +71,13 @@ There are three main elements I have to code.
 
 The player will need to be restricted inside the canvas, and controlled with the arrows on the keyboard. If the player interacts with the goal, they win and game should pause.
 
-TODO:
-
 The enemy targets players and moves toward them. If the enemy intercects with the player then it's Game Over.
 
-I want the player to appear randomly on the lower bottom of the screen. The enemy should appear randomly on the upper part of the screen. Should the location of the goal should be random too?
+I want the player to appear randomly on the left of the screen. The enemy should appear randomly on the right of the screen.
 
 ### Player Movement
 
-Here is the code for player movement using the `keyIsDown` argument. [Test sketch for Player Movement](https://jballas.github.io/120-work/final-project-proposal/index.html)
+Here is the code for player movement using the `keyIsDown` argument.
 
 ```JS
 function move(){
@@ -92,15 +93,33 @@ function move(){
 }
 ```
 
+Here is a link to my Game so far:
+
+
+
+### Deadlines
+
+November 27th: Finish coding Main elements of game(player, enemy, you win, game over)
+
+November 30th: sprite animation and concept art completed, added to final game
+
+December 1st: Main page and About page, Link these pages to game
+
+December 4th: Sound added to game
+
+December 5th: Play testing on forum, with friends and family.
+
+My deadline for coding the main game features is November 27th, which is when I usually submit my homework. Then I want to focus on the artwork, sound and other presentation elements, like having a main page link to the game, and an about. I'll impliment any feedback suggestions on the weekend before the deadline, and impliment any other ideas, such as obstacles, before final submission.  
+
 ### Art
 
-I'll need to make a sprite animation for Lucy and Edith. I'll need to create a background.
+I'll need to make a sprite animation for Lucy and Edith. I'll need to create a background. I'm going to do a 16 bit pixel artwork style.
 
-I would also like to have a main page sketch, featuring both Lucy and Edith.
+I would also like to have a main page sketch, featuring both Lucy and Edith. I'd like to see a loop animation of Edith chasing Lucy across the screen.
 
 ### Sound
 
-I need to find background music, and simple sound effects, such when Lucy sucessfully reaches the goal, and when Edith catches her.
+I need to find background music, and simple sound effects, such as when Lucy sucessfully reaches the goal, and when Edith catches her.
 
 ### Other ideas
 
@@ -133,4 +152,4 @@ I haven't done anything with sound in p5.js, so I'll be reviewing Dan Shiffman's
 
 ## Conclusion
 
-I grew up playing Nintendo NES games and I expect a certain level of finesse to my games. But as an artist, I'm much more interested in the story and characters behind this game than the actual game play. Simplier is better. That's why I'm only programming one ghost, and not three.
+I grew up playing Nintendo NES games and I expect a certain level of finesse to my games. But as an artist, I'm much more interested in the story and characters behind this game than the actual game play. Simplier is better. That's why I'm only programming one ghost, and not three. Otherwise this game might start to resemble pacman.
