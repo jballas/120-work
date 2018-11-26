@@ -47,6 +47,7 @@ class Enemy {
     // Displays the Enemy on screen
     display(){
 
+        fill('red');
         ellipse(this.position.x, this.position.y, this.size);
     }
 }

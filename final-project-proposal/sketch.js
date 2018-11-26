@@ -19,31 +19,26 @@ function setup() {
     goal = new Goal();
 
     enemy = new Enemy(enemy_init_x, enemy_init_y, player.pos.x, player.pos.y);
-    //enemies.push(enemy);
 }
 
 function draw() {
     background(0);
     
-    // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x,pos.x. I needed a vector. 
-    let target = createVector( player.pos.x, player.pos.y);
+    let target = createVector( player.pos.x, player.pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x,pos.x. I needed a vector.
 
     goal.displayPortal();
 
-    player.display();
-    player.move();
-    player.inBounds();
+    player.display(); // displays the player on screen
+    player.move(); // Allows the user to control the player with keyboard arrows
+    player.inBounds(); // keeps the player inside the walls of the screen.
 
+    reachedGoal();
 
-    reachedGoal();   
-
-    //let e = enemies[0];
-    enemy.seek(target);
-    enemy.update();
-    enemy.display();
+    enemy.display(); // displays the enemy on screen
+    enemy.seek(target); // This used the enemy's steeting to seek out the target
+    enemy.update(); // This controls how the enemy moves: the velocity and acceleration
 
     gameOver();
-
 }
 
 function reachedGoal(){

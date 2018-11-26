@@ -10,6 +10,7 @@ class Goal {
 
     displayPortal(){
 
+        fill(100);
         ellipse(this.x, this.y, this.size);
     }
 
