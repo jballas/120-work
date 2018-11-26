@@ -1,9 +1,10 @@
-// What happens when enemy interacts with Player? It's game over.
+// What happens when player touches an obstacle? They can't move forward.
 
 let player_init_x = 50;
 let player_init_y ;
 let player;
 let enemy;
+
 //let enemies = [];
 let enemy_init_x = 500;
 let enemy_init_y;
@@ -33,6 +34,7 @@ function draw() {
     player.move();
     player.inBounds();
 
+
     reachedGoal();   
 
     //let e = enemies[0];
@@ -46,7 +48,7 @@ function draw() {
 
 function reachedGoal(){
 
-    let d = dist(player.pos.x, player.pos.y, goal.x, goal.y)
+    let d = dist(player.pos.x, player.pos.y, goal.x, goal.y);
     let combinedR = player.radius + goal.r;
     if (d <= combinedR){
         stroke(255)
@@ -57,7 +59,7 @@ function reachedGoal(){
 
 function gameOver(){
 
-    let d = dist(enemy.position.x, enemy.position.y, player.pos.x, player.pos.y)
+    let d = dist(enemy.position.x, enemy.position.y, player.pos.x, player.pos.y);
     let combinedR = enemy.r + player.radius;
     if (d <= combinedR){
         stroke(255)
@@ -65,5 +67,4 @@ function gameOver(){
         noLoop();
     }
 }
-
 

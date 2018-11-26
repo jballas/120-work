@@ -8,11 +8,10 @@ class Player {
             x,
             y
         }
-        this.size = 50;
-        //this controls how fast the player moves
-        this.speed = 5;
-        // This controls how close you have to be to reach the goal.
-        this.radius = this.size/ 2.5;
+        this.size = 50; // Size of player sprite
+        this.speed = 5;   //this controls how fast the player moves
+        this.radius = this.size/ 2.5; // This controls how close you have to be to reach the goal.
+
     }
 
     // Lucy sprite will go here
