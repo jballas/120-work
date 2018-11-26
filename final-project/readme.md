@@ -64,7 +64,6 @@ TODO: LOGO for GAME
 
 7. Submit Final Project **deadline Tuesday December 11th, 8:00AM**
 
-
 ## Progress Report
 
 date: 11-21-18
@@ -73,7 +72,7 @@ date: 11-21-18
 
 Secondly, I worked on the 'Player interacts with Goal'. I finally feel like I have a grasp on everything we learned in Week 12. I have a seperate file for the player, and it interacts with another class known as Goal.
 
-Next up is Enemy movement. I'm going to make a Enemy Class for my ghost. Possibly ghosts. But I will start with one ghost. I'd love to be able to have more than one, and they could appear randomly or two at once, for higher difficulty. But one thing at a time. 
+Next up is Enemy movement. I'm going to make a Enemy Class for my ghost. Possibly ghosts. But I will start with one ghost. I'd love to be able to have more than one, and they could appear randomly or two at once, for higher difficulty. But one thing at a time.
 
 Later today I'm going to work on sketching and pixel art in Photoshop.
 
@@ -81,9 +80,9 @@ I reviewed a p5.js pacman game to see how the code for a game was laid out, and 
 
 date: 11-23-18
 
-**Summary:** I focused on making the enemy movement today. I want it to target the player, and I modified code from Dan Shiffman's Steering Behaviors. In his tutorial he discusses how the steering behavior, in this case a `seek` behavior is defined by the simple equation of steering = desired velocity - current velocity (3). I used the code in my Enemy.js file and now the object zips across the screen toward a stationary x,y position. Now the trick will be to get it to target a constantly moving position. I think I just need to put the current X,Y posistions into an array and then have the enemy target those numbers.
+**Summary:** I focused on making the enemy movement today. I want it to target the player, and I modified code from Dan Shiffman's Steering Behaviors. In his tutorial he discusses how the steering behavior, in this case a `seek()` function is defined by the simple equation of steering = desired velocity - current velocity (3). I used this in my Enemy.js file and now the object zips across the screen toward a stationary x,y position. Now the trick will be to get it to target a constantly moving position. I think I just need to put the current X,Y posistions into an array and then have the enemy target those numbers.
 
-And I just discovered another problem. My goal function is not working. Somehow I deactivated that code so it doesn't recognize when the "player" reaches the goal. 
+And I just discovered another problem. My goal function is not working. Somehow I deactivated that code so it doesn't recognize when the player reaches the goal.
 
 Todo:
 
@@ -92,11 +91,13 @@ Todo:
 
 date: 11-26-18
 
-**Summary:** Coding the enemy movement turned out to be the biggest struggle so far. I managed to make the enemy target a stationary point, but I could not figure out how to make it target a moving object. I knew it had to be possible. As I researched into this I discovered various methods to target the mouseX, and mouseY, but I was determined to keep my movement tied to the keyIsPress. After researching more about steering, I discovered another example in Dan Shiffman's Nature of Coding that used steering to target specific dots on a screen. (4) That's when I finally had a break through with what I needed. The enemy is programmed to `seek(target)` using a creatVector. That's all it took.
+**Summary:** Coding the enemy movement turned out to be the biggest struggle so far. I managed to make the enemy target a stationary point, but I could not figure out how to make it target a moving object. I knew it had to be possible. As I researched into this I discovered various methods to target the mouseX, and mouseY, but I was determined to keep my movement tied to the keyIsPress. After researching more about steering, I discovered another example in Dan Shiffman's Nature of Coding that used steering to target specific dots on a screen. (4) That's when I finally had a breakthrough. The enemy is programmed to `seek(target)` using the variable `let target = creatVector( player.pos.x,  player.pos.y)`. That's all it took.
+
+The screenshot below shows a winning screen, with the player(white) touching the goal(gray), after avoiding the enemy(red).
 
 ![Screenshot of Simple Game with simple shapes](screenshot_simple_shapes.PNG)
 
-Here is the basic code from the draw function of my game:
+Here is the `draw()` function of my game:
 
 ```JS
 function draw() {
@@ -106,14 +107,14 @@ function draw() {
 
     goal.displayPortal();
 
-    player.display(); // displays the player on screen
+    player.display(); // Displays the player on screen
     player.move(); // Allows the user to control the player with keyboard arrows
-    player.inBounds(); // keeps the player inside the walls of the screen.
+    player.inBounds(); // Keeps the player inside the walls of the screen.
 
     reachedGoal();
 
-    enemy.display(); // displays the enemy on screen
-    enemy.seek(target); // This used the enemy's steeting to seek out the target
+    enemy.display(); // Displays the enemy on screen
+    enemy.seek(target); // This uses the enemy's steering to seek out the target
     enemy.update(); // This controls how the enemy moves: the velocity and acceleration
 
     gameOver();
@@ -121,7 +122,10 @@ function draw() {
 }
 ```
 
-Next, I need to focus on the Art concept, and getting sprite animation. Then 
+Next, I need to focus on concept art, and getting sprite animation. I'm looking forward to this part.
+
+## Conclusion
+
 
 ## Sources
 
@@ -132,5 +136,3 @@ Next, I need to focus on the Art concept, and getting sprite animation. Then
 (3) [Shiffman, Dan. "Coding Challenge #59: Steering Behaviors." The Coding Train. February 2017. www.youtube.com/watch?v=4hA7G3gup-4](https://www.youtube.com/watch?v=4hA7G3gup-4)
 
 (4)  [Shiffman, Dan. "Coding Challenge 61.1: Evolutionary Steering behaviors - Part 1." The Coding Train. April 2017. www.youtube.com/watch?v=flxOkx0yLrY ](https://www.youtube.com/watch?v=flxOkx0yLrY)
-
-## Conclusion
