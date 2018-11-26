@@ -1,9 +1,8 @@
-// TODO: Make goal class into a seperate js file
-// Find example of a code that targets a location that is constantly updating. Check the p5.js book as well as Dr. Musick's pacman and bubbles array: https://montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-interacting/
+// Find example of a code that targets a location that is constantly updating. 
 
 let player_init_x = 50;
 let player_init_y = 50;
-let player ;
+
 let enemies = [];
 
 function setup() {
@@ -14,14 +13,15 @@ function setup() {
 
     let enemy = new Enemy(500, 100, player.xPos, player.yPos);
     enemies.push(enemy);
-
 }
 
 function draw() {
-  background(0);
-	
-  goal.displayPortal();
+    background(0);
+    
+    // This creates the vector target that the enemy will seek. I didn't need an array to hold the xPos,xPos. I need a vector. 
+    let target = createVector( player.xPos, player.yPos);
 
+    goal.displayPortal();
 
     player.display();
     player.move();
@@ -30,9 +30,9 @@ function draw() {
     reachedGoal();   
 
     let e = enemies[0];
-    e.behaviors();
+    e.seek(target);
     e.update();
-    e.show();
+    e.display();
 
 }
 
