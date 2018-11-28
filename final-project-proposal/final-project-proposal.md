@@ -8,13 +8,15 @@ date 11-21-18
 
 ## Summary
 
-For my final project I'm going to make a simple game: Lucy and the Ghost of Garnet.
+For my final project I'm going to make a simple game called: Fairy Doctor Runs Away.
+
+![Fairy Doctor Game Logo](FD-RunsAway-logo-01.png)
 
 ## Inspirations
 
-The basic idea of the game is to get Lucy to the portal before Edith catches her. There isn't any fighting, no attacking. It's a chase game.
+The basic idea of the game is to get Lillia to the portal before the fairies catch her. There isn't any fighting, no attacking. It's a chase game based on my self-published novels, under my psydoounym Ava Clary. I'm working on the 2nd book in the trilogy and this could be used a promotion for the books.
 
-The story comes from a Young Adult novel I would like to write someday about Lucy's complicated school life, where she learns to study and fight against shadowy monsters. Anvil Edith is a ghost from Garnet Ghost town who died hundred of years ago when she fell and hit her head on an anvil.
+The Fairy Doctor triliogy follows a young woman named Lillia, for years she was a Fairy Doctor, but she quit. The problem is the fairies still love her. They can't be reasoned with, and they really want her to be a fairy doctor again. If they catch Lillia it's gave over.
 
 ## Workflow
 
@@ -26,8 +28,9 @@ The story comes from a Young Adult novel I would like to write someday about Luc
     - Enemy interacts with Player
     - Random appearance on screen
     - Obstacles?
+    - Text-based method to Splice the fairies from the array, so there are less of them?
 2. Sprites/ Concept Art (Finish by November 30th)
-    - Lucy and Edith
+    - Lillia and the fairies
         - PS pixel art
         - Sprite animation/Sprite sheet
     - Background sketch
@@ -65,8 +68,8 @@ The story comes from a Young Adult novel I would like to write someday about Luc
 
 There are three main elements I have to code.
 
-- Lucy (player)
-- Anvil Edith (enemy)
+- Lillia (player)
+- Fairies (enemy)
 - Portal (goal)
 
 The player will need to be restricted inside the canvas, and controlled with the arrows on the keyboard. If the player interacts with the goal, they win and game should pause.
@@ -93,9 +96,7 @@ function move(){
 }
 ```
 
-Here is a link to my Game so far:
-
-
+Here is a link to my Game so far: [Game in Progress](https://jballas.github.io/120-work/final-project-proposal/index.html)
 
 ### Deadlines
 
@@ -109,31 +110,37 @@ December 4th: Sound added to game
 
 December 5th: Play testing on forum, with friends and family.
 
-My deadline for coding the main game features is November 27th, which is when I usually submit my homework. Then I want to focus on the artwork, sound and other presentation elements, like having a main page link to the game, and an about. I'll impliment any feedback suggestions on the weekend before the deadline, and impliment any other ideas, such as obstacles, before final submission.  
+My deadline for coding the main game features is November 27th, which is when I usually submit my homework. I'll continue to work on implimenting my other ideas, such as obstacles. Then I want to focus on the artwork, sound and other presentation elements, like having a main page link to the game, and an about. I'll impliment any feedback suggestions on the weekend before the deadline for final submission.  
 
 ### Art
 
-I'll need to make a sprite animation for Lucy and Edith. I'll need to create a background. I'm going to do a 16 bit pixel artwork style.
+I'll need to make a sprite animation for Lillia and the fairies. I'll need to create a background. I'm going to do a 16 bit pixel artwork style.
 
-I would also like to have a main page sketch, featuring both Lucy and Edith. I'd like to see a loop animation of Edith chasing Lucy across the screen.
+I would also like to have a main page sketch, featuring both Lillia and the fairies. I'd like to see a loop animation of fairies chasing Lillia across the screen.
 
 ### Sound
 
-I need to find background music, and simple sound effects, such as when Lucy sucessfully reaches the goal, and when Edith catches her.
+I need to find background music, and simple sound effects, such as when Lillia sucessfully reaches the goal, and when the fairies catches her.
 
-### Other ideas
+### Other ideas, Questions and Concerns
 
-Should I make obstacles inside the room to limit the player's ability to get to the goal?  I want to have a static background. What size should my screen be?
+Should I make obstacles inside the room to limit the player's ability to get to the goal?
+
+I want to have a static background. What size should my screen be?
 
 Should I have a way to refresh the game, or a reset button? What about making a return to main menu button?
 
 Where do I show people the game controls? On the main menu screen? Can I make a About page that includes the controls?
 
-What about other enemies? I could make other ghosts, such as a ghost that only moves on the X-axis or a ghost that mirrors your movement.
+**A Second Game within the game **
 
-Can I somehow program other difficulty levels for Edith?
+If there is only one fairy on screen, the game is too easy. If there are ten fairies the game is too hard. Right now I have five of them and that balances out nicely, if possible, if I have time, I'd like to code in more of a challenge for people. Difficulty levels.
 
-Can I add in another element to the game where Edith talks to you and you can respond to her while you're trying to move the character around the screen?
+What if I made a way to change how many fairies show up? It could start with ten fairies, and then when you fail to reach the goal you can retry the game as is, or you could have a second option where you try to reason with the fairies.
+
+Then I'd make a conversation game, where you can talk to the fairies and 'cure' their illnesses, or convince they to leave one by one. You'd do this with props and a conversation tree. Where you have to pick the right answer to convince the fairies to leave you alone. If you do convince one to leave, it would 'splice' it from the array and you could continue the game with one less fairy. You could even get rid of all ten of them if you wanted. Ten different conversations? Yikes, that would be a challenge.
+
+I'll consider how to make this work. If I can figure out the basic coding for a text based game.
 
 ## Research
 
@@ -152,4 +159,4 @@ I haven't done anything with sound in p5.js, so I'll be reviewing Dan Shiffman's
 
 ## Conclusion
 
-I grew up playing Nintendo NES games and I expect a certain level of finesse to my games. But as an artist, I'm much more interested in the story and characters behind this game than the actual game play. Simplier is better. That's why I'm only programming one ghost, and not three. Otherwise this game might start to resemble pacman.
+I grew up playing Nintendo NES games and I expect a certain level of finesse to my games. But as an artist, I'm much more interested in the story and characters behind this game than the actual game play. At this point I'm bascially down with the game, and I need to make it into a polished product. If I can add more game play, like the second game I will, but getting the sprites into the game and the background and music will be a different kind of challenge.
