@@ -18,6 +18,8 @@ The basic idea of the game is to get Lillia to the portal before the fairies cat
 
 The Fairy Doctor trilogy follows a young woman named Lillia. She wants to run away from her problems. She used to be a Fairy Doctor, but she quit. However, the fairies still adore her, and they really want her to be a fairy doctor again. If they catch Lillia, it's game over.
 
+Game inspirations include recent ones like Celeste, Splunky, and older NES ones like Mario and the Legend of Zelda.
+
 ## Workflow
 
 1. Coding (Finish by November 27th)
