@@ -1,4 +1,5 @@
-// What happens when player touches an obstacle? They can't move forward.
+// Instead of a gameover, what if they enemies touching you adds up a score and the more you can avoid the better your score is.
+// Having obstacles, would still be good, if I can figure those out.
 
 let player_init_x = 50;
 let player_init_y ;
@@ -61,7 +62,7 @@ function reachedGoal(){
     }
 }
 
-/*
+/* // I moved this feature to the Enemy.js file
 function gameOver(){
 
     let d = dist(this.position.x, this.position.y, player.pos.x, player.pos.y);
