@@ -50,4 +50,15 @@ class Enemy {
         fill('red');
         ellipse(this.position.x, this.position.y, this.size);
     }
+
+    gameOver(){
+
+        let d = dist(this.position.x, this.position.y, player.pos.x, player.pos.y);
+        let combinedR = this.r + player.radius;
+        if (d <= combinedR){
+            stroke(255)
+            text('Game Over', width * .5, 50);
+            noLoop();
+        }
+    }
 }

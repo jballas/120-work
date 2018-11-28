@@ -5,20 +5,26 @@ let player_init_y ;
 let player;
 let enemy;
 
-//let enemies = [];
-let enemy_init_x = 500;
+let fairies = [];
+let howMany = 10;
+let enemy_init_x;
 let enemy_init_y;
 
 function setup() {
     createCanvas(600, 600);
-    player_init_y = abs( random(width) );
-    enemy_init_y = abs ( random(height) );
-
+    player_init_y = abs( random(width/2, width) );
+    
     player = new Player(player_init_x, player_init_y);
 
     goal = new Goal();
 
-    enemy = new Enemy(enemy_init_x, enemy_init_y, player.pos.x, player.pos.y);
+
+    for (let i = 0; i < howMany; i++){
+        enemy_init_y = abs ( random(height/2, height) );
+        enemy_init_x = abs ( random ( width / 2, width) );
+
+        fairies.push( new Enemy(enemy_init_x, enemy_init_y, player.pos.x, player.pos.y) )
+    }
 }
 
 function draw() {
@@ -34,11 +40,13 @@ function draw() {
 
     reachedGoal();
 
-    enemy.display(); // displays the enemy on screen
-    enemy.seek(target); // This used the enemy's steeting to seek out the target
-    enemy.update(); // This controls how the enemy moves: the velocity and acceleration
-
-    gameOver();
+    for (let i = 0; i < fairies.length; i++) {
+        fairies[i].display(); // displays the fairies[i] on screen
+        fairies[i].seek(target); // This used the enemy's steeting to seek out the target
+        fairies[i].update(); // This controls how the enemy moves: the velocity and acceleration
+        fairies[i].gameOver();
+    }
+   // gameOver();
 }
 
 function reachedGoal(){
@@ -52,14 +60,15 @@ function reachedGoal(){
     }
 }
 
+/*
 function gameOver(){
 
-    let d = dist(enemy.position.x, enemy.position.y, player.pos.x, player.pos.y);
-    let combinedR = enemy.r + player.radius;
+    let d = dist(this.position.x, this.position.y, player.pos.x, player.pos.y);
+    let combinedR = this.r + player.radius;
     if (d <= combinedR){
         stroke(255)
         text('Game Over', width * .5, 50);
         noLoop();
     }
 }
-
+*/
