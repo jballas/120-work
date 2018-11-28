@@ -9,12 +9,13 @@ class Enemy {
     constructor(x,y) {
     
         this.position = createVector(x,y);
-        this.velocity = createVector(0,-2);
+        this.velocity = createVector(0,-2 * this.deltaX);
         this.acceleration = createVector(0,0);
         this.size = 32;
         this.r = this.size / 2;
         this.maxspeed = 5;
         this.maxforce = 0.2;
+        
 
     }
 
@@ -38,7 +39,7 @@ class Enemy {
 
         desired.setMag(this.maxspeed)
 
-        let steering = p5.Vector.sub(desired, this.velocity)
+        let steering = p5.Vector.sub(desired, this.velocity )
         steering.limit(this.maxforce);
 
         this.applyForce(steering);
@@ -59,6 +60,22 @@ class Enemy {
             stroke(255)
             text('Game Over', width * .5, 50);
             noLoop();
+        }
+    }
+
+    avoidOthers(otherEnemies, myId){
+        for (let n = 0; n < otherEnemies.length; n++) {
+            // if n != myId, then check for touching
+            // otherwise, its ME and we need to skip
+            if (n != myId) {
+                let d = dist(this.position.x, this.position.y, otherEnemies[n].position.x, otherEnemies[n].position.y);
+                let combinedR = this.r + otherEnemies[n].r;
+
+                if (d <= combinedR) {
+                    this.position.x = abs( random(width/2, width) );
+                    this.position.y = abs (random( height/2, height) );
+                }
+            }
         }
     }
 }

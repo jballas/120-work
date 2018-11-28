@@ -12,7 +12,7 @@ let enemy_init_y;
 
 function setup() {
     createCanvas(600, 600);
-    player_init_y = abs( random(width/2, width) );
+    player_init_y = abs( random(0, width/2) );
     
     player = new Player(player_init_x, player_init_y);
 
@@ -44,7 +44,8 @@ function draw() {
         fairies[i].display(); // displays the fairies[i] on screen
         fairies[i].seek(target); // This used the enemy's steeting to seek out the target
         fairies[i].update(); // This controls how the enemy moves: the velocity and acceleration
-        fairies[i].gameOver();
+        //fairies[i].gameOver();
+        fairies[i].avoidOthers(fairies, i);
     }
    // gameOver();
 }
