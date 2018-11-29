@@ -12,18 +12,18 @@ class Player {
 
         // Size of player sprite sheet
         this.size = {
-            w: 36,
-            h: 32
+            w: 64,
+            h: 64
         } 
         this.aniSpeed = 10; // this is the animation speed
         this.sprite_number = 0;
         this.subRect = [
             [0,0],
-            [32,0]
+            [64,0]
         ];
 
         this.speed = 5;   //this controls how fast the player moves
-        this.radius = this.size/ 2.5; // This controls how close you have to be to reach the goal.
+        this.radius = this.size.w/ 2.5; // This controls how close you have to be to reach the goal.
 
     }
 

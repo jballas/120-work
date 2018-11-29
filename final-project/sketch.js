@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(512, 288);
+    createCanvas(1024, 576);
     player_init_y = abs( random(0, width/2) );
     
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
@@ -33,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(255);
     
     let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x,pos.x. I needed a vector.
 
