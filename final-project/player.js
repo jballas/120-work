@@ -1,28 +1,66 @@
 
-// class for player, also known as Lucy. This is the initial sketch with a circle in place of Lucy. Later on I'll add a sprite for Lucy.
+// class for player, also known as Lillia
 class Player {
 
-    constructor(x,y){
+    constructor(x,y, img){
 
         this.pos = {
             x,
             y
         }
-        this.size = 50; // Size of player sprite
+        this.image = img;
+
+        // Size of player sprite sheet
+        this.size = {
+            w: 36,
+            h: 32
+        } 
+        this.aniSpeed = 10; // this is the animation speed
+        this.sprite_number = 0;
+        this.subRect = [
+            [0,0],
+            [32,0]
+        ];
+
         this.speed = 5;   //this controls how fast the player moves
         this.radius = this.size/ 2.5; // This controls how close you have to be to reach the goal.
 
     }
 
-    // Lucy sprite will go here
+    frame(){
+        this.display(); // displays the player on screen
+        this.animate(); // animates sprite
+        this.move(); // Allows the user to control the player with keyboard arrows
+        this.inBounds(); // keeps the player inside the walls of the screen.
+    }
+
+
+    // Lillia's sprite will go here
 
     display(){
 
-        fill(255)
-        ellipse(this.pos.x, this.pos.y, this.size);
+        push();
+
+            image(
+                this.image, 
+                this.pos.x, this.pos.y, 
+                this.size.w, this.size.h,
+                this.subRect[this.sprite_number][0],this.subRect[this.sprite_number][1],
+                this.size.w, this.size.h
+            );
+        pop();
     }
 
-    // Lucy's movement across the screen will be controlled by the user.
+    animate(){
+
+        if(frameCount % this.aniSpeed ===0){
+            this.sprite_number ++;
+            this.sprite_number %= 2;
+        }
+
+    }
+
+    // Lilla's movement across the screen will be controlled by the user.
     move(){
         if (keyIsDown (LEFT_ARROW) ) {
             this.pos.x -= this.speed;
@@ -38,7 +76,7 @@ class Player {
         }
     }
 
-    // Prevents Lucy from moving off the screen. She will be inside a house, and can't move through walls, unlike the ghosts. 
+    // Prevents Lillia from moving off the screen. She will be inside a house, and can't move through walls, unlike the fairies. 
     inBounds(){
         if (this.pos.x <= 0) {
             this.pos.x = 0;
