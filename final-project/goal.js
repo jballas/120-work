@@ -1,18 +1,23 @@
 class Goal {
 
     constructor(){
-        this.size = width * .1;
+        this.size = width * .10;
         // this controls how close to have to be to reach the goal
-        this.r = this.size / 2.5;
+        this.r = this.size/ 2.5;
         this.x = width * .5;
         this.y = height * .5;
+
     }
 
     displayPortal(){
 
-        fill(100);
-        image( portal_img, this.x, this.y)
-        //ellipse(this.x, this.y, this.size);
+        push();
+            //image( portal_img, this.x, this.y)
+            
+            fill('rgb(200,100,20)');
+            ellipse(this.x, this.y, this.size);
+            fill(100)
+        pop();
     }
 
 }

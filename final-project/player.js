@@ -23,7 +23,7 @@ class Player {
         ];
 
         this.speed = 5;   //this controls how fast the player moves
-        this.radius = this.size.w/ 2.5; // This controls how close you have to be to reach the goal.
+        this.radius = this.size.w * .5 ; // This controls how close you have to be to reach the goal.
 
     }
 
@@ -81,14 +81,14 @@ class Player {
         if (this.pos.x <= 0) {
             this.pos.x = 0;
         }
-        if (this.pos.y <= 0) {
-            this.pos.y = 0;
+        if (this.pos.y <= 50) {
+            this.pos.y = 50;
         }
-        if (this.pos.x >= width ) {
-            this.pos.x = width;
+        if (this.pos.x >= width -50 ) {
+            this.pos.x = width -50;
         }
-        if (this.pos.y >= height) {
-            this.pos.y = height;
+        if (this.pos.y >= height - 70) {
+            this.pos.y = height - 70;
         }
     }
 }

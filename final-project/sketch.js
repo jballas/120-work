@@ -44,14 +44,14 @@ function preload() {
 function setup() {
     createCanvas(1024, 576);
 
-    background(bg_img);
+
 
     //Play the game's background music
     game_bg_music.setVolume(0.5);
     game_bg_music.play();
 
     
-    player_init_y = abs( random(0, width/2) );
+    player_init_y = abs( random(50, width/2) );
     
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
 
@@ -67,7 +67,7 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background( bg_img );
     
     let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x,pos.x. I needed a vector.
 
@@ -99,11 +99,13 @@ function reachedGoal(){
 
         //Play the You win Sound Effects
         game_clear.play();
-        sparkle_sound.play();
+        //sparkle_sound.play();
 
+        console.log(player.radius);
 
         stroke(255)
-        text('You win', width * .75, 50);
+        textSize(50);
+        text('You win', width * 0.5, height * 0.5);
         noLoop();
 
     }
