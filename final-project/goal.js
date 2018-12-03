@@ -3,7 +3,7 @@ class Goal {
     constructor(){
         this.size = width * .10;
         // this controls how close to have to be to reach the goal
-        this.r = this.size/ 2.5;
+        this.r = this.size * .6;
         this.x = width * .5;
         this.y = height * .5;
 

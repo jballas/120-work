@@ -5,9 +5,9 @@ let player_init_y ;
 let player = [];
 
 //Enemy variables
-let enemy;
+//let enemy;
 let fairies = [];
-let howMany = 5;
+let howManyFairies = 5;
 let enemy_init_x;
 let enemy_init_y;
 
@@ -22,7 +22,7 @@ let lillia_img;
 let fairy_img;
 let portal_img;
 
-// Background variable
+// Background variables
 let bg_img;
 let bg_main
 
@@ -57,11 +57,11 @@ function setup() {
     goal = new Goal();
 
 
-    for (let i = 0; i < howMany; i++){
+    for (let i = 0; i < howManyFairies; i++){
         enemy_init_y = abs ( random(height/2, height) );
         enemy_init_x = abs ( random ( width / 2, width) );
 
-        fairies.push( new Enemy(enemy_init_x, enemy_init_y, player[0].pos.x, player[0].pos.y) )
+        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
     }
 }
 
@@ -78,10 +78,7 @@ function draw() {
     reachedGoal();
 
     for (let i = 0; i < fairies.length; i++) {
-        fairies[i].display(); // displays the fairies[i] on screen
-        fairies[i].seek(target); // This used the enemy's steeting to seek out the target
-        fairies[i].update(); // This controls how the enemy moves: the velocity and acceleration
-        fairies[i].gameOver();
+        fairies[i].frame(target);
         fairies[i].avoidOthers(fairies, i);
     }
    // gameOver();
@@ -96,7 +93,7 @@ function reachedGoal(){
         //Stop the background music
         game_bg_music.stop();
 
-        //Play the You win Sound Effects
+        //Play the 'You win' Sound Effect
         game_clear.play();
 
         stroke(255)
