@@ -37,7 +37,6 @@ function preload() {
     game_clear = loadSound('./sounds/SFX-clear.mp3');
     game_bg_music = loadSound('./sounds/game-music.mp3');
     game_over_sound = loadSound('./sounds/SFX-game-over.mp3');
-    sparkle_sound = loadSound('./sounds/SFX-sparkle.mp3');
 
 }
 
@@ -82,7 +81,7 @@ function draw() {
         fairies[i].display(); // displays the fairies[i] on screen
         fairies[i].seek(target); // This used the enemy's steeting to seek out the target
         fairies[i].update(); // This controls how the enemy moves: the velocity and acceleration
-        //fairies[i].gameOver();
+        fairies[i].gameOver();
         fairies[i].avoidOthers(fairies, i);
     }
    // gameOver();
@@ -99,9 +98,6 @@ function reachedGoal(){
 
         //Play the You win Sound Effects
         game_clear.play();
-        //sparkle_sound.play();
-
-        console.log(player.radius);
 
         stroke(255)
         textSize(50);
