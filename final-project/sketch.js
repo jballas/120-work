@@ -1,22 +1,56 @@
-// Instead of a gameover, what if they enemies touching you adds up a score and the more you can avoid the better your score is.
-// Having obstacles, would still be good, if I can figure those out.
 
+//Player variables
 let player_init_x = 50;
 let player_init_y ;
 let player = [];
-let enemy;
 
+//Enemy variables
+let enemy;
 let fairies = [];
 let howMany = 5;
 let enemy_init_x;
 let enemy_init_y;
 
+//Sound variables
+let game_song;
+let game_over_sound;
+let sparkle_sound;
+let game_clear;
+
+//Image variables
+let lillia_img;
+let fairy_img;
+let portal_img;
+
+// Background variable
+let bg_img;
+let bg_main
+
 function preload() {
     lillia_img = loadImage('./images/sprite-sheet-lillia.png');
+    fairy_img = loadImage('./images/sprite-sheet-fairy-blue.png');
+    portal_img = loadImage('./images/portal.png');
+    bg_img = loadImage('./images/bg-tropical.png');
+    bg_main = loadImage('./images/bg-mainpage.png');
+
+    //Sound Effects and background music
+    game_clear = loadSound('./sounds/SFX-clear.mp3');
+    game_bg_music = loadSound('./sounds/game-music.mp3');
+    game_over_sound = loadSound('./sounds/SFX-game-over.mp3');
+    sparkle_sound = loadSound('./sounds/SFX-sparkle.mp3');
+
 }
 
 function setup() {
     createCanvas(1024, 576);
+
+    background(bg_img);
+
+    //Play the game's background music
+    game_bg_music.setVolume(0.5);
+    game_bg_music.play();
+
+    
     player_init_y = abs( random(0, width/2) );
     
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
@@ -59,9 +93,19 @@ function reachedGoal(){
     let d = dist(player[0].pos.x, player[0].pos.y, goal.x, goal.y);
     let combinedR = player[0].radius + goal.r;
     if (d <= combinedR){
+
+        //Stop the background music
+        game_bg_music.stop();
+
+        //Play the You win Sound Effects
+        game_clear.play();
+        sparkle_sound.play();
+
+
         stroke(255)
-        text('You win', width * .5, 50);
+        text('You win', width * .75, 50);
         noLoop();
+
     }
 }
 

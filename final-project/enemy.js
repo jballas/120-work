@@ -57,6 +57,13 @@ class Enemy {
         let d = dist(this.position.x, this.position.y, player.pos.x, player.pos.y);
         let combinedR = this.r + player.radius;
         if (d <= combinedR){
+            
+            //Stop the game background music
+            game_bg_music.stop();
+
+            // Play the Game Over sound
+            game_over_sound.play();
+
             stroke(255)
             text('Game Over', width * .5, 50);
             noLoop();

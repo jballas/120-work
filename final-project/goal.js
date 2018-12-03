@@ -11,7 +11,8 @@ class Goal {
     displayPortal(){
 
         fill(100);
-        ellipse(this.x, this.y, this.size);
+        image( portal_img, this.x, this.y)
+        //ellipse(this.x, this.y, this.size);
     }
 
 }
