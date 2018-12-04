@@ -27,10 +27,12 @@ let bg_img;
 let bg_main
 
 function preload() {
+
+    //Load images
     lillia_img = loadImage('./images/sprite-sheet-lillia.png');
-    fairy_img = loadImage('./images/sprite-sheet-fairy-blue.png');
+    fairy_img = loadImage('./images/sprite-sheet-fairy-v2.png');
     portal_img = loadImage('./images/portal.png');
-    bg_img = loadImage('./images/bg-tropical.png');
+    bg_img = loadImage('./images/bg-game-v2.png');
     bg_main = loadImage('./images/bg-mainpage.png');
 
     //Sound Effects and background music

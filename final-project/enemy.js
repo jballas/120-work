@@ -1,6 +1,6 @@
 // Code modified from Dan Shiffman's Nature of Code
 // [Shiffman, Dan. "Coding Challenge 61.1: Evolutionary Steering behaviors - Part 1." The Coding Train](https://www.youtube.com/watch?v=flxOkx0yLrY) 
-// Instead of having having multiple objects I have one Enemy that is targeting a player. 
+// I have Enemies that are targeting a player. It's game over if they reach the player. 
 // github.com/shiffman/The-Nature-of-Code-Examples-p5.js/tree/master/chp06_agents/NOC_6_01_Seek
 
 
@@ -29,8 +29,6 @@ class Enemy {
         this.r = this.size.w * .5; // the size of Enemy's capture radius.
         this.maxspeed = 5;
         this.maxforce = 0.2;
-        
-
     }
 
     frame(target){
@@ -55,6 +53,7 @@ class Enemy {
         pop();
     }
 
+    // Animate the enemy sprite
     animate(){
 
         if(frameCount % this.animateSpeed === 0){
@@ -91,7 +90,7 @@ class Enemy {
     gameOver(){
 
         let d = dist(this.position.x, this.position.y, player[0].pos.x, player[0].pos.y);
-        let combinedR = this.r + player[0].radius;
+        let combinedR = this.r + player[0].radius - 10;
         if (d <= combinedR){
             
             //Stop the game background music
@@ -107,6 +106,7 @@ class Enemy {
         }
     }
 
+    // Function to keep the enemies movements erratic, and to prevent them from swarming the player. If they touch each other they are transported back to the location. Code modified from Dr. Musick's
     avoidOthers(otherEnemies, myId){
         for (let n = 0; n < otherEnemies.length; n++) {
             // if n != myId, then check for touching
