@@ -44,6 +44,7 @@ class Enemy {
 
         push();
             
+            imageMode(CENTER);
             image(this.image,
                 this.position.x, this.position.y,
                 this.size.w, this.size.h,
@@ -51,6 +52,9 @@ class Enemy {
                 this.size.w, this.size.h
             );
         pop();
+        
+        // for testing the game-over hit box.
+        //ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
     }
 
     // Animate the enemy sprite
@@ -90,7 +94,7 @@ class Enemy {
     gameOver(){
 
         let d = dist(this.position.x, this.position.y, player[0].pos.x, player[0].pos.y);
-        let combinedR = this.r + player[0].radius - 10;
+        let combinedR = this.r + player[0].radius;
         if (d <= combinedR){
             
             //Stop the game background music

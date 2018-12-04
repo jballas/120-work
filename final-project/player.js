@@ -23,7 +23,7 @@ class Player {
         ];
 
         this.speed = 5;   //this controls how fast the player moves
-        this.radius = this.size.w * .5 ; // This controls how close you have to be to reach the goal.
+        this.radius = this.size.w *.10 ; // This controls how close you have to be to reach the goal.
 
     }
 
@@ -40,7 +40,8 @@ class Player {
     display(){
 
         push();
-
+        
+            imageMode(CENTER);
             image(
                 this.image, 
                 this.pos.x, this.pos.y, 
@@ -49,6 +50,8 @@ class Player {
                 this.size.w, this.size.h
             );
         pop();
+        // for testing the game-win boundaries
+        //ellipse(this.pos.x, this.pos.y, this.size.w, this.size.h);
     }
 
     animate(){
