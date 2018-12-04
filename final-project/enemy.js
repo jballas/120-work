@@ -36,7 +36,7 @@ class Enemy {
         this.animate(); // animate's the enemy sprite
         this.seek(target); // This uses the enemy's steering to seek out the target
         this.update(); // This controls how the enemy moves: the velocity and acceleration
-        this.gameOver();
+       this.gameOver();
     }
     
     // Displays the Enemy on screen

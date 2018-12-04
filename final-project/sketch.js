@@ -51,7 +51,7 @@ function setup() {
     game_bg_music.play();
 
     
-    player_init_y = abs( random(50, width/2) );
+    player_init_y = abs( random(60, width/2) );
     
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
 
