@@ -9,7 +9,7 @@ class Enemy {
     constructor(x,y, img) {
     
         this.position = createVector(x,y); 
-        this.velocity = createVector(0,-2 * this.deltaX);
+        this.velocity = createVector(0,-2);
         this.acceleration = createVector(0,0);
         
         this.image = img;
@@ -36,7 +36,7 @@ class Enemy {
         this.animate(); // animate's the enemy sprite
         this.seek(target); // This uses the enemy's steering to seek out the target
         this.update(); // This controls how the enemy moves: the velocity and acceleration
-       this.gameOver();
+        this.gameOver();
     }
     
     // Displays the Enemy on screen
@@ -110,7 +110,9 @@ class Enemy {
         }
     }
 
-    // Function to keep the enemies movements erratic, and to prevent them from swarming the player. If they touch each other they are transported back to the location. Code modified from Dr. Musick's
+    // Function to keep the enemies movements erratic, and to prevent them from swarming the player. // If they touch each other they are transported back to a random location. 
+    // Code modified Musick, Michael. Bouncing Balls, Week 12. montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/ 
+
     avoidOthers(otherEnemies, myId){
         for (let n = 0; n < otherEnemies.length; n++) {
             // if n != myId, then check for touching
