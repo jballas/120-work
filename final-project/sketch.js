@@ -130,7 +130,7 @@ function reachedGoal(){
 }
 
 function startScreenDisplay(){
-    ellipse(100, 100, 50);
+    bg_img = bg_mainpage;
 }
 
 /* // I moved this feature to the Enemy.js file
