@@ -29,20 +29,20 @@ TODO: LOGO for GAME
     - **Random appearance on screen**
     - Obstacles
 2. Sprites/ Concept Art (Finish by November 30th)
-    - Lucy and Edith
+    - Lillia and Fairies
         - **PS pixel line art**
-        - PS coloring
-        - Sprite animation/Sprite sheet
+        - **PS coloring**
+        - **Sprite animation/Sprite sheet**
     - Background sketch
-        - PS line art
-        - PS coloring
+        - **PS line art**
+        - **PS coloring**
     - Main Page
-        - brainstorm ideas/draft
-        - Logo sketch
-        - line art
-        - coloring
-    - Add final sprites to game
-    - Add final background to game
+        - **brainstorm ideas/draft**
+        - **Logo sketch**
+        - **line art**
+        - **coloring**
+    - **Add final sprites to game**
+    - **Add final background to game**
 3. Main Page and About page (Finish by December 1st)
     - Draft main page layout
         - A simple p5.JS animation loop?
@@ -50,11 +50,11 @@ TODO: LOGO for GAME
     - Final sketch
     - Link Main Page to About and Game
 4. Sound (finish by Decemer 4th)
-    - Search Hooksounds.com or Musopen.org offer for free background music
-    - Add background music to Game
+    - **Search Hooksounds.com or Musopen.org offer for free background music**
+    - **Add background music to Game**
     - Add music to Main Page
-    - Search Freesound.org for creative-commons Sound effects
-    - Add sound effects to game
+    - **Search Freesound.org for creative-commons Sound effects**
+    - **Add sound effects to game**
 
 5. Impliment other ideas?
 
@@ -124,6 +124,44 @@ function draw() {
 
 Next, I need to focus on concept art, and getting sprite animation. I'm looking forward to this part.
 
+date 12-3-18
+
+**Summary**: Over the weekend I worked on my artwork, and I found pixel art as frustrating at the game. I was pretty satified with the tropical setting, until I added the sprites on top of it and did some play testing, now I hate the background. I'm going to make it simplier. The pattern I made at first is too jarring.
+
+![background-tropical](./images/bg-tropical.png)
+
+Other Image issues I need to address:
+
+- Background should be simply black or a light brown color with some of the trees at top.
+- Impilmenting my portal is not working at the moment. So I'm just using a p5.js circle as by portal.
+- I also I realized my fairy's wing is cut off on the left, so I need to adjust the size again!
+
+Other concerns: I'm also struggling with the 'hit boxes'. When I had the game as circles, I could definetely tell where the boundaries are, but with sprites I can't always tell. I wonder if I could layer a circle on top, to see the difference.
+
+I'm going to have to post to the forum, or else find out when lab hours are this week, because I don't have any ideas how to fix this problem with 'hit boxes'.
+
+![current screenshot of game play, you win](screenshot_you_win.PNG)
+
+My Todo List
+
+- create a Main page and About page that will link to the main game. Using HTML? Or stick with p5.js?
+- Start button
+- restart button
+- Obstacles?
+- Can I add a text conversation game?
+
+### Images and Sound
+
+![Lillia sprite sheet](./images/sprite-sheet-Lillia.png)
+![Fairies sprite sheet](./images/sprite-sheet-fairy-blue.png)
+
+Using the `function preload()` I added in images for my fairies, and for Lillia, my main character. The trouble was getting used to drawing in the 8bit or pixel art style. I got some tips from youtube channel by blackthornprod. Each pixel has to do a lot of work, and typically 8bit games don't use very many colors. (5)
+
+As for animating, the advice I recieved was to keep my animations simple, like the artwork. After some experimenting I ended up with a very basic movement for both characters. Lillia's arms move up and down, and the fairies' wings flap up and down. (6)
+
+During my study of p5.js sound I watched more of Dan Shiffman's tutorials. In two different videos he gives some simple examples of adding background music, and adding sound effects to a game (7) (8). This was exactly what I needed. It was also very similar to preloading the image files. I feel like the beginning of my file has too many variables and preloaded images, but I'm trying to keep the file sizes down.
+
+
 ## Conclusion
 
 
@@ -135,4 +173,12 @@ Next, I need to focus on concept art, and getting sprite animation. I'm looking 
 
 (3) [Shiffman, Dan. "Coding Challenge #59: Steering Behaviors." The Coding Train. February 2017. www.youtube.com/watch?v=4hA7G3gup-4](https://www.youtube.com/watch?v=4hA7G3gup-4)
 
-(4)  [Shiffman, Dan. "Coding Challenge 61.1: Evolutionary Steering behaviors - Part 1." The Coding Train. April 2017. www.youtube.com/watch?v=flxOkx0yLrY ](https://www.youtube.com/watch?v=flxOkx0yLrY)
+(4)  [Shiffman, Dan. "Coding Challenge 61.1: Evolutionary Steering behaviors - Part 1." The Coding Train. April 2017. www.youtube.com/watch?v=flxOkx0yLrY](https://www.youtube.com/watch?v=flxOkx0yLrY)
+
+(5) ["How to draw pixel art game characters in PS - Tutorial" YouTube. Blackthornprod. May 2018. www.youtube.com/watch?v=qzvYu48kw5Q](https://www.youtube.com/watch?v=qzvYu48kw5Q)
+
+(6) ["How to animate Pixel art Game Characters in PS - Tutorial". YouTube blackthornprod. May 2018. www.youtube.com/watch?v=mnJb5iwYAmg](https://www.youtube.com/watch?v=mnJb5iwYAmg)
+
+(7) [Shiffman, Dan. "17.1: Loading and Playing - p5.js Sound Tutorial" The Coding Train. June 2017. www.youtube.com/watch?v=Pn1g1wjxl_0](https://www.youtube.com/watch?v=Pn1g1wjxl_0)
+
+(8) [Shiffman, Dan. "17.5: Adding Sound Effects - p5.js Sound Tutorial." The Coding Train. June 2017.www.youtube.com/watch?v=40Me1-yAtTc&t=864s](https://www.youtube.com/watch?v=40Me1-yAtTc&t=864s)
