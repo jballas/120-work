@@ -79,7 +79,7 @@ class Player {
         }
     }
 
-    // Prevents Lillia from moving off the screen. She will be inside a house, and can't move through walls, unlike the fairies. 
+    // Prevents Lillia from moving off the screen. 
     inBounds(){
         if (this.pos.x <= 15) {
             this.pos.x = 15;

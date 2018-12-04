@@ -24,7 +24,12 @@ let portal_img;
 
 // Background variables
 let bg_img;
-let bg_main
+let bg_main;
+let canvas_w = 1024;
+let canvas_h = 576;
+
+//game start
+let button;
 
 function preload() {
 
@@ -33,7 +38,7 @@ function preload() {
     fairy_img = loadImage('./images/sprite-sheet-fairy-v2.png');
     portal_img = loadImage('./images/portal.png');
     bg_img = loadImage('./images/bg-game-v2.png');
-    bg_main = loadImage('./images/bg-mainpage.png');
+    bg_mainpage = loadImage('./images/bg-mainpage.png');
 
     //Sound Effects and background music
     game_clear = loadSound('./sounds/SFX-clear.mp3');
@@ -43,9 +48,12 @@ function preload() {
 }
 
 function setup() {
-    //let canvas = 
-    createCanvas(1024, 576);
-    //canvas.position(0,0);
+    createCanvas(canvas_w, canvas_h);
+
+    button = createButton("Start Game");
+
+    button.mousePressed( startScreenDisplay );
+        
 
     //Play the game's background music
     game_bg_music.setVolume(0.5);
@@ -72,26 +80,31 @@ function setup() {
 
 function draw() {
 
+    
     background( bg_img );
-        
-    let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
 
-    goal.displayPortal();
+        let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
 
-    // Create player character
-    for(let i = 0; i < player.length; i ++){
-        player[i].frame();
-    }
+        goal.displayPortal();
 
-    //If you reach the goal you win.
-    reachedGoal();
+        // Create player character
+        for(let i = 0; i < player.length; i ++){
+            player[i].frame();
+        }
 
-    // Enemy characters
-    for (let i = 0; i < fairies.length; i++) {
-        fairies[i].frame(target);
-        fairies[i].avoidOthers(fairies, i);
-    }
-   // gameOver(); // I moved gameOver into the enemy.js file.
+        //If you reach the goal you win.
+        reachedGoal();
+
+        // Enemy characters
+        for (let i = 0; i < fairies.length; i++) {
+            fairies[i].frame(target);
+            fairies[i].avoidOthers(fairies, i);
+        }
+        // gameOver(); // I moved gameOver into the enemy.js file.
+    
+
+    
+    
 }
 
 function reachedGoal(){
@@ -114,6 +127,10 @@ function reachedGoal(){
         noLoop();
 
     }
+}
+
+function startScreenDisplay(){
+    ellipse(100, 100, 50);
 }
 
 /* // I moved this feature to the Enemy.js file
