@@ -35,7 +35,7 @@ let startingGame;
 function preload() {
 
     //Load images
-    lillia_img = loadImage("./images/sprite-sheet-lillia.png");
+    lillia_img = loadImage("sprite-sheet-lillia.png");
     fairy_img = loadImage("./images/sprite-sheet-fairy-v2.png");
     portal_img = loadImage("./images/portal.png");
     bg_img = loadImage("./images/bg-game-v2.png");
@@ -103,6 +103,7 @@ function draw() {
     
 }
 
+/********* WIN the Game  *********/
 function reachedGoal(){
 
     let d = dist(player[0].pos.x, player[0].pos.y, goal.x, goal.y);
@@ -123,7 +124,7 @@ function reachedGoal(){
     }
 }
 
-
+/********* Game Starts Function *********/
 function startGame(){
 
     startingGame = 1;
@@ -131,11 +132,13 @@ function startGame(){
     // Player's Y starting position is a random location
     player_init_y = abs( random(60, width/2) );
 
-
+    // Create player
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
 
+    // Create Goal
     goal = new Goal();
 
+    // Create Enemies
     for (let i = 0; i < howManyFairies; i++){
         // Enemy position is random, but in the lower quadrant of the screen
         enemy_init_y = abs ( random(height/2, height) );
@@ -145,11 +148,13 @@ function startGame(){
     }
 }
 
+/********* Main Page screen *********/
 function startScreenDisplay(){
     background (bg_mainpage);
 
 }
 
+/********* Credits *********/
 function creditsDisplay(){
 
     let text_x = 0;
