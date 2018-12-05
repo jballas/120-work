@@ -30,7 +30,9 @@ let canvas_h = 576;
 
 //game start
 let button;
+let startingGame;
 
+/********* Image and Sound *********/
 
 function preload() {
 
@@ -42,25 +44,19 @@ function preload() {
     bg_mainpage = loadImage("./images/bg-mainpage.png");
 
     //Sound Effects and background music
-    game_clear = loadSound("./sounds/SFX-clear.mp3");
-    game_bg_music = loadSound("./sounds/game-music.mp3");
-    game_over_sound = loadSound("./sounds/SFX-game-over.mp3");
+    game_clear = loadSound("sounds/SFX-clear.mp3");
+    game_bg_music = loadSound("sounds/game-music.mp3");
+    game_over_sound = loadSound("sounds/SFX-game-over.mp3");
 
 }
 
+/********* Setup *********/
 function setup() {
     createCanvas(canvas_w, canvas_h);
 
-    button = createButton("Start Game");
+    startingGame == false;
 
-    button.mousePressed( startScreenDisplay );
-        
-
-    //Play the game's background music
-    game_bg_music.setVolume(0.5);
-    game_bg_music.play();
-
-    
+ 
     // Player's Y starting position is a random location
     player_init_y = abs( random(60, width/2) );
 
@@ -79,10 +75,18 @@ function setup() {
     }
 }
 
+/********* Draw *********/
 function draw() {
 
+    if ( startingGame == true) {
     
-    background( bg_img );
+        background( bg_img );
+        
+        //Play the game's background music
+        game_bg_music.playMode('untilDone');
+        game_bg_music.setVolume(0.5);
+        game_bg_music.play();
+        
 
         let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
 
@@ -103,8 +107,16 @@ function draw() {
         }
         // gameOver(); // I moved gameOver into the enemy.js file.
     
+    }
+    else {
 
-    
+        startScreenDisplay();
+        button = createButton("Start Game");
+        button.mousePressed( startGame);
+        
+
+    }
+
     
 }
 
@@ -130,8 +142,15 @@ function reachedGoal(){
     }
 }
 
+
+function startGame(){
+
+    startingGame = true;
+
+}
+
 function startScreenDisplay(){
-    bg_img = bg_mainpage;
+    background (bg_mainpage);
 }
 
 /* // I moved this feature to the Enemy.js file
