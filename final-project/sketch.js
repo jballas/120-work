@@ -183,8 +183,6 @@ function creditsDisplay(){
 
     noLoop();
 
-    
-    button.mousePressed( startGame);
 }
 
 /* // I moved this feature to the Enemy.js file
