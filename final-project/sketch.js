@@ -31,6 +31,7 @@ let canvas_h = 576;
 //game start
 let button;
 
+
 function preload() {
 
     //Load images
