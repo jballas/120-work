@@ -54,25 +54,11 @@ function preload() {
 function setup() {
     createCanvas(canvas_w, canvas_h);
 
-    startingGame == false;
+    startingGame = false;
+    button = createButton("Start Game");
+    button.mousePressed( startGame);
+    
 
- 
-    // Player's Y starting position is a random location
-    player_init_y = abs( random(60, width/2) );
-
-
-    player[0] = new Player(player_init_x, player_init_y, lillia_img);
-
-    goal = new Goal();
-
-
-    for (let i = 0; i < howManyFairies; i++){
-        // Enemy position is random, but in the lower quadrant of the screen
-        enemy_init_y = abs ( random(height/2, height) );
-        enemy_init_x = abs ( random ( width / 2, width) );
-
-        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
-    }
 }
 
 /********* Draw *********/
@@ -111,10 +97,6 @@ function draw() {
     else {
 
         startScreenDisplay();
-        button = createButton("Start Game");
-        button.mousePressed( startGame);
-        
-
     }
 
     
@@ -137,8 +119,9 @@ function reachedGoal(){
         stroke(255)
         textSize(50);
         text('You win', width * 0.4, height * 0.4);
-        noLoop();
+        //noLoop();
 
+        startingGame = false;
     }
 }
 
@@ -147,10 +130,26 @@ function startGame(){
 
     startingGame = true;
 
+    // Player's Y starting position is a random location
+    player_init_y = abs( random(60, width/2) );
+
+
+    player[0] = new Player(player_init_x, player_init_y, lillia_img);
+
+    goal = new Goal();
+
+
+    for (let i = 0; i < howManyFairies; i++){
+        // Enemy position is random, but in the lower quadrant of the screen
+        enemy_init_y = abs ( random(height/2, height) );
+        enemy_init_x = abs ( random ( width / 2, width) );
+
+        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
+    }
 }
 
 function startScreenDisplay(){
-    background (bg_mainpage);
+    //background (bg_mainpage);
 }
 
 /* // I moved this feature to the Enemy.js file
