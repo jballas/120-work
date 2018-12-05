@@ -54,9 +54,9 @@ class Enemy {
         pop();
         
         // for testing the game-over hit box.
-        //stroke(0);
-        //noFill();
-        //ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
+        stroke(0);
+        noFill();
+        ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
     }
 
     // Animate the enemy sprite
@@ -113,7 +113,7 @@ class Enemy {
             //noLoop();
 
             // set Game screen to false
-            startingGame = false;
+            startingGame = 0;
             
 
         }

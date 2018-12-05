@@ -1,11 +1,10 @@
-
+/********* Fairy Doctor Runs Away game version 1.0 *********/
 //Player variables
 let player_init_x = 50;
 let player_init_y ;
 let player = [];
 
 //Enemy variables
-//let enemy;
 let fairies = [];
 let howManyFairies = 5;
 let enemy_init_x;
@@ -14,7 +13,6 @@ let enemy_init_y;
 //Sound variables
 let game_song;
 let game_over_sound;
-let sparkle_sound;
 let game_clear;
 
 //Image variables
@@ -54,7 +52,7 @@ function preload() {
 function setup() {
     createCanvas(canvas_w, canvas_h);
 
-    startingGame = false;
+    startingGame = 0;
     button = createButton("Start Game");
     button.mousePressed( startGame);
     
@@ -64,7 +62,7 @@ function setup() {
 /********* Draw *********/
 function draw() {
 
-    if ( startingGame == true) {
+    if ( startingGame == 1) {
     
         background( bg_img );
         
@@ -94,7 +92,10 @@ function draw() {
         // gameOver(); // I moved gameOver into the enemy.js file.
     
     }
-    else {
+    else if( startingGame == 2){
+        creditsDisplay();
+    }
+    else if( startingGame == 0){
 
         startScreenDisplay();
         fairies = [];
@@ -117,19 +118,16 @@ function reachedGoal(){
 
         createP("Thank you for playing my game!");
 
-        stroke(255)
-        textSize(50);
-        text('You win', width * 0.4, height * 0.4);
         //noLoop();
 
-        startingGame = false;
+        startingGame = 2;
     }
 }
 
 
 function startGame(){
 
-    startingGame = true;
+    startingGame = 1;
 
     // Player's Y starting position is a random location
     player_init_y = abs( random(60, width/2) );
@@ -138,7 +136,6 @@ function startGame(){
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
 
     goal = new Goal();
-
 
     for (let i = 0; i < howManyFairies; i++){
         // Enemy position is random, but in the lower quadrant of the screen
@@ -151,6 +148,37 @@ function startGame(){
 
 function startScreenDisplay(){
     background (bg_mainpage);
+
+}
+
+function creditsDisplay(){
+
+    let text_x = 50;
+    let text_y = 100;
+    let lines = 5;
+
+    background(0);
+    stroke(255)
+
+       textSize(200)
+    text("Fairy Doctor", text_x + lines, text_y + lines);
+
+    textSize(200)
+    text("Runs Away", text_x, text_y + 200);
+
+    textSize(50);
+    text("You win", text_x + 300, text_y + 300);
+
+    createElement('h1', "About");
+
+    createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana."); 
+
+    createP("Story");
+    createP("Lillia has gotten herself into a situation. She used to be a fairy doctor, but had to quit for various reason. Her marriage was a mistake. She's desperate to escape. Her only choice? Run away. Unfortunately, the fairies have this crazy idea that Lillia needs to be their fairy doctor. She doesn't, but they just don't understand. What's a girl to do?");
+
+    createP(" Attributions: song credits got to Shiftkun: https://freesound.org/s/435782/. Gameover sound from wolerado: https://freesound.org/s/415096/.");
+
+    noLoop();
 
 }
 
