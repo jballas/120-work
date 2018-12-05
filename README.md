@@ -28,7 +28,7 @@ Interactive sketch
 ![Week 11: Popcorn](hw-11.png) [Popcorn](https://jballas.github.io/120-work/hw-10/index.html)
 Animated sketch
 
-![Week 11: Butterflies](hw-11-butterflies.PNG) [Butterflies](https://jballas.github.io/120-work/course-work/week-11-butterflies/index.html)
+![Week 11: Butterflies](butterflies.PNG) [Butterflies](https://jballas.github.io/120-work/course-work/week-11-butterflies/index.html)
 Animated sketch
 
 ![Week 12: Ripples](hw-12.png) [Ripples](https://jballas.github.io/120-work/hw-12/index.html)
