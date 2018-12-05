@@ -97,6 +97,7 @@ function draw() {
     else {
 
         startScreenDisplay();
+        fairies = [];
     }
 
     
@@ -149,7 +150,8 @@ function startGame(){
 }
 
 function startScreenDisplay(){
-    //background (bg_mainpage);
+    background (bg_mainpage);
+
 }
 
 /* // I moved this feature to the Enemy.js file
