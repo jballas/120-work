@@ -35,16 +35,16 @@ let button;
 function preload() {
 
     //Load images
-    lillia_img = loadImage("images/sprite-sheet-lillia.png");
-    fairy_img = loadImage("images/sprite-sheet-fairy-v2.png");
-    portal_img = loadImage("images/portal.png");
-    bg_img = loadImage("images/bg-game-v2.png");
-    bg_mainpage = loadImage("images/bg-mainpage.png");
+    lillia_img = loadImage("./images/sprite-sheet-lillia.png");
+    fairy_img = loadImage("./images/sprite-sheet-fairy-v2.png");
+    portal_img = loadImage("./images/portal.png");
+    bg_img = loadImage("./images/bg-game-v2.png");
+    bg_mainpage = loadImage("./images/bg-mainpage.png");
 
     //Sound Effects and background music
-    game_clear = loadSound("sounds/SFX-clear.mp3");
-    game_bg_music = loadSound("sounds/game-music.mp3");
-    game_over_sound = loadSound("sounds/SFX-game-over.mp3");
+    game_clear = loadSound("./sounds/SFX-clear.mp3");
+    game_bg_music = loadSound("./sounds/game-music.mp3");
+    game_over_sound = loadSound("./sounds/SFX-game-over.mp3");
 
 }
 
@@ -124,7 +124,7 @@ function reachedGoal(){
 
         stroke(255)
         textSize(50);
-        text('You win', width * 0.5, height * 0.5);
+        text('You win', width * 0.4, height * 0.4);
         noLoop();
 
     }

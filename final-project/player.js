@@ -23,7 +23,7 @@ class Player {
         ];
 
         this.speed = 5;   //this controls how fast the player moves
-        this.radius = this.size.w *.10 ; // This controls how close you have to be to reach the goal.
+        this.radius = this.size.w *.20 ; // This controls how close you have to be to reach the goal.
 
     }
 
