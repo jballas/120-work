@@ -112,8 +112,9 @@ class Enemy {
             text('Game Over', width * 0.5, height * 0.5 );
             //noLoop();
 
-                        // set Game screen to false
-                        startingGame = false;
+            // set Game screen to false
+            startingGame = false;
+            
 
         }
     }

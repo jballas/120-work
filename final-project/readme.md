@@ -8,15 +8,18 @@ date
 
 ## Overview
 
-Presenting my final project: Lucy and the Ghost of Garnet
+My final project: Fairy Doctor Runs Away
 
-TODO: LOGO for GAME
+[!Game screen](./images/bg-mainpage.png)
 
 ## Projects
 
 - player.js
 - sketch.js
-- 
+- enemy.js
+- goal.js
+- Sounds
+- Images
 
 ## Workflow / Deadlines
 
@@ -44,15 +47,14 @@ TODO: LOGO for GAME
     - **Add final sprites to game**
     - **Add final background to game**
 3. Main Page and About page (Finish by December 1st)
-    - Draft main page layout
+    - **Draft main page layout**
         - A simple p5.JS animation loop?
     - Write About page
-    - Final sketch
-    - Link Main Page to About and Game
+    - **Link Main Page to About and Game**
 4. Sound (finish by Decemer 4th)
     - **Search Hooksounds.com or Musopen.org offer for free background music**
     - **Add background music to Game**
-    - Add music to Main Page
+    - Add music to Main Page, can I mute it?
     - **Search Freesound.org for creative-commons Sound effects**
     - **Add sound effects to game**
 
@@ -192,9 +194,7 @@ As for animating, the advice I recieved was to keep my animations simple, like t
 
 During my study of p5.js sound I watched more of Dan Shiffman's tutorials. In two different videos he gives some simple examples of adding background music, and adding sound effects to a game (7) (8). This was exactly what I needed. It was also very similar to preloading the image files. I feel like the beginning of my file has too many variables and preloaded images, but I'm trying to keep the file sizes down.
 
-
 ## Conclusion
-
 
 ## Sources
 
