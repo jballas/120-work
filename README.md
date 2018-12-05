@@ -34,4 +34,5 @@ Animated sketch
 ![Week 12: Ripples](hw-12.png) [Ripples](https://jballas.github.io/120-work/hw-12/index.html)
 Animated sketch
 
-Final Project
+[Final Project: Fairy Doctor Runs Away](https://jballas.github.io/120-work/final-project/index.html)
+Animated sketch
