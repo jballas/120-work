@@ -44,9 +44,9 @@ function preload() {
     bg_mainpage = loadImage("./images/bg-mainpage.png");
 
     //Sound Effects and background music
-    game_clear = loadSound("https://jballas.github.io/120-work/final-project/sounds/SFX-clear.mp3");
-    game_bg_music = loadSound("https://jballas.github.io/120-work/final-project/sounds/SFX-clear.mp3");
-    game_over_sound = loadSound("https://jballas.github.io/120-work/final-project/sounds/SFX-clear.mp3");
+    game_clear = loadSound("./sounds/SFX-clear.mp3");
+    game_bg_music = loadSound("./sounds/game-music.mp3");
+    game_over_sound = loadSound("./sounds/SFX-game-over.mp3");
 
 }
 
