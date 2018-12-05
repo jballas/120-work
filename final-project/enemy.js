@@ -54,6 +54,8 @@ class Enemy {
         pop();
         
         // for testing the game-over hit box.
+        //stroke(0);
+        //noFill();
         //ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
     }
 

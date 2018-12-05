@@ -150,6 +150,37 @@ My Todo List
 - Obstacles?
 - Can I add a text conversation game?
 
+date: 12-4-18
+**Summary:**
+I researched dialogue trees and discovered a wonderful program called [Twine](http://twinery.org), which allows you to create HTML based interactive fiction. This is too much work to try and add a second conversation based game in p5.js, so I'm just going to focus on getting the game to work properly.
+
+I fixed the backgrounds, and figured out how to make my 'hit boxes work. I added in the test circles. This allowed me to see where the characters were hitting each other.
+
+![Hit boxes around sprites](screenshot_hit_box.PNG)
+
+My solution was to change the `imageMode()`. The default is CORNERS, which specifies that the 2nd and 3rd parameters are attached to the upper left corner. When I changed to `imageMode(CENTER);` then the images are more like ellipses. Success! It fixed my hit boxes. Of course, after that I had to adjust my boundaries to make sure my sprite stayed on screen properly.
+
+My next problem is adding the main page, and start game button. I looked over the Pacman game again (1), and started poking around on our github Issues forum. @HagenNataniel has been working on a trivia game, and there was a link to another p5.js game, which uses a Game Start screen, as well as the main game Screen.
+
+Looks like I'm going to have to impliment an if/else statement and a game start button.
+
+I reviewed more of Dan Shiffman's DOM videos, to see how adding HTML elements works in p5.js. When I tried to add HTML information straight to my index file, I didn't like the layout anymore. I also had to download the newest version of dom.min.js library because of an error with the button.
+
+Lasty, I am getting warning from google about my audio playing automatically.
+![Google warning](screenshot_audio_warning.PNG)
+
+TODO:
+
+- Add if/else statement to get game screen
+- Button to start the game, and then when it's game over, to restart the game
+- Credits/About page, because I need to give attributions for my audio files. 
+
+CONCERNS:
+
+- How do I tell people what the best size for the game is?
+- Im concerned about scalability. What if someone views this game on a phone? It wouldn't play. 
+- How do I change the background images from static to something that will adjust automatically to screen size?
+
 ### Images and Sound
 
 ![Lillia sprite sheet](./images/sprite-sheet-Lillia.png)
