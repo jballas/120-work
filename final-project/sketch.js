@@ -42,9 +42,9 @@ function preload() {
     bg_mainpage = loadImage("./images/bg-mainpage.png");
 
     //Sound Effects and background music
-    game_clear = loadSound("./sounds/SFX-clear.mp3");
-    game_bg_music = loadSound("./sounds/game-music.mp3");
-    game_over_sound = loadSound("./sounds/SFX-game-over.mp3");
+    game_clear = loadSound("SFX-clear.mp3");
+    game_bg_music = loadSound("game-music.mp3");
+    game_over_sound = loadSound("SFX-game-over.mp3");
 
 }
 
@@ -55,7 +55,6 @@ function setup() {
     startingGame = 0;
     button = createButton("Start Game");
     button.mousePressed( startGame);
-    
 
 }
 
@@ -177,7 +176,7 @@ function creditsDisplay(){
 
     createP("It is also the final project for my Media Arts Creative Coding 1 at the University of Montana."); 
 
-    createP("The story is about Lillia, who has gotten herself into a sticky situation. She's on the run right now. She used to be a fairy doctor, but had to quit for various reason. Unfortunately, the fairies still want Lillia to be their doctor. Can she escape through the portal before they catch her?");
+    createP("The story is about Lillia, who has gotten herself into a sticky situation. She used to be a fairy doctor, but had to quit for various reason. Unfortunately, the fairies still want her to be their doctor. Can she escape through the portal before they catch her?");
 
     createP(" Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/.") ;
 
