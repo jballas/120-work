@@ -153,33 +153,38 @@ function startScreenDisplay(){
 
 function creditsDisplay(){
 
-    let text_x = 50;
-    let text_y = 100;
-    let lines = 5;
-
+    let text_x = 0;
+    let text_y = height;
+    let t_size = width/8
+    let t_size_sm = t_size /2;
+    
     background(0);
     stroke(255)
 
-       textSize(200)
-    text("Fairy Doctor", text_x + lines, text_y + lines);
+    textSize(t_size_sm);
+    text("You win", text_x /3, text_y/4);
 
-    textSize(200)
-    text("Runs Away", text_x, text_y + 200);
+    textSize(t_size)
+    text("Fairy Doctor", text_x, text_y/2);
 
-    textSize(50);
-    text("You win", text_x + 300, text_y + 300);
+    textSize(t_size)
+    text("Runs Away", text_x, text_y /1.25);
+
 
     createElement('h1', "About");
 
-    createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana."); 
+    createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary.");
 
-    createP("Story");
-    createP("Lillia has gotten herself into a situation. She used to be a fairy doctor, but had to quit for various reason. Her marriage was a mistake. She's desperate to escape. Her only choice? Run away. Unfortunately, the fairies have this crazy idea that Lillia needs to be their fairy doctor. She doesn't, but they just don't understand. What's a girl to do?");
+    createP("It is also the final project for my Media Arts Creative Coding 1 at the University of Montana."); 
 
-    createP(" Attributions: song credits got to Shiftkun: https://freesound.org/s/435782/. Gameover sound from wolerado: https://freesound.org/s/415096/.");
+    createP("The story is about Lillia, who has gotten herself into a sticky situation. She's on the run right now. She used to be a fairy doctor, but had to quit for various reason. Unfortunately, the fairies still want Lillia to be their doctor. Can she escape through the portal before they catch her?");
+
+    createP(" Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/.") ;
 
     noLoop();
 
+    
+    button.mousePressed( startGame);
 }
 
 /* // I moved this feature to the Enemy.js file
