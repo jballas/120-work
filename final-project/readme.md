@@ -49,7 +49,7 @@ My final project: Fairy Doctor Runs Away
 3. Main Page and About page (Finish by December 1st)
     - **Draft main page layout**
         - A simple p5.JS animation loop?
-    - Write About page
+    - **Write About page/ Credits**
     - **Link Main Page to About and Game**
 4. Sound (finish by Decemer 4th)
     - **Search Hooksounds.com or Musopen.org offer for free background music**
@@ -68,7 +68,7 @@ My final project: Fairy Doctor Runs Away
 
 ## Progress Report
 
-date: 11-21-18
+### date: 11-21-18
 
 **Summary:** After finishing up my proposal, I started working on first step: Coding. This included coding the player and making it move using `keyIsDown`, which is tied to each of the directional arrow keys. Right now I have the speed moving at 5, but this is quite fast. I may consider revising it.
 
@@ -80,7 +80,7 @@ Later today I'm going to work on sketching and pixel art in Photoshop.
 
 I reviewed a p5.js pacman game to see how the code for a game was laid out, and specifcially how the objects interact(1), and our week 12 lesson for interaction between objects(2).
 
-date: 11-23-18
+### date: 11-23-18
 
 **Summary:** I focused on making the enemy movement today. I want it to target the player, and I modified code from Dan Shiffman's Steering Behaviors. In his tutorial he discusses how the steering behavior, in this case a `seek()` function is defined by the simple equation of steering = desired velocity - current velocity (3). I used this in my Enemy.js file and now the object zips across the screen toward a stationary x,y position. Now the trick will be to get it to target a constantly moving position. I think I just need to put the current X,Y posistions into an array and then have the enemy target those numbers.
 
@@ -91,7 +91,7 @@ Todo:
 1. Add colors to objects, so I can identify them better.
 2. Research code that targets a location that is constantly updating. Check the p5.js book as well as Dr. Musick's pacman and bubbles array for this behavior.
 
-date: 11-26-18
+### date: 11-26-18
 
 **Summary:** Coding the enemy movement turned out to be the biggest struggle so far. I managed to make the enemy target a stationary point, but I could not figure out how to make it target a moving object. I knew it had to be possible. As I researched into this I discovered various methods to target the mouseX, and mouseY, but I was determined to keep my movement tied to the keyIsPress. After researching more about steering, I discovered another example in Dan Shiffman's Nature of Coding that used steering to target specific dots on a screen. (4) That's when I finally had a breakthrough. The enemy is programmed to `seek(target)` using the variable `let target = creatVector( player.pos.x,  player.pos.y)`. That's all it took.
 
@@ -126,7 +126,7 @@ function draw() {
 
 Next, I need to focus on concept art, and getting sprite animation. I'm looking forward to this part.
 
-date 12-3-18
+### date 12-3-18
 
 **Summary**: Over the weekend I worked on my artwork, and I found pixel art as frustrating at the game. I was pretty satified with the tropical setting, until I added the sprites on top of it and did some play testing, now I hate the background. I'm going to make it simplier. The pattern I made at first is too jarring.
 
@@ -152,7 +152,8 @@ My Todo List
 - Obstacles?
 - Can I add a text conversation game?
 
-date: 12-4-18
+### date: 12-4-18
+
 **Summary:**
 I researched dialogue trees and discovered a wonderful program called [Twine](http://twinery.org), which allows you to create HTML based interactive fiction. This is too much work to try and add a second conversation based game in p5.js, so I'm just going to focus on getting the game to work properly.
 
@@ -175,13 +176,45 @@ TODO:
 
 - Add if/else statement to get game screen
 - Button to start the game, and then when it's game over, to restart the game
-- Credits/About page, because I need to give attributions for my audio files. 
+- Credits/About page, because I need to give attributions for my audio files.
 
 CONCERNS:
 
 - How do I tell people what the best size for the game is?
-- Im concerned about scalability. What if someone views this game on a phone? It wouldn't play. 
+- Im concerned about scalability. What if someone views this game on a phone? It wouldn't play.
 - How do I change the background images from static to something that will adjust automatically to screen size?
+
+### Date 12-5-18
+
+**Summary:**
+Today I updated my game to switch between a main page, the game and a credit page. I use an if/else if/else if statement to switch between each of the three 'pages'. The basic layout for this came from a p5.js game called Flappy Pong.(9)
+
+There was some unexpected results. At one point the fairies kept multiplying over and over every time I lost the game. There were way too many.
+![Nightmare](screenshot_nightmare.png)
+
+There was an easy solution, I just had to make sure my enemy array was empty again whenever I restarted the game.
+
+```JS
+    else if( startingGame == 0){
+
+        startScreenDisplay();
+        fairies = [];
+    }
+```
+
+I also made my About/Credits page today. I tried to keep it simple. In some ways I prefer the design of this to my pixelated background.
+
+![Credits](screenshot_credits.png)
+
+Today, I was ready to ask for feedback from friends and family, but I ran into a bigger issue. Whenever I try to view my game on the github webpage there is an error.
+
+![Sound Loading Error](final-project-sound-errors.PNG)
+
+I have no clue why. Googling didn't reveal any solutions. I posted to the forum today to see if anyone else knows and I'll e-mail the TAs tomorrow. At this rate I won't be able to submit my project.
+
+The game still works on my local server, but not on github. Not in Chrome or Firefox.
+
+Next I could try to move the sound file from the sound folder for a direct path. It's worth a try.
 
 ### Images and Sound
 
@@ -193,6 +226,10 @@ Using the `function preload()` I added in images for my fairies, and for Lillia,
 As for animating, the advice I recieved was to keep my animations simple, like the artwork. After some experimenting I ended up with a very basic movement for both characters. Lillia's arms move up and down, and the fairies' wings flap up and down. (6)
 
 During my study of p5.js sound I watched more of Dan Shiffman's tutorials. In two different videos he gives some simple examples of adding background music, and adding sound effects to a game (7) (8). This was exactly what I needed. It was also very similar to preloading the image files. I feel like the beginning of my file has too many variables and preloaded images, but I'm trying to keep the file sizes down.
+
+## Forum Issues
+
+I've been helping people debug their code project. @JoleneTiffanyG had some small typos in her code I found. @HagenNathaniel couldn't get his code to display and I suggested he  download the newest version of dom.min.js file, because of a button error.
 
 ## Conclusion
 
@@ -213,3 +250,5 @@ During my study of p5.js sound I watched more of Dan Shiffman's tutorials. In tw
 (7) [Shiffman, Dan. "17.1: Loading and Playing - p5.js Sound Tutorial" The Coding Train. June 2017. www.youtube.com/watch?v=Pn1g1wjxl_0](https://www.youtube.com/watch?v=Pn1g1wjxl_0)
 
 (8) [Shiffman, Dan. "17.5: Adding Sound Effects - p5.js Sound Tutorial." The Coding Train. June 2017.www.youtube.com/watch?v=40Me1-yAtTc&t=864s](https://www.youtube.com/watch?v=40Me1-yAtTc&t=864s)
+
+(9) [Gelal, Oguz. "Flappy Pong". Github. gist.github.com/oguzgelal/a2a8db8b2da0e864d1d0#file-flappy_pong-js](https://gist.github.com/oguzgelal/a2a8db8b2da0e864d1d0#file-flappy_pong-js)
