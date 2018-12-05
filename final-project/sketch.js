@@ -35,7 +35,7 @@ let startingGame;
 function preload() {
 
     //Load images
-    lillia_img = loadImage("sprite-sheet-lillia.png");
+    lillia_img = loadImage("sprite-sheet-Lillia.png");
     fairy_img = loadImage("./images/sprite-sheet-fairy-v2.png");
     portal_img = loadImage("./images/portal.png");
     bg_img = loadImage("./images/bg-game-v2.png");
