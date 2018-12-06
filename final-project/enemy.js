@@ -104,7 +104,8 @@ class Enemy {
             //Stop the game background music
             game_bg_music.stop();
 
-            // Play the Game Over sound
+            // Play the Game Over sound       
+            game_over_sound.setVolume(0.5);
             game_over_sound.play();
 
             stroke(255);

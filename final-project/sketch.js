@@ -3,6 +3,7 @@
 let player_init_x = 50;
 let player_init_y ;
 let player = [];
+let lillia;
 
 //Enemy variables
 let fairies = [];
@@ -61,7 +62,11 @@ function setup() {
 /********* Draw *********/
 function draw() {
 
-    if ( startingGame == 1) {
+    if( startingGame == 0){
+
+        startScreenDisplay();
+        fairies = [];
+    } else if ( startingGame == 1) {
     
         background( bg_img );
         
@@ -94,37 +99,8 @@ function draw() {
     else if( startingGame == 2){
         creditsDisplay();
     }
-    else if( startingGame == 0){
-
-        startScreenDisplay();
-        fairies = [];
-    }
 
     
-}
-
-/********* WIN the Game  *********/
-function reachedGoal(){
-
-    let d = dist(player[0].pos.x, player[0].pos.y, goal.x, goal.y);
-    let combinedR = player[0].radius + goal.r;
-    if (d <= combinedR){
-
-        //Stop the background music
-        game_bg_music.stop();
-
-        //Play the 'You win' Sound Effect
-        game_clear.play();
-
-        createP("Thank you for playing my game!");
-
-        
-        createElement("H1", "About");
-
-        createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
-
-        startingGame = 2;
-    }
 }
 
 /********* Game Starts Function *********/
@@ -159,6 +135,8 @@ function startScreenDisplay(){
     let t_size = width/8
     let t_size_sm = t_size /2;
     let t_size_tiny = t_size_sm/2;
+    lillia_loc_x = width * 0.10;
+    lillia_loc_y = height /2;
 
     background(0);
     stroke(255)
@@ -175,6 +153,33 @@ function startScreenDisplay(){
     textSize(t_size_tiny);
     text("Escape through the portal before the fairies catch you!", text_x, height - 50);
 
+    lillia = new Player(lillia_loc_x, lillia_loc_y, lillia_img);
+    lillia.frame();
+
+}
+
+/********* WIN the Game  *********/
+function reachedGoal(){
+
+    let d = dist(player[0].pos.x, player[0].pos.y, goal.x, goal.y);
+    let combinedR = player[0].radius + goal.r;
+    if (d <= combinedR){
+
+        //Stop the background music
+        game_bg_music.stop();
+
+        //Play the 'You win' Sound Effect
+        game_clear.play();
+
+        createP("Thank you for playing my game!");
+
+        
+        createElement("H1", "About");
+
+        createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
+
+        startingGame = 2;
+    }
 }
 
 /********* Credits *********/
