@@ -150,7 +150,23 @@ function startGame(){
 
 /********* Main Page screen *********/
 function startScreenDisplay(){
-    background (bg_mainpage);
+
+    let text_x = 0;
+    let text_y = height;
+    let t_size = width/8
+    let t_size_sm = t_size /2;
+
+    background(0);
+    stroke(255)
+
+    textSize(t_size_sm);
+    text("Control with W A S D", text_x, text_y/4);
+
+    textSize(t_size_sm);
+    text("Fairy Doctor", text_x, text_y/2);
+
+    textSize(t_size_sm);
+    text("Runs Away", text_x, text_y /1.25);
 
 }
 
@@ -165,13 +181,13 @@ function creditsDisplay(){
     background(0);
     stroke(255)
 
-    textSize(t_size_sm);
-    text("You win", text_x /3, text_y/4);
+    textSize(t_size);
+    text("You win", text_x, text_y/4);
 
-    textSize(t_size)
+    textSize(t_size_sm);
     text("Fairy Doctor", text_x, text_y/2);
 
-    textSize(t_size)
+    textSize(t_size_sm);
     text("Runs Away", text_x, text_y /1.25);
 
 
