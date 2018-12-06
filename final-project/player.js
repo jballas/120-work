@@ -77,6 +77,20 @@ class Player {
         if (keyIsDown (83) ) {
             this.pos.y += this.speed;
         }
+
+        if (keyIsDown (LEFT_ARROW) ) {
+            this.pos.x -= this.speed;
+        } 
+        if (keyIsDown(RIGHT_ARROW) ) {
+            this.pos.x += this.speed;
+        } 
+        if (keyIsDown (UP_ARROW) ) {
+            this.pos.y -= this.speed;
+        } 
+        if (keyIsDown (DOWN_ARROW) ) {
+            this.pos.y += this.speed;
+        }
+        
     }
 
     // Prevents Lillia from moving off the screen. 

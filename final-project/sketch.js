@@ -118,7 +118,10 @@ function reachedGoal(){
 
         createP("Thank you for playing my game!");
 
-        //noLoop();
+        
+        createElement("H1", "About");
+
+        createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
 
         startingGame = 2;
     }
@@ -155,18 +158,22 @@ function startScreenDisplay(){
     let text_y = height;
     let t_size = width/8
     let t_size_sm = t_size /2;
+    let t_size_tiny = t_size_sm/2;
 
     background(0);
     stroke(255)
 
-    textSize(t_size_sm);
-    text("Control with W A S D", text_x, text_y/4);
+    textSize(t_size);
+    text("Fairy Doctor", text_x, text_y/4);
 
-    textSize(t_size_sm);
-    text("Fairy Doctor", text_x, text_y/2);
+    textSize(t_size);
+    text("Runs Away", text_x, text_y /2);
 
-    textSize(t_size_sm);
-    text("Runs Away", text_x, text_y /1.25);
+    textSize(t_size_tiny);
+    text("Control with W A S D or Arrow keys", text_x, text_y/1.25);
+
+    textSize(t_size_tiny);
+    text("Escape through the portal before the fairies catch you!", text_x, height - 50);
 
 }
 
@@ -190,18 +197,6 @@ function creditsDisplay(){
     textSize(t_size_sm);
     text("Runs Away", text_x, text_y /1.25);
 
-
-    createElement('h1', "About");
-
-    createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary.");
-
-    createP("It is also the final project for my Media Arts Creative Coding 1 at the University of Montana."); 
-
-    createP("The story is about Lillia, who has gotten herself into a sticky situation. She used to be a fairy doctor, but had to quit for various reason. Unfortunately, the fairies still want her to be their doctor. Can she escape through the portal before they catch her?");
-
-    createP(" Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/.") ;
-
-    noLoop();
 
 }
 
