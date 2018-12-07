@@ -30,6 +30,7 @@ let canvas_h = 576;
 //game start and game Screens
 let button;
 let gameScreen;
+let volume = 0.25;
 
 /********* Image and Sound *********/
 
@@ -56,6 +57,9 @@ function setup() {
     gameScreen = 0;
     button = createButton("Start Game");
     button.mousePressed( startGame);
+    
+    button = createButton("Mute");
+    button.mousePressed( volumeControl);
 
 }
 
@@ -74,8 +78,8 @@ function draw() {
         background( bg_img );
         
         //Play the game's background music
-        game_bg_music.playMode('untilDone');
-        game_bg_music.setVolume(0.5);
+        setTimeout( game_bg_music.playMode('untilDone'), 1000);
+        game_bg_music.setVolume(volume);
         game_bg_music.play();
         
 
@@ -85,7 +89,11 @@ function draw() {
 
         // Create player character
         for(let i = 0; i < player.length; i ++){
-            player[i].frame();
+            player[0].display();
+            player[0].frame();
+            //setTimeout(player[0].animate, 1000);
+            //setTimeout(player[0].move, 1000);
+            //setTimeout(player[0].inBounds, 1000);
         }
 
         //If you reach the goal you win.
@@ -93,14 +101,15 @@ function draw() {
 
         // Enemy characters
         for (let i = 0; i < fairies.length; i++) {
-            fairies[i].frame(target);
-            fairies[i].avoidOthers(fairies, i);
+            fairies[i].display();
+            setTimeout(fairies[i].frame(target), 2000);
+            setTimeout(fairies[i].avoidOthers(fairies, i), 2000);
         }
         // gameOver(); // I moved gameOver into the enemy.js file.
     
     }
     // Or if you win the game, then the credit's show up.
-    else if( gameScreen == 3){
+    else if( gameScreen == 2){
         creditsDisplay();
     }
 
@@ -138,15 +147,6 @@ function startScreenDisplay(){
 
 }
 
-/********* Game Loading Screen *********/
-
-function loadingScreenDisplay(){
-
-    // Countdown
-
-
-}
-
 /********* Game Starts Function *********/
 function startGame(){
 
@@ -155,7 +155,6 @@ function startGame(){
 
     // Create player
     player[0] = new Player(player_init_x, player_init_y, lillia_img);
-    player[0].display();
 
     // Create Goal
     goal = new Goal();
@@ -167,12 +166,8 @@ function startGame(){
         enemy_init_x = abs ( random ( width / 2, width) );
 
         fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
-        fairies.display();
     }
 
-    timer();
-
-    
     gameScreen = 1;
 }
 
@@ -186,7 +181,8 @@ function reachedGoal(){
         //Stop the background music
         game_bg_music.stop();
 
-        //Play the 'You win' Sound Effect
+        //Play the 'You win' Sound Effect               
+        game_clear.setVolume(volume);
         game_clear.play();
 
         createP("Thank you for playing my game!");
@@ -196,7 +192,7 @@ function reachedGoal(){
 
         createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
 
-        gameScreen = 3;
+        gameScreen = 2;
     }
 }
 
@@ -223,6 +219,15 @@ function creditsDisplay(){
 
 }
 
+function volumeControl(){
+
+    if (volume === 0.25){
+        volume = 0;
+    } else{
+        volume = 0.25;
+    }
+
+}
 /* // I moved this feature to the Enemy.js file
 function gameOver(){
 

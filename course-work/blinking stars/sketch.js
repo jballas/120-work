@@ -18,23 +18,22 @@ let button;
 /********** SETUP **********/
 function setup() {
     createCanvas(400,400)
-    
-    
     button = createButton("Start Game");
-    button.mousePressed( starDisplay);
+
+
 }
 
 function draw(){
-
+    frameRate(30);
     background( r,g,b );
+    starDisplay();
 
-setTimeout( move(), 3000);
+    setTimeout( moveStar, 1000);
+}   
 
-
-}
 
 function starDisplay(){
-    
+ 
     star(width * .25, height * .25);
     star(width * .75, height * .75);
 
@@ -53,9 +52,10 @@ function star(x, y){
     
 }
 
-function move(){
+function moveStar(){
 
     //I change from + to minus and now it bounces. It's very much like twinking stars. Althought they blink at the same time. Too bad I can't add an element of randomness to their blinking.
+    
     loc_x -= delta_x;
 
     if(loc_x + delta_x >= 0 || loc_x + delta_x <= 100) {
@@ -71,7 +71,6 @@ function timer(){
     text('Current second: \n' + s, 5, 50);
 
     if (s ===3) {
-        frameRate(30);
     }
     else{
     }

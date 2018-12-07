@@ -32,7 +32,7 @@ class Enemy {
     }
 
     frame(target){
-        this.display(); // displays the enemies on screen
+        //this.display(); // displays the enemies on screen
         this.animate(); // animate's the enemy sprite
         this.seek(target); // This uses the enemy's steering to seek out the target
         this.update(); // This controls how the enemy moves: the velocity and acceleration
@@ -54,9 +54,9 @@ class Enemy {
         pop();
         
         // for testing the game-over hit box.
-        stroke(0);
-        noFill();
-        ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
+        //stroke(0);
+        //noFill();
+        //ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
     }
 
     // Animate the enemy sprite
@@ -105,7 +105,7 @@ class Enemy {
             game_bg_music.stop();
 
             // Play the Game Over sound       
-            game_over_sound.setVolume(0.5);
+            game_over_sound.setVolume(volume);
             game_over_sound.play();
 
             stroke(255);
@@ -114,7 +114,7 @@ class Enemy {
             //noLoop();
 
             // set Game screen to false
-            startingGame = 0;
+            gameScreen = 0;
             
 
         }

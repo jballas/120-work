@@ -28,7 +28,7 @@ class Player {
     }
 
     frame(){
-        this.display(); // displays the player on screen
+        //this.display(); // displays the player on screen
         this.animate(); // animates sprite
         this.move(); // Allows the user to control the player with keyboard arrows
         this.inBounds(); // keeps the player inside the walls of the screen.
@@ -80,7 +80,7 @@ class Player {
             this.pos.y += this.speed;
         }
 
-        // RIGHT handed controls
+        /* RIGHT handed controls
         if (keyIsDown (LEFT_ARROW) ) {
             this.pos.x -= this.speed;
         } 
@@ -92,7 +92,7 @@ class Player {
         } 
         if (keyIsDown (DOWN_ARROW) ) {
             this.pos.y += this.speed;
-        }
+        }*/
         
     }
 
