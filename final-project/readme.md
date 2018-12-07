@@ -216,20 +216,57 @@ The game still works on my local server, but not on github. Not in Chrome or Fir
 
 Next I could try to move the sound file from the sound folder for a direct path. It's worth a try.
 
+## Date 12/7/18
+
+**Summary:**
+
+Sound fixed!
+I managed to fix my sound errors by moving around the location of the sound files. They are directly in my JS folder, instead of inside a seperate one.
+
+Feedback I got some feedback from my family on the game. Both my sisters complained abou the sound levels, so I changed the volume level to quarter, and added a mute button. The mute button appears only after you start the game, and effects both the sound effects and the background music.
+
+My sister also described it as moving so fast, and it took my Dad 30-50 times to finally escape. At my sister's suggestion I decided to add a 3-2-1 start to the game. After some research, and more help from Dan Shiffman, I discoverd the setTimeout() function in JS (10). I could use this to have my sprites display, and then a few seconds later they start moving. This was so frustrating. I couldn't figure out where to put it, inside my Class funtions, or inside the main file. It was in the main sketch file, when I am displaying the enemy and player. Eventually, I discovered I needed to make more functions to call inside the setTimeout().
+
+```JS
+/********* Loading Timer Functions *********/
+
+function loadingPlayer(){
+    player[0].frame();
+}
+
+function loadingEnemies(target, fairies, i){
+    fairies[i].frame(target);
+    fairies[i].avoidOthers(fairies, i);
+}
+```
+However, I also had parameters.
+I googled a solution on this. I discovered where to put my parameters. (11)
+
+```JS
+setTimeout(yourFunctionReference, 4000, param1, param2, paramN);
+``` 
+
+This, gave me what I needed. Now, when you start the game there is a brief 'loading' before the fairies move. I need to add some text that say 'Ready? Start!' Or else adjust how long the 'loading' lasts. I think it might have effected my enemy vector, but I'm okay with that. 
+
+I also discovered an interesting glitch. If you continue to hit the start button it spawns more and more fairies. Ah, ha! This is hard mode!
+
+
 ### Images and Sound
 
 ![Lillia sprite sheet](./images/sprite-sheet-Lillia.png)
 ![Fairies sprite sheet](./images/sprite-sheet-fairy-blue.png)
 
-Using the `function preload()` I added in images for my fairies, and for Lillia, my main character. The trouble was getting used to drawing in the 8bit or pixel art style. I got some tips from youtube channel by blackthornprod. Each pixel has to do a lot of work, and typically 8bit games don't use very many colors. (5)
+Using the `function preload()` I added in images for my fairies, and for Lillia, my main character. The trouble was getting used to drawing in the 8bit or pixel art style. I got some tips from youtube channel by blackthornprod. Each pixel has to do a lot of work, and typically 8bit games don't use very many colors (5).
 
-As for animating, the advice I recieved was to keep my animations simple, like the artwork. After some experimenting I ended up with a very basic movement for both characters. Lillia's arms move up and down, and the fairies' wings flap up and down. (6)
+As for animating, the advice I recieved was to keep my animations simple, like the artwork. After some experimenting I ended up with a very basic movement for both characters. Lillia's arms move up and down, and the fairies' wings flap up and down (6).
 
 During my study of p5.js sound I watched more of Dan Shiffman's tutorials. In two different videos he gives some simple examples of adding background music, and adding sound effects to a game (7) (8). This was exactly what I needed. It was also very similar to preloading the image files. I feel like the beginning of my file has too many variables and preloaded images, but I'm trying to keep the file sizes down.
 
 ## Forum Issues
 
-I've been helping people debug their code project. @JoleneTiffanyG had some small typos in her code I found. @HagenNathaniel couldn't get his code to display and I suggested he  download the newest version of dom.min.js file, because of a button error.
+I've been helping people debug their code project. @JoleneTiffanyG had some small typos in her code I found. @HagenNathaniel couldn't get his code to display and I suggested he download the newest version of dom.min.js file, because of a button error.
+
+## Feedback
 
 ## Conclusion
 
@@ -252,3 +289,7 @@ I've been helping people debug their code project. @JoleneTiffanyG had some smal
 (8) [Shiffman, Dan. "17.5: Adding Sound Effects - p5.js Sound Tutorial." The Coding Train. June 2017.www.youtube.com/watch?v=40Me1-yAtTc&t=864s](https://www.youtube.com/watch?v=40Me1-yAtTc&t=864s)
 
 (9) [Gelal, Oguz. "Flappy Pong". Github. gist.github.com/oguzgelal/a2a8db8b2da0e864d1d0#file-flappy_pong-js](https://gist.github.com/oguzgelal/a2a8db8b2da0e864d1d0#file-flappy_pong-js)
+
+(10) [Shiffman, Dan. "9.4: JavaScript setTimeout() FUntion - p5.js Tutorial". The Coding Train. December 2015. www.youtube.com/watch?v=nGfTjA8qNDA&t=4s](https://www.youtube.com/watch?v=nGfTjA8qNDA&t=4s)
+
+(11)["Vetyska, Jiri. "How can I pass a Parameter to a setTimeout - callback". Stack Overflow forum. Oct 30 2012 stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback](https://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback)
