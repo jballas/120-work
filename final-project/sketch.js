@@ -82,7 +82,7 @@ function draw() {
         //Play the game's background music
         game_bg_music.playMode('untilDone');
         game_bg_music.setVolume(volume);
-        setTimeout( game_bg_music.play, loadingTime);
+        game_bg_music.play();
         
 
         let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
@@ -102,10 +102,11 @@ function draw() {
         for (let i = 0; i < fairies.length; i++) {
             fairies[i].display();
             setTimeout(loadingEnemies, loadingTime, target, fairies, i);
+            
+        // If the enemies catch you it's game over.
+        gameOver(i); 
         }
         
-        // If the enemies catch you it's game over.
-        gameOver(); 
         
     }
     // When you win the game, then the credit's page appears.
@@ -147,7 +148,7 @@ function startScreenDisplay(){
     text("Runs Away", text_x, text_y /2);
 
     textSize(t_size_tiny);
-    text("Control with W A S D or Arrow keys", text_x, text_y/1.25);
+    text("Control with WASD or Arrow keys", text_x, text_y/1.25);
 
     textSize(t_size_tiny);
     text("Escape through the portal before the fairies catch you!", text_x, height - 50);
@@ -182,10 +183,10 @@ function startGame(){
 }
 
 /********* You LOSE the Game  *********/
-function gameOver(){
+function gameOver(i){
 
-    let d = dist(fairies[length].position.x, fairies[length].position.y, player[0].pos.x, player[0].pos.y);
-    let combinedR = fairies[length].r + player[0].radius;
+    let d = dist(fairies[i].position.x, fairies[i].position.y, player[0].pos.x, player[0].pos.y);
+    let combinedR = fairies[i].r + player[0].radius;
     if (d <= combinedR){
 
 
