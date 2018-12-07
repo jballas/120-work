@@ -65,6 +65,8 @@ class Player {
 
     // Lilla's movement across the screen will be controlled by the user.
     move(){
+
+        // Left handed controls.
         if (keyIsDown (65) ) {
             this.pos.x -= this.speed;
         } 
@@ -78,6 +80,7 @@ class Player {
             this.pos.y += this.speed;
         }
 
+        // RIGHT handed controls
         if (keyIsDown (LEFT_ARROW) ) {
             this.pos.x -= this.speed;
         } 
