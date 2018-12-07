@@ -3,10 +3,6 @@ let r = 100
 let g = 255
 let b = 100
 
-function setup() {
-    createCanvas(400,400)
-}
-
 // Nice, I changed the initial location of X and Y from 0 to 10 and it make a scattered, dropping.
 // removing the Move function and making location of X to 1000 gets me a long scattered lines
 let loc_x = 25;
@@ -16,17 +12,34 @@ let loc_x = 25;
 let loc_y = 10;
 let delta_x = 10;
 
+let s = 0;
+let button;
+
+/********** SETUP **********/
+function setup() {
+    createCanvas(400,400)
+    
+    
+    button = createButton("Start Game");
+    button.mousePressed( starDisplay);
+}
 
 function draw(){
 
     background( r,g,b );
-    frameRate(10);
 
-star( width * .25, height * .25);
-star(width * .75, height * .75);
-move();
+setTimeout( move(), 3000);
+
 
 }
+
+function starDisplay(){
+    
+    star(width * .25, height * .25);
+    star(width * .75, height * .75);
+
+}
+
 
 function star(x, y){
 
@@ -48,4 +61,19 @@ function move(){
     if(loc_x + delta_x >= 0 || loc_x + delta_x <= 100) {
         loc_x *= -1;
     }
+}
+
+
+function timer(){
+
+    s = second();
+
+    text('Current second: \n' + s, 5, 50);
+
+    if (s ===3) {
+        frameRate(30);
+    }
+    else{
+    }
+
 }

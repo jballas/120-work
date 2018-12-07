@@ -27,9 +27,9 @@ let bg_main;
 let canvas_w = 1024;
 let canvas_h = 576;
 
-//game start
+//game start and game Screens
 let button;
-let startingGame;
+let gameScreen;
 
 /********* Image and Sound *********/
 
@@ -40,7 +40,7 @@ function preload() {
     fairy_img = loadImage("./images/sprite-sheet-fairy-v2.png");
     portal_img = loadImage("./images/portal.png");
     bg_img = loadImage("./images/bg-game-v2.png");
-    bg_mainpage = loadImage("./images/bg-mainpage.png");
+    //bg_mainpage = loadImage("./images/bg-mainpage.png");
 
     //Sound Effects and background music
     game_clear = loadSound("SFX-clear.mp3");
@@ -53,7 +53,7 @@ function preload() {
 function setup() {
     createCanvas(canvas_w, canvas_h);
 
-    startingGame = 0;
+    gameScreen = 0;
     button = createButton("Start Game");
     button.mousePressed( startGame);
 
@@ -62,11 +62,14 @@ function setup() {
 /********* Draw *********/
 function draw() {
 
-    if( startingGame == 0){
+    // Game stars on main start screen. 
+    if( gameScreen == 0){
 
         startScreenDisplay();
         fairies = [];
-    } else if ( startingGame == 1) {
+    } 
+    // Otherwise if the button is pressed, then you see the loading screen and then it goes into the game.
+    else if ( gameScreen == 1) {
     
         background( bg_img );
         
@@ -96,35 +99,12 @@ function draw() {
         // gameOver(); // I moved gameOver into the enemy.js file.
     
     }
-    else if( startingGame == 2){
+    // Or if you win the game, then the credit's show up.
+    else if( gameScreen == 3){
         creditsDisplay();
     }
 
     
-}
-
-/********* Game Starts Function *********/
-function startGame(){
-
-    startingGame = 1;
-
-    // Player's Y starting position is a random location
-    player_init_y = abs( random(60, width/2) );
-
-    // Create player
-    player[0] = new Player(player_init_x, player_init_y, lillia_img);
-
-    // Create Goal
-    goal = new Goal();
-
-    // Create Enemies
-    for (let i = 0; i < howManyFairies; i++){
-        // Enemy position is random, but in the lower quadrant of the screen
-        enemy_init_y = abs ( random(height/2, height) );
-        enemy_init_x = abs ( random ( width / 2, width) );
-
-        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
-    }
 }
 
 /********* Main Page screen *********/
@@ -154,8 +134,46 @@ function startScreenDisplay(){
     text("Escape through the portal before the fairies catch you!", text_x, height - 50);
 
     lillia = new Player(lillia_loc_x, lillia_loc_y, lillia_img);
-    lillia.frame();
+    lillia.display();
 
+}
+
+/********* Game Loading Screen *********/
+
+function loadingScreenDisplay(){
+
+    // Countdown
+
+
+}
+
+/********* Game Starts Function *********/
+function startGame(){
+
+    // Player's Y starting position is a random location
+    player_init_y = abs( random(60, width/2) );
+
+    // Create player
+    player[0] = new Player(player_init_x, player_init_y, lillia_img);
+    player[0].display();
+
+    // Create Goal
+    goal = new Goal();
+
+    // Create Enemies
+    for (let i = 0; i < howManyFairies; i++){
+        // Enemy position is random, but in the lower quadrant of the screen
+        enemy_init_y = abs ( random(height/2, height) );
+        enemy_init_x = abs ( random ( width / 2, width) );
+
+        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
+        fairies.display();
+    }
+
+    timer();
+
+    
+    gameScreen = 1;
 }
 
 /********* WIN the Game  *********/
@@ -178,7 +196,7 @@ function reachedGoal(){
 
         createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
 
-        startingGame = 2;
+        gameScreen = 3;
     }
 }
 
