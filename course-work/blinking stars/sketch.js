@@ -14,13 +14,14 @@ let delta_x = 10;
 
 let s = 0;
 let button;
+let click = true;
 
 /********** SETUP **********/
 function setup() {
     createCanvas(400,400)
-    button = createButton("Start Game");
+    button = createButton("Start");
 
-
+    button.mousePressed(startStop);
 }
 
 function draw(){
@@ -63,7 +64,6 @@ function moveStar(){
     }
 }
 
-
 function timer(){
 
     s = second();
@@ -73,6 +73,21 @@ function timer(){
     if (s ===3) {
     }
     else{
+    }
+
+}
+
+function startStop(){
+
+    
+    if ( click == true){
+        click = false;
+        button.html("restart")
+        noLoop()
+    } else{
+        click = true;
+        loop();
+        button.html("pause")
     }
 
 }

@@ -28,7 +28,7 @@ class Player {
     }
 
     frame(){
-        //this.display(); // displays the player on screen
+        //this.); // displays the player on screen
         this.animate(); // animates sprite
         this.move(); // Allows the user to control the player with keyboard arrows
         this.inBounds(); // keeps the player inside the walls of the screen.

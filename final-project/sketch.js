@@ -31,6 +31,7 @@ let canvas_h = 576;
 let button;
 let gameScreen;
 let volume = 0.25;
+let loadingTime = 2000;
 
 /********* Image and Sound *********/
 
@@ -72,15 +73,16 @@ function draw() {
         startScreenDisplay();
         fairies = [];
     } 
-    // Otherwise if the button is pressed, then you see the loading screen and then it goes into the game.
+
+    // Otherwise if the button is pressed, then you see the game starts.
     else if ( gameScreen == 1) {
     
         background( bg_img );
         
         //Play the game's background music
-        setTimeout( game_bg_music.playMode('untilDone'), 1000);
+        game_bg_music.playMode('untilDone');
         game_bg_music.setVolume(volume);
-        game_bg_music.play();
+        setTimeout( game_bg_music.play, loadingTime);
         
 
         let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
@@ -90,10 +92,7 @@ function draw() {
         // Create player character
         for(let i = 0; i < player.length; i ++){
             player[0].display();
-            player[0].frame();
-            //setTimeout(player[0].animate, 1000);
-            //setTimeout(player[0].move, 1000);
-            //setTimeout(player[0].inBounds, 1000);
+            setTimeout(loadingPlayer, loadingTime);
         }
 
         //If you reach the goal you win.
@@ -102,8 +101,7 @@ function draw() {
         // Enemy characters
         for (let i = 0; i < fairies.length; i++) {
             fairies[i].display();
-            setTimeout(fairies[i].frame(target), 2000);
-            setTimeout(fairies[i].avoidOthers(fairies, i), 2000);
+            setTimeout(loadingEnemies, loadingTime, target, fairies, i);
         }
         // gameOver(); // I moved gameOver into the enemy.js file.
     
@@ -114,6 +112,15 @@ function draw() {
     }
 
     
+}
+
+function loadingPlayer(){
+    player[0].frame();
+}
+
+function loadingEnemies(target, fairies, i){
+    fairies[i].frame(target);
+    fairies[i].avoidOthers(fairies, i);
 }
 
 /********* Main Page screen *********/
