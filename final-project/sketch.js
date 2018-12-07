@@ -31,7 +31,7 @@ let canvas_h = 576;
 let button;
 let gameScreen;
 let volume = 0.25;
-let loadingTime = 2000;
+let loadingTime = 1000;
 
 /********* Image and Sound *********/
 
@@ -95,7 +95,7 @@ function draw() {
             setTimeout(loadingPlayer, loadingTime);
         }
 
-        //If you reach the goal you win.
+        // If you reach the goal you win.
         reachedGoal();
 
         // Enemy characters
@@ -103,16 +103,19 @@ function draw() {
             fairies[i].display();
             setTimeout(loadingEnemies, loadingTime, target, fairies, i);
         }
-        // gameOver(); // I moved gameOver into the enemy.js file.
-    
+        
+        // If the enemies catch you it's game over.
+        gameOver(); 
+        
     }
-    // Or if you win the game, then the credit's show up.
+    // When you win the game, then the credit's page appears.
     else if( gameScreen == 2){
         creditsDisplay();
     }
 
-    
 }
+
+/********* Loading Timer Functions *********/
 
 function loadingPlayer(){
     player[0].frame();
@@ -178,7 +181,35 @@ function startGame(){
     gameScreen = 1;
 }
 
-/********* WIN the Game  *********/
+/********* You LOSE the Game  *********/
+function gameOver(){
+
+    let d = dist(fairies[length].position.x, fairies[length].position.y, player[0].pos.x, player[0].pos.y);
+    let combinedR = fairies[length].r + player[0].radius;
+    if (d <= combinedR){
+
+
+        
+        //Stop the game background music
+        game_bg_music.stop();
+
+        // Play the Game Over sound       
+        game_over_sound.setVolume(volume);
+        game_over_sound.play();
+
+        stroke(255);
+        textSize(50);
+        text('Game Over', width * 0.5, height * 0.5 );
+        //noLoop();
+
+        // set Game screen to starting screen
+        gameScreen = 0;
+        
+
+    }
+}
+
+/********* You WIN the Game  *********/
 function reachedGoal(){
 
     let d = dist(player[0].pos.x, player[0].pos.y, goal.x, goal.y);
@@ -235,15 +266,3 @@ function volumeControl(){
     }
 
 }
-/* // I moved this feature to the Enemy.js file
-function gameOver(){
-
-    let d = dist(this.position.x, this.position.y, player.pos.x, player.pos.y);
-    let combinedR = this.r + player.radius;
-    if (d <= combinedR){
-        stroke(255)
-        text('Game Over', width * .5, 50);
-        noLoop();
-    }
-}
-*/
