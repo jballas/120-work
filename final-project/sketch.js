@@ -31,7 +31,7 @@ let canvas_h = 576;
 let button;
 let gameScreen;
 let volume = 0.25;
-let loadingTime = 1000;
+let loadingTime = 500;
 
 /********* Image and Sound *********/
 

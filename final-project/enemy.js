@@ -26,8 +26,8 @@ class Enemy {
             [32,0]
         ]
 
-        this.r = this.size.w * .5; // the size of Enemy's capture radius.
-        this.maxspeed = 5;
+        this.r = this.size.w * .5; // the size of Enemy's capture radius. Or 'hit box'.
+        this.maxspeed = 3;
         this.maxforce = 0.2;
     }
 
