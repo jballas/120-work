@@ -148,7 +148,7 @@ function startScreenDisplay(){
         textFont( fontScript );
         textSize( t_size );
         text("Fairy Doctor", text_x, text_y/4 );
-        text("Runs Away", text_x, text_y /2 ;
+        text("Runs Away", text_x, text_y /2 );
     pop();
 
     textSize( t_size_tiny );
