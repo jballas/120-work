@@ -84,17 +84,17 @@ The first phase of coding my game began immediately after I finished my proposal
 
 ### Solutions in phase 1
 
-I decided my player movement should use `keyIsDown`, which I tied to the arrow keys. The challenge was having player interacts with a goal. I studied a Pacman-clone made in p5.js to see how the game was laid out, and specifically how the objects interacted, and our week 12 lesson for interaction between objects(2). I finally felt like I understood everything we learned in Week 12.
+I decided my player movement should use `keyIsDown`, which I tied to the arrow keys. The first challenge was having the player interacts with a goal. I studied a Pacman-clone made in p5.js to see how the game was laid out, and how those objects interacted, and our week 12 lesson for interaction between objects(2). I finally felt like I understood everything we learned in Week 12.
 
-Each object is in a separate class and separate file: 'player.js', 'goal.js' and 'enemy.js'.
+I put each object into a separate class and separate file: 'player.js', 'goal.js' and 'enemy.js'.
 
 Next up was Enemy movement.
 
 I created a new class called Enemy, so I could have more than one enemy appear at a time, in random locations. For the enemy movement I studied and modified the code from Dan Shiffman's Steering Behaviors. In his tutorial he discusses how the steering behavior, in this case a `seek()` function is defined by the simple equation of steering = desired velocity - current velocity (3).
 
-The enemy object zipped across the screen toward a stationary x,y position. Now the trick will be to get it to target a constantly moving position. I struggled with this, thinking I needed to make an array that contained the player's x,y positions.
+The enemy object now zipped across the screen toward a stationary x,y position. Now the tricky part was getting it to target a constantly moving position. I struggled with this, thinking I needed to make an array that contained the player's x,y positions.
 
-I knew it was possible, because I discovered various methods to target the mouseX, and mouseY, but I was determined to keep my movement tied to arrow keys with the `keyIsPress`. After researching more about steering, I discovered another example in Dan Shiffman's Nature of Coding that used steering to target specific dots on a screen. (4) That's when I finally had a breakthrough. The enemy is programmed to `seek(target)` using the variable `let target = createVector( player.pos.x,  player.pos.y)`. That's all it took.
+I knew it was possible, because I discovered various methods to target the mouseX and mouseY, but I was determined to keep my movement tied to arrow keys with the `keyIsPress`. After researching more about steering, I discovered another example in Dan Shiffman's Nature of Coding that used steering to target specific dots on a screen. (4) That's when I finally had a breakthrough. The enemy is programmed to `seek(target)` using the variable `let target = createVector( player.pos.x,  player.pos.y)`. That's all it took.
 
 The screenshot below shows a winning screen: the player(white) touches the goal(gray), after avoiding the enemy(red).
 
@@ -136,26 +136,27 @@ function draw() {
 - Adding HTMl or DOM elements
 
 ### Solutions in phase 2
+Here is an early screen shot of the game
 
 ![current screenshot of game play, you win](./images/screenshot_you_win.PNG)
 
-After completing the basic game play, I needed to start adding the artwork and sound, using the lesson from Week 13. I kept my animations very simple with only two sprites, so the math wasn't too difficult to divide the animation sheets. Adding in the sound involved a brief study of Dan Shiffman's sound tutorials.(5) The code was very similar to adding in images, you need to preload the sound files.
+After completing the basic game play, I needed to design the artwork and find sound. Following the lesson from Week 13 I added my sprites. I kept my animations very simple with only two sprites, so it wasn't too difficult to divide the animation sheets. Adding in the sound involved a brief study of Dan Shiffman's sound tutorials.(5) The code was very similar to adding in images, you need to preload the sound files.
 
 However, after adding in the sprites I noticed the interaction between the player objects had been disrupted. I began to think of this as a problem with the 'hit boxes'. Sometimes, as I playtested, the sprite would be much higher than the goal when I won, or the enemies would not actually hit me but a game over would occur.
 
 To fix this, first I added in the test circles around the sprites. This allowed me to see when the sprites were hitting each other.
 
-![Hit boxes around sprites](.images/screenshot_hit_box.PNG)
+![Hit boxes around sprites](./images/screenshot_hit_box.PNG)
 
-The solution turned out to be simply changing the `imageMode()`. The default in p5js is CORNERS, which specifies that the 2nd and 3rd parameters are attached to the upper left corner. When I changed to `imageMode(CENTER);` then the images were more like ellipses. Success! It fixed my hit boxes. Of course, after that I had to adjust the boundaries of my make sure my sprite stayed on screen properly.
+The solution turned out to be simply changing the `imageMode()`. The default in p5js is CORNERS, which specifies that the 2nd and 3rd parameters are attached to the upper left corner. When I changed to `imageMode(CENTER);` then the images were more like ellipses. Success! It fixed my hit boxes. Of course, after that I had to adjust the boundaries to make sure my sprite stayed on screen properly.
 
-My next problem was how to add a main page and create a 'start game' button. I looked over the Pacman game again and started poking around on our github issues forum. @HagenNataniel has been working on a trivia game, and there was a link to another p5.js game, called Flappy Pong.(9)
+My next problem was how to add a main page and create a 'start game' button. I looked over the Pacman game again and started poking around on our github issues forum. @HagenNataniel has been working on a trivia game, and there was a link to another p5.js game called Flappy Pong.(9)
 
 I decided to impliment an if/else if/else if statement to switch between three 'pages'. Basically, if the Game Screen = 0 then my start screen will display. When Game screen = 1, then my game plays. If a game over occurs, then it goes straight back to the start screen. If the player wins, then game screen = 2 and the credits display.
 
 There was some unexpected results. At one point the fairy enemies kept multiplying over and over every time I lost the game. There were way too many.
 
-![Nightmare](./images/screenshot_nightmare.png)
+![Nightmare, enemies swarm the player](./images/screenshot_nightmare.png)
 
 Luckily, there was an easy solution, I just had to make sure my enemy array was empty again whenever I restarted the game.
 
@@ -167,13 +168,13 @@ Luckily, there was an easy solution, I just had to make sure my enemy array was 
     }
 ```
 
-For the 'game start' button. I reviewed more of Dan Shiffman's DOM videos to see how adding HTML elements works in p5.js. When I tried to add HTML information straight to my index file, I didn't like the layout anymore. Instead, I have the credits appear below after you win the game. I also had to download the newest version of dom.min.js library because of an error with the button.
+For the 'game start' button. I reviewed Dan Shiffman's DOM videos to see how to add HTML elements in p5.js. When I tried to add HTML information straight to my index file, I didn't like the layout anymore. Instead, I have the credits appear below after you win the game. I also had to download the newest version of dom.min.js library because of an error with the button.
 
-Here is the simple credits page I designed.
+Here is the first credits page I designed.
 
 ![Credits](./images/screenshot_credits.png)
 
-At this point in development I needed ask for feedback from friends and family. Of course, that's when I ran straight into an error. Although, I was able to view my page on my computer with a local server, I could not view it on the github webpage. There was a sound loading error.
+At this point in development I needed to ask for feedback from friends and family. Of course, that's when I ran straight into an error. Although, I was able to view my page on my computer with a local server, I could not view it on the github webpage. There was a sound loading error.
 
 ![Sound Loading Error](./.images/final-project-sound-errors.PNG)
 
@@ -229,8 +230,9 @@ I also discovered an interesting glitch. If you continue to hit the start button
 
 ### Images and Sound
 
+final Spites in game:
 ![Lillia sprite sheet](sprite-sheet-Lillia.png)
-![Fairies sprite sheet](./images/sprite-sheet-fairy-blue.png)
+![Fairies sprite sheet](./images/sprite-sheet-fairy-v2.png)
 
 The story for Fairy Doctor is set in Singapore, so the game needed a tropical setting.
 
@@ -244,7 +246,14 @@ Eventually, I changed from a pattern to a solid brown color.
 
 ![Final background](./images/bg-game-v2.png)
 
-As for animating, the advice I received was to keep my animations simple, like the artwork. After some experimenting I ended up with a very basic movement for both characters. Lillia's arms move up and down, and the fairies' wings flap up and down (8).
+I tried several different versions of my fairies before I got to the final design. 
+
+These ones I rejected:
+![Fairies sprite sheet](./images/sprite-sheet-fairy.png)
+![Fairies sprite sheet](./images/sprite-sheet-fairy-blue.png)
+![Fairies sprite sheet](./images/sprite-sheet-fairy-magenta.png)
+
+As for animating, the advice I received was to keep my animations simple (8). After some experimenting I ended up with a very basic movement. Lillia's arms move up and down, and the fairies' wings flap up and down.
 
 Searching for sound files to fit my game took much more time than I expected. Eventually, I settled on an 8bit sound to keep it consistent with my 8bit art style. I was also concerned about a Google warning. It didn't like my game music to play automatically.
 ![Google warning](./images/screenshot_audio_warning.PNG)
@@ -253,17 +262,17 @@ According to their guidelines you need to either mute your audio, or not have it
 
 ## Reject Ideas
 
-I researched dialogue trees and discovered a wonderful program called [Twine](http://twinery.org), which allows you to create HTML based interactive fiction. This was too much work to add a  conversation based game to my p5.js, so I'm decided to focus on polishing what I had.
+I researched dialogue trees and discovered a wonderful program called [Twine](http://twinery.org), which allows you to create HTML based interactive fiction. This was too much work to add a  conversation based game to my p5.js, so I decided to focus on polishing my simple game.
 
 Adding in obstacles for the player was another idea, but creating boundaries between the player and object turned out to be too difficult. Also, my game play is very fast, it would be too hard if the player has to avoid obstacles too.
 
 ## Forum Issues
 
-I helped some people debug their code project. @JoleneTiffanyG had some small typos in her code I found. @HagenNathaniel couldn't get his code to display and I suggested he download the newest version of dom.min.js file, because of a button error.
+I helped some people debug their code project. @JoleneTiffanyG had some small typos in her code I found. @HagenNathaniel couldn't get his code to display and I suggested he download the newest version of dom.min.js file, because of a button error. I also recommended Dan Shiffman's steering video to @Dani-Briggs.
 
 ## Conclusion
 
-Learning p5.js turned into a fantastic experience for me. I truly felt like I was learning a new language, and a new way of thinking logically about objects. Through repetition I felt like I learned to grasp these strange new ideas. It could be very frustrating at times, especially when I struggled with errors and empty canvases. However, it was also very rewarding to find a solution to the coding problem, or to see my code create something unexpected.
+Learning p5.js turned into a fantastic experience for me. I truly felt like I was learning a new language, and Object Oriented Programming forced me think differently. Through repetition I felt like I learned to grasp these strange new ideas. It could be very frustrating at times, especially when I struggled with errors and empty canvases. However, it was also very rewarding to find a solution to the coding problem, or to see my code create something unexpected.
 
 Although, my game is not complex or particularly difficult, I feel like I learned a lot in the process of making my first game. It works. It's not perfect, but I'm ready to tackle the next p5.js project.
 
