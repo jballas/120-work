@@ -38,70 +38,71 @@ let loadingTime = 500;
 function preload() {
 
     //Load images
-    lillia_img = loadImage("sprite-sheet-Lillia.png");
-    fairy_img = loadImage("./images/sprite-sheet-fairy-v2.png");
-    portal_img = loadImage("./images/portal.png");
-    bg_img = loadImage("./images/bg-game-v2.png");
-    //bg_mainpage = loadImage("./images/bg-mainpage.png");
+    lillia_img = loadImage( "sprite-sheet-Lillia.png" );
+    fairy_img = loadImage( "./images/sprite-sheet-fairy-v2.png" );
+    portal_img = loadImage( "./images/portal.png" );
+    bg_img = loadImage( "./images/bg-game-v2.png" );
 
     //Sound Effects and background music
-    game_clear = loadSound("SFX-clear.mp3");
-    game_bg_music = loadSound("game-music.mp3");
-    game_over_sound = loadSound("SFX-game-over.mp3");
+    game_clear = loadSound( "SFX-clear.mp3" );
+    game_bg_music = loadSound( "game-music.mp3" );
+    game_over_sound = loadSound( "SFX-game-over.mp3" );
 
+    // Font
+    fontScript = loadFont( 'Playlist-Script.otf' );
 }
 
 /********* Setup *********/
 function setup() {
-    createCanvas(canvas_w, canvas_h);
+    createCanvas( canvas_w, canvas_h );
 
     gameScreen = 0;
-    button = createButton("Start Game");
-    button.mousePressed( startGame);
+    button = createButton( "Start Game" );
+    button.mousePressed( startGame );
     
-    button = createButton("Mute");
-    button.mousePressed( volumeControl);
+    button = createButton( "Mute" );
+    button.mousePressed( volumeControl );
 
 }
 
 /********* Draw *********/
 function draw() {
 
-    // Game stars on main start screen. 
-    if( gameScreen == 0){
+    // Game starts on main start screen. 
+    if( gameScreen == 0 ){
 
         startScreenDisplay();
         fairies = [];
     } 
 
-    // Otherwise if the button is pressed, then you see the game starts.
-    else if ( gameScreen == 1) {
+    // Otherwise if the button is pressed, then you see the game start screen.
+    else if ( gameScreen == 1 ) {
     
         background( bg_img );
         
         //Play the game's background music
-        game_bg_music.playMode('untilDone');
-        game_bg_music.setVolume(volume);
+        game_bg_music.playMode( 'untilDone');
+        game_bg_music.setVolume( volume );
         game_bg_music.play();
         
 
-        let target = createVector( player[0].pos.x, player[0].pos.y); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
+        let target = createVector( player[0].pos.x, player[0].pos.y ); // This creates the vector target that the enemy will seek. I didn't need an array to hold the pos.x, pos.x. I needed a vector.
 
         goal.displayPortal();
 
-        // Create player character
+        // Create and display player sprite
         for(let i = 0; i < player.length; i ++){
             player[0].display();
-            setTimeout(loadingPlayer, loadingTime);
+            setTimeout( loadingPlayer, loadingTime );
         }
 
         // If you reach the goal you win.
         reachedGoal();
 
-        // Enemy characters
+        // Display the Enemy sprites
         for (let i = 0; i < fairies.length; i++) {
             fairies[i].display();
-            setTimeout(loadingEnemies, loadingTime, target, fairies, i);
+            setTimeout( loadingEnemies, loadingTime, target, fairies, i );
             
         // If the enemies catch you it's game over.
         gameOver(i); 
@@ -109,8 +110,8 @@ function draw() {
         
         
     }
-    // When you win the game, then the credit's page appears.
-    else if( gameScreen == 2){
+    // When you win the game, then the credit's page appears. You can still play the game if you click the start button.
+    else if( gameScreen == 2 ){
         creditsDisplay();
     }
 
@@ -118,13 +119,15 @@ function draw() {
 
 /********* Loading Timer Functions *********/
 
+// These functions used to be in the main sketch, but the setTimeout function wouldn't work unless I created these new functions to callback. Then I had to discover where to put the parameters.
+
 function loadingPlayer(){
     player[0].frame();
 }
 
-function loadingEnemies(target, fairies, i){
-    fairies[i].frame(target);
-    fairies[i].avoidOthers(fairies, i);
+function loadingEnemies( target, fairies, i ){
+    fairies[i].frame( target );
+    fairies[i].avoidOthers( fairies, i );
 }
 
 /********* Main Page screen *********/
@@ -141,19 +144,18 @@ function startScreenDisplay(){
     background(0);
     stroke(255)
 
-    textSize(t_size);
-    text("Fairy Doctor", text_x, text_y/4);
+    push();
+        textFont( fontScript );
+        textSize( t_size );
+        text("Fairy Doctor", text_x, text_y/4 );
+        text("Runs Away", text_x, text_y /2 ;
+    pop();
 
-    textSize(t_size);
-    text("Runs Away", text_x, text_y /2);
+    textSize( t_size_tiny );
+    text( "Control with WASD or Arrow keys", text_x, text_y/1.25 );
+    text( "Escape through the portal before the fairies catch you!", text_x, height - 50 );
 
-    textSize(t_size_tiny);
-    text("Control with WASD or Arrow keys", text_x, text_y/1.25);
-
-    textSize(t_size_tiny);
-    text("Escape through the portal before the fairies catch you!", text_x, height - 50);
-
-    lillia = new Player(lillia_loc_x, lillia_loc_y, lillia_img);
+    lillia = new Player( lillia_loc_x, lillia_loc_y, lillia_img );
     lillia.display();
 
 }
@@ -162,10 +164,10 @@ function startScreenDisplay(){
 function startGame(){
 
     // Player's Y starting position is a random location
-    player_init_y = abs( random(60, width/2) );
+    player_init_y = abs( random( 60, width/2 ) );
 
     // Create player
-    player[0] = new Player(player_init_x, player_init_y, lillia_img);
+    player[0] = new Player( player_init_x, player_init_y, lillia_img );
 
     // Create Goal
     goal = new Goal();
@@ -173,12 +175,13 @@ function startGame(){
     // Create Enemies
     for (let i = 0; i < howManyFairies; i++){
         // Enemy position is random, but in the lower quadrant of the screen
-        enemy_init_y = abs ( random(height/2, height) );
-        enemy_init_x = abs ( random ( width / 2, width) );
+        enemy_init_y = abs ( random( height/2, height ) );
+        enemy_init_x = abs ( random( width / 2, width ) );
 
-        fairies.push( new Enemy(enemy_init_x, enemy_init_y, fairy_img) )
+        fairies.push( new Enemy( enemy_init_x, enemy_init_y, fairy_img ) )
     }
 
+    // Set the game Screen so in draw() function it will display the correct screen
     gameScreen = 1;
 }
 
@@ -195,12 +198,12 @@ function gameOver(i){
         game_bg_music.stop();
 
         // Play the Game Over sound       
-        game_over_sound.setVolume(volume);
+        game_over_sound.setVolume( volume );
         game_over_sound.play();
 
         stroke(255);
         textSize(50);
-        text('Game Over', width * 0.5, height * 0.5 );
+        text( 'Game Over', width * 0.5, height * 0.5 );
         //noLoop();
 
         // set Game screen to starting screen
@@ -221,15 +224,15 @@ function reachedGoal(){
         game_bg_music.stop();
 
         //Play the 'You win' Sound Effect               
-        game_clear.setVolume(volume);
+        game_clear.setVolume( volume );
         game_clear.play();
 
-        createP("Thank you for playing my game!");
+        createP( "Thank you for playing my game!" );
 
         
-        createElement("H1", "About");
+        createElement( "H1", "About" );
 
-        createP("Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. ");
+        createP( "Fairy Doctor Runs Away is a p5.js game inspired by the fantasy series <em>Fairy Doctor Falls in Love</em> by Ava Clary. It is also the final project for my Media Arts Creative Coding 1 at the University of Montana. Credits for songs and sound effects go to Shiftkun (https://freesound.org/s/435782/) and wolerado. (https://freesound.org/s/415096/. " );
 
         gameScreen = 2;
     }
@@ -246,18 +249,19 @@ function creditsDisplay(){
     background(0);
     stroke(255)
 
-    textSize(t_size);
-    text("You win", text_x, text_y/4);
+    textSize( t_size );
+    text( "You win", text_x, text_y/4 );
 
-    textSize(t_size_sm);
-    text("Fairy Doctor", text_x, text_y/2);
-
-    textSize(t_size_sm);
-    text("Runs Away", text_x, text_y /1.25);
-
+    push();
+        textFont( fontScript );
+        textSize( t_size_sm );
+        text( "Fairy Doctor", text_x, text_y/2 );
+        text( "Runs Away", text_x, text_y /1.25 );
+    pop();
 
 }
 
+/********* Mute button *********/
 function volumeControl(){
 
     if (volume === 0.25){

@@ -1,3 +1,4 @@
+// Enemy Class
 // Code modified from Dan Shiffman's Nature of Code
 // [Shiffman, Dan. "Coding Challenge 61.1: Evolutionary Steering behaviors - Part 1." The Coding Train](https://www.youtube.com/watch?v=flxOkx0yLrY) 
 // I have Enemies that are targeting a player. It's game over if they reach the player. 
@@ -54,9 +55,9 @@ class Enemy {
         pop();
         
         // for testing the game-over hit box.
-        stroke(0);
-        noFill();
-        ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
+        //stroke(0);
+        //noFill();
+        //ellipse(this.position.x,this.position.y,this.size.w,this.size.h);
     }
 
     // Animate the enemy sprite
@@ -93,8 +94,7 @@ class Enemy {
         this.acceleration.add(force);
     }
 
-    /* I moved gameOver back to main sketch, because of my setTimeout causing issues with sound.
-    // However, I can't figure out how to indicate the enemy position.
+    /* I moved gameOver back to main sketch, because of setTimeout() caused issues with the sound.
     gameOver(){
 
         let d = dist(this.position.x, this.position.y, player[0].pos.x, player[0].pos.y);
@@ -123,7 +123,7 @@ class Enemy {
     }
 */
 
-    // Function to keep the enemies movements erratic, and to prevent them from swarming the player. // If they touch each other they are transported back to a random location. 
+    // This function to keep the enemies movement erratic, and prevents them from swarming the player. // If they touch each other they are transported back to a random location. 
     // Code modified Musick, Michael. Bouncing Balls, Week 12. montana-media-arts.github.io/creative-coding-1/modules/week-12/objects-w-each-other/ 
 
     avoidOthers(otherEnemies, myId){

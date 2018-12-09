@@ -28,14 +28,14 @@ class Player {
     }
 
     frame(){
-        //this.); // displays the player on screen
+        //this.display(); // displays the player on screen. I call this directly now.
         this.animate(); // animates sprite
         this.move(); // Allows the user to control the player with keyboard arrows
         this.inBounds(); // keeps the player inside the walls of the screen.
     }
 
 
-    // Lillia's sprite will go here
+    // Lillia's sprite
 
     display(){
 
@@ -50,7 +50,7 @@ class Player {
                 this.size.w, this.size.h
             );
         pop();
-        // for testing the game-win boundaries
+        // for testing the game-win hitbox boundaries
         //ellipse(this.pos.x, this.pos.y, this.size.w, this.size.h);
     }
 
