@@ -4,13 +4,13 @@ Julia Ballas 50
 
 # Final Project
 
-date
+date 12-10-18
 
 ## Overview
 
 My final project: Fairy Doctor Runs Away
 
-[!Game screen](./images/bg-mainpage.png)
+![FDRA Logo](./images/FDRA-logo-01.PNG)
 
 ## Projects
 
@@ -24,47 +24,70 @@ My final project: Fairy Doctor Runs Away
 ## Workflow / Deadlines
 
 1. Coding (Finish by November 27th)
-    - **Player movement (using `keyIsDown`)**
-    - **Player interacts with goal**
-    - **Enemy movement toward stationary target**
-    - **Enemy movement toward moving target**
-    - **Enemy interacts with Player**
-    - **Random appearance on screen**
-    - Obstacles
-2. Sprites/ Concept Art (Finish by November 30th)
+    - Player movement (using `keyIsDown`)
+    - Player interacts with goal
+    - Enemy movement toward stationary target
+    - Enemy movement toward moving target
+    - Enemy interacts with Player
+    - Random appearance on screen
+2. Images / Sound (Finish by December 4th)
     - Lillia and Fairies
-        - **PS pixel line art**
-        - **PS coloring**
-        - **Sprite animation/Sprite sheet**
+        - create pixel line art
+        - color in Photoshop
+        - Sprite animation/Sprite sheet
     - Background sketch
-        - **PS line art**
-        - **PS coloring**
+        - create pixel line art
+        - color in Photoshop
     - Main Page
-        - **brainstorm ideas/draft**
-        - **Logo sketch**
-        - **line art**
-        - **coloring**
-    - **Add final sprites to game**
-    - **Add final background to game**
-3. Main Page and About page (Finish by December 1st)
-    - **Draft main page layout**
-        - A simple p5.JS animation loop?
-    - **Write About page/ Credits**
-    - **Link Main Page to About and Game**
-4. Sound (finish by Decemer 4th)
-    - **Search Hooksounds.com or Musopen.org offer for free background music**
-    - **Add background music to Game**
-    - Add music to Main Page, can I mute it?
-    - **Search Freesound.org for creative-commons Sound effects**
-    - **Add sound effects to game**
+        - brainstorm ideas/draft
+        - create Logo
+        - draft line art
+        - color in photostop
+    - Add code for final sprites
+    - Add code for background images
+    - Sound
+        - Search Hooksounds.com or Musopen.org offer for Creative Commons background music
+        - Add code for background music
+    - Add music to Main Page
+        - Search Freesound.org for creative commons Sound effects
+        - Add code for sound effects
+3. Code Game Screens and About Page
+    - Add a Start Button
+    - P5.JS Dom elements for About page
+    - Code different Game Screens 0, 1, 2 and connect using an if/else statment
+4. Playtesting/Feedback (Send to people around December 5th)
+    - Coding changes
+        - Add left handed player controls WASD
+        - Add a loading time. Display sprites, but don't let them move for X seconds
+        - Add a button to restart game after winning
+    - Add a Mute Button
+    - Adjust volume of sounds
+    - Change Main Page background, font style, add in controls and basic story.
 
-5. Impliment other ideas?
+5. Final proofreading and copy edits
+    - Clean up Code
+    - Finish Readme
+    - Proofreading
 
-6. Playtesting/Feedback (Send to people around December 5th)
-    - From friends and family
-    - GitHub forum
+6. Submit Final Project **deadline Tuesday December 11th, 8:00AM**
 
-7. Submit Final Project **deadline Tuesday December 11th, 8:00AM**
+## Coding Phase 1
+
+### Challenges in phase 1
+
+### Solutions in phase 1
+
+## Coding Phase 2
+
+### Challenges in phase 2
+
+### Solutions in phase 2
+
+## Coding Phase 3
+
+### Challenges in phase 3
+
+### Solutions in phase 3
 
 ## Progress Report
 
@@ -97,7 +120,7 @@ Todo:
 
 The screenshot below shows a winning screen, with the player(white) touching the goal(gray), after avoiding the enemy(red).
 
-![Screenshot of Simple Game with simple shapes](screenshot_simple_shapes.PNG)
+![Screenshot of Simple Game with simple shapes](./images/screenshot_simple_shapes.PNG)
 
 Here is the `draw()` function of my game:
 
@@ -142,7 +165,7 @@ Other concerns: I'm also struggling with the 'hit boxes'. When I had the game as
 
 I'm going to have to post to the forum, or else find out when lab hours are this week, because I don't have any ideas how to fix this problem with 'hit boxes'.
 
-![current screenshot of game play, you win](screenshot_you_win.PNG)
+![current screenshot of game play, you win](./images/screenshot_you_win.PNG)
 
 My Todo List
 
@@ -159,7 +182,7 @@ I researched dialogue trees and discovered a wonderful program called [Twine](ht
 
 I fixed the backgrounds, and figured out how to make my 'hit boxes work. I added in the test circles. This allowed me to see where the characters were hitting each other.
 
-![Hit boxes around sprites](screenshot_hit_box.PNG)
+![Hit boxes around sprites](.images/screenshot_hit_box.PNG)
 
 My solution was to change the `imageMode()`. The default is CORNERS, which specifies that the 2nd and 3rd parameters are attached to the upper left corner. When I changed to `imageMode(CENTER);` then the images are more like ellipses. Success! It fixed my hit boxes. Of course, after that I had to adjust my boundaries to make sure my sprite stayed on screen properly.
 
@@ -170,7 +193,7 @@ Looks like I'm going to have to impliment an if/else statement and a game start 
 I reviewed more of Dan Shiffman's DOM videos, to see how adding HTML elements works in p5.js. When I tried to add HTML information straight to my index file, I didn't like the layout anymore. I also had to download the newest version of dom.min.js library because of an error with the button.
 
 Lasty, I am getting warning from google about my audio playing automatically.
-![Google warning](screenshot_audio_warning.PNG)
+![Google warning](./images/screenshot_audio_warning.PNG)
 
 TODO:
 
@@ -190,7 +213,7 @@ CONCERNS:
 Today I updated my game to switch between a main page, the game and a credit page. I use an if/else if/else if statement to switch between each of the three 'pages'. The basic layout for this came from a p5.js game called Flappy Pong.(9)
 
 There was some unexpected results. At one point the fairies kept multiplying over and over every time I lost the game. There were way too many.
-![Nightmare](screenshot_nightmare.png)
+![Nightmare](./images/screenshot_nightmare.png)
 
 There was an easy solution, I just had to make sure my enemy array was empty again whenever I restarted the game.
 
@@ -204,11 +227,11 @@ There was an easy solution, I just had to make sure my enemy array was empty aga
 
 I also made my About/Credits page today. I tried to keep it simple. In some ways I prefer the design of this to my pixelated background.
 
-![Credits](screenshot_credits.png)
+![Credits](./images/screenshot_credits.png)
 
 Today, I was ready to ask for feedback from friends and family, but I ran into a bigger issue. Whenever I try to view my game on the github webpage there is an error.
 
-![Sound Loading Error](final-project-sound-errors.PNG)
+![Sound Loading Error](./.images/final-project-sound-errors.PNG)
 
 I have no clue why. Googling didn't reveal any solutions. I posted to the forum today to see if anyone else knows and I'll e-mail the TAs tomorrow. At this rate I won't be able to submit my project.
 
@@ -244,16 +267,25 @@ I googled a solution on this. I discovered where to put my parameters. (11)
 
 ```JS
 setTimeout(yourFunctionReference, 4000, param1, param2, paramN);
-``` 
+```
 
 This, gave me what I needed. Now, when you start the game there is a brief 'loading' before the fairies move. I need to add some text that say 'Ready? Start!' Or else adjust how long the 'loading' lasts. I think it might have effected my enemy vector, but I'm okay with that. 
 
 I also discovered an interesting glitch. If you continue to hit the start button it spawns more and more fairies. Ah, ha! This is hard mode!
 
+## date: 12-9-18
+
+**Summary:** Today is my last progress report. I plan to change the font type on my main page, and tweek the timing for the sprites loading. Mostly, I am updating my readme file.
+
+I fixed the workflow to reflex my actua progress, instead of a daily report, which is rambling and hard to follow. I am going to make the readme focus on Coding Phases 1-3, their challenges and solutions. I'll briefly discuss the images and sounds and how important it was to get feedback. So, I'm making this last report for my history. So, I have the record on file, but I'm removing it for my final submission. 
+
+I will also try to clean up my code, check on the comments, and proofread.
+
+Cheers! This was a great learning experience!
 
 ### Images and Sound
 
-![Lillia sprite sheet](./images/sprite-sheet-Lillia.png)
+![Lillia sprite sheet](sprite-sheet-Lillia.png)
 ![Fairies sprite sheet](./images/sprite-sheet-fairy-blue.png)
 
 Using the `function preload()` I added in images for my fairies, and for Lillia, my main character. The trouble was getting used to drawing in the 8bit or pixel art style. I got some tips from youtube channel by blackthornprod. Each pixel has to do a lot of work, and typically 8bit games don't use very many colors (5).
