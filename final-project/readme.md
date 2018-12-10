@@ -176,7 +176,7 @@ Here is the first credits page I designed.
 
 At this point in development I needed to ask for feedback from friends and family. Of course, that's when I ran straight into an error. Although, I was able to view my page on my computer with a local server, I could not view it on the github webpage. There was a sound loading error.
 
-![Sound Loading Error](./.images/final-project-sound-errors.PNG)
+![Sound Loading Error](./images/final-project-sound-errors.PNG)
 
 I have no clue why. Googling didn't reveal any solutions. I posted to the forum to see if anyone else knew a solution. It didn't load in a Chrome or Firefox browser. The next morning I fixed the error by moving my sound files into my direct folder, instead of having a separate 'Sounds' file.
 
