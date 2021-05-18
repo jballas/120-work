@@ -35,4 +35,4 @@ Animated sketch
 Animated sketch
 
 [Final Project: Fairy Doctor Runs Away](https://jballas.github.io/120-work/final-project/index.html)
-Animated sketch
+simple escape game
